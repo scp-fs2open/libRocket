@@ -1,0 +1,68 @@
+= Overview =
+
+libRocket is a C++ interface middleware package designed for game applications. At its core it is based on the popular HTML and CSS specifications - we've taken most of the latest implementations used in web browsers now as well as a few of the most useful proposed additions to the specifications. It contains a full set of widgets so you can get creating screens right out of the box.
+
+[[Image(htmlcss.gif, nolink, align="left")]]
+== Why HTML and CSS? ==
+ - There's no point in re-inventing the wheel! The HTML and CSS standards have gone through many revisions and updates and now offer a very powerful and easy-to-use solution to interface problems.
+ - They are two very widely known standards so you don't have learn a completely new toolset.
+ - Consistency is a cinch: no longer will you have to go through every screen and fix something up every time the design changes.
+ - The well-known, well-defined automatic layout engine makes creating new and consistent screens a simple task.
+{{{
+#!html
+<div class="clear">&nbsp;</div>
+}}}
+
+[[Image(template.gif, nolink, align="left")]]
+== Templating ==
+libRocket incorporates a powerful templating tool. You define key elements, such as windows, then re-use these throughout the project. If you want to make a global change to the window, change it in one place and every window will reflect the change.
+{{{
+#!html
+<div class="clear">&nbsp;</div>
+}}}
+
+[[Image(form.gif, nolink, align="left")]]
+== Form controls and input ==
+But wait, there's more: you also get access to a full form controls widget set - input fields, text areas, slider bars, drop down lists, as well as the new dynamic data displays, data grids.
+
+Visual representation of widgets is completely customisable via CSS or add custom decorators for real-time effects. If you want to go past the visual aspects and delve deeper into the controls behaviour thats no problem as Rocket comes complete with full source code to the controls plugin.
+{{{
+#!html
+<div class="clear">&nbsp;</div>
+}}}
+
+[[Image(datagrids.gif, nolink, align="left")]]
+== Dynamic data representation (model, view, controller) ==
+One of the key parts of any UI is displaying dynamic data - main menus are all well enough, but the real test of a UI is how well it can handle the lobby screens, the inventory screens, and the level select screens. libRocket comes with a powerful collection of classes to detach the data from the output. Data is fetched from a data source, passed through a data formatter, then finally displayed in a data grid which includes full support for tree-like structures, like Windows Explorer.[[br]]
+{{{
+#!html
+<div class="clear">&nbsp;</div>
+}}}
+
+[[Image(scripting.gif, nolink, align="left")]]
+== Tight scripting integration ==
+The lightweight Python plugin exposes all of Rocket's core features and DOM to the Python programmer. The Python interface has been modeled around Javascript for simplicity and familiarity, and can be used to manipulate any part of a document in real time. Whole games can be written in Python once the Rocket framework is initialised.
+
+Don't use Python? No problem; Rocket provides support for developing your own bindings to other scripting languages, or simply stick with C++.
+{{{
+#!html
+<div class="clear">&nbsp;</div>
+}}}
+
+== Extensibility ==
+
+libRocket doesn't do exactly what you want it to do? No problem! We've bent over backwards to open it up to modification by adding customisable interfaces to it. You can:
+ - Set your own log, file, render and system interfaces.
+ - Define custom decorators to display anything you like. For example, the starfield in the demo application, Rocket Invaders from Mars, is a custom decorator.
+ - Define custom elements with their own behaviour, events and display.
+ - Add extra features to the XML parser to make it do whatever you want it do.
+
+[[Image(debugger.gif, nolink, align="left")]]
+== Debugger ==
+libRocket also comes with its own open-sourced visual debugger to allow you to track down any problems you're having with your interface development. You can click on any part of the screen and see what the element is, why it looks and acts the way it does, exactly where it gets its style information from, and navigate up and down to any of its children or parents.
+{{{
+#!html
+<div class="clear">&nbsp;</div>
+}}}
+
+For more details on what you receive with Rocket please see the [wiki:documentation/C++Manual/Packages Package Descriptions] or visit the [http://www.librocket.com/download Download] page to get a copy of the FREE trial.

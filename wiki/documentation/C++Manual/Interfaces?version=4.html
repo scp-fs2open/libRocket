@@ -1,0 +1,346 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title> Interfaces - libRocket</title>
+<link rel="start" href="http://librocket.com/wiki"/><link rel="search" href="http://librocket.com/search"/><link rel="help" href="../../TracGuide.html"/><link rel="stylesheet" href="../../../chrome/common/css/trac.css" type="text/css"/><link rel="stylesheet" href="../../../chrome/common/css/wiki.css" type="text/css"/><link rel="icon" href="../../../chrome/site/trac.ico" type="image/x-icon"/><link rel="shortcut icon" href="../../../chrome/site/trac.ico" type="image/x-icon"/><link rel="alternate" href="Interfaces%3Fversion=4&amp;format=txt" title="Plain Text" type="text/x-trac-wiki"/><style type="text/css">
+</style>
+<script type="text/javascript" src="../../../chrome/common/js/trac.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/base.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/content.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/discussion.css"></link>
+<style>
+		div.wiki img
+		{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+<div class="widthshell-width">
+<div class="widthshell-minwidth">
+<div class="widthshell-layout">
+<div class="widthshell-container">
+<div class="widthshell-content">
+<div id="background">
+<div style="float:right;width:160px;height:600px;margin-top:110px;margin-right:20px;">
+<script type="text/javascript"><!--
+                        google_ad_client = "pub-5872045433470541";
+                        /* Default, Wide Skyscraper */
+                        google_ad_slot = "3956485030";
+                        google_ad_width = 160;
+                        google_ad_height = 600;
+                //-->
+                </script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+</div>
+<div class="shell">
+<div class="stars">
+<img id="star-1" src="../../../chrome/site/images/star-red-medium.gif" width="22px" height="22px" alt="Star"/>
+<img id="star-2" src="../../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-3" src="../../../chrome/site/images/star-red-small.gif" width="11px" height="11px" alt="Star"/>
+<img id="star-4" src="../../../chrome/site/images/star-orange-small.gif" width="16px" height="16px" alt="Star"/>
+<img id="star-5" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-6" src="../../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-7" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-8" src="../../../chrome/site/images/star-red-big.gif" width="33px" height="33px" alt="Star"/>
+<img id="star-9" src="../../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-10" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-11" src="../../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-12" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+</div>
+<div id="header">
+<a href="../../documentation.html"><img id="title" src="../../../chrome/site/images/title.gif" width="256px" height="49px" alt="Rocket"/></a>
+<ul class="top-level-nav">
+<li><a href="../../frontend/features.html">features.</a></li>
+
+<li><a href="http://github.com/lloydw/librocket">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../../documentation.html">developer.</a></li>
+</ul>
+<img id="trail" src="../../../chrome/site/images/trail-content.gif" width="72px" height="115px" alt="Rocket Trail"/>
+<a href="../../documentation.html"><img id="rocket" src="../../../chrome/site/images/rocket-content.gif" width="126px" height="139px" alt="Rocket"/></a>
+</div>
+</div>
+</div>
+<div class="shell">
+<div id="banner">
+<div class="stars">
+<img id="star-13" src="../../../chrome/site/images/star-black-big.gif" width="49px" height="50px" alt="Star"/>
+<img id="star-14" src="../../../chrome/site/images/star-black-medium.gif" width="23px" height="23px" alt="Star"/>
+<img id="star-15" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-16" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-17" src="../../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-18" src="../../../chrome/site/images/star-black-tiny.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-19" src="../../../chrome/site/images/star-black-tiny.gif" width="9px" height="9px" alt="Star"/>
+<img id="star-20" src="../../../chrome/site/images/star-black-tiny.gif" width="10px" height="10px" alt="Star"/>
+<img id="star-21" src="../../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-22" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-23" src="../../../chrome/site/images/star-black-small.gif" width="13px" height="13px" alt="Star"/>
+</div>
+<img id="banner-bottom-left" src="../../../chrome/site/images/banner-bottom-left.gif" width="20px" height="19px" alt="Bottom left banner image"/>
+<img id="banner-bottom-right" src="../../../chrome/site/images/banner-bottom-right.gif" width="20px" height="19px" alt="Bottom right banner image"/>
+<div id="login"><a href="http://librocket.com/login">Login</a> | <a "http://librocket.com/wiki/documentation/C%2B%2BManual/href">Register</a></div>
+<div id="breadcrumbs">
+<a href="../../documentation.html">documentation</a> <strong>&#8249;</strong> <a href="http://librocket.com/wiki/documentation/C++Manual">C++Manual</a> <strong>&#8249;</strong> <a href="http://librocket.com/wiki/documentation/C++Manual/Interfaces">Interfaces</a></div>
+<div id="title"> Interfaces</div>
+<div id="second-level-nav">
+<span class="nav-item active"><a href="../../documentation.html">Documentation</a></span>
+<span class="nav-item"><a accesskey="4" href="http://librocket.com/search">Search</a></span>
+</div>
+</div>
+<div id="content-container">
+<div id="content" class="wiki">
+<table id="info" summary="Revision info"><tbody><tr>
+<th scope="col">
+Version 4 (modified by peterc, 9 years ago)
+</th></tr><tr>
+<td class="message">--</td>
+</tr>
+</tbody></table>
+<div class="wikipage">
+<div id="searchable"><p>
+<div class="wiki-toc"><h4>Contents</h4><ol><li><a href="Interfaces%3Fversion=4.html#RocketInterfaces">Rocket Interfaces</a><ol><li><a href="Interfaces%3Fversion=4.html#Thefileinterface">The file interface</a></li><li>
+<a href="Interfaces%3Fversion=4.html#Thesysteminterface">The system interface</a></li><li>
+<a href="Interfaces%3Fversion=4.html#Therenderinterface">The render interface</a><ol><li><a href="Interfaces%3Fversion=4.html#Renderingsimplegeometry">Rendering simple geometry</a></li><li>
+<a href="Interfaces%3Fversion=4.html#Compilingandrenderinggeometry">Compiling and rendering geometry</a></li><li>
+<a href="Interfaces%3Fversion=4.html#Configuringthescissorregion">Configuring the scissor region</a></li><li>
+<a href="Interfaces%3Fversion=4.html#Generatingandreleasingtextures">Generating and releasing textures</a></li><li>
+<a href="Interfaces%3Fversion=4.html#Texeloffsets">Texel offsets</a></li></ol></li></ol></li></ol></div>
+</p>
+<h1 id="RocketInterfaces">Rocket Interfaces</h1>
+<p>
+There are three interfaces that Rocket provides to control how it interacts with your application. These are the <a href="Interfaces%3Fversion=4.html#Therenderinterface">render interface</a>, the <a href="Interfaces%3Fversion=4.html#Thesysteminterface">system interface</a> and the <a href="Interfaces%3Fversion=4.html#Thefileinterface">file interface</a>.
+</p>
+<p>
+To install a custom interface, instance your interface and install it with the appropriate Rocket::Core::Set*Interface() before you initialise Rocket.
+</p>
+<pre class="wiki">CustomFileInterface* file_interface = new CustomFileInterface();
+Rocket::Core::SetFileInterface(file_interface);
+</pre><p>
+Rocket will not release your custom interfaces when it is shutdown, so make sure you destroy any you create after Rocket::Core::Shutdown() is called.
+</p>
+<h2 id="Thefileinterface">The file interface</h2>
+<p>
+The file interface controls how Rocket opens and reads from files, such as fonts, RCSS and RML files. If you do not install a custom file interface, Rocket will default to using the standard C file I/O API and attempt to open files from the current working directory. If this is satisfactory for your application you will not need to provide a custom file interface.
+</p>
+<p>
+The file interface is given in &lt;Rocket/Core/FileInterface.h&gt;. To develop a custom file interface, create a class derived from <i>Rocket::Core::FileInterface</i> and provide function definitions for the pure virtual functions:
+</p>
+<pre class="wiki">// Opens a file.
+virtual Rocket::Core::FileHandle Open(const EMP::Core::String&amp; path) = 0;
+
+// Closes a previously opened file.
+virtual void Close(Rocket::Core::FileHandle file) = 0;
+
+// Reads data from a previously opened file.
+virtual size_t Read(void* buffer, size_t size, Rocket::Core::FileHandle file) = 0;
+
+// Seeks to a point in a previously opened file.
+virtual bool Seek(Rocket::Core::FileHandle file, long offset, int origin) = 0;
+
+// Returns the current position of the file pointer.
+virtual size_t Tell(Rocket::Core::FileHandle file) = 0;
+</pre><p>
+These function prototypes should be fairly self-explanatory. The <i>Rocket::Core::FileHandle</i> type that is returned from the Open() function, and passed into the other functions, is a void pointer type. This can be any value you need to uniquely identify each opened file, however the NULL (0) value is reserved for the invalid file handle, so make sure you don't use it to represent a valid handle!
+</p>
+<p>
+Open() takes the string value that was given to whatever system is opening the file; this could have been through the font database, a style sheet reference in an RML document, etc. Depending on how you've configured your file interface, it needn't be a file path. The function should return a non-NULL file handle for a successful open, or NULL if the open failed.
+</p>
+<p>
+Rocket will call Close() when it is done reading from a previously opened file.
+</p>
+<p>
+The Read() function should read <i>size</i> bytes from the file, starting at the current position of the file pointer, into <i>buffer</i>. The actual number of bytes read should be returned, and the file pointer should be incremented by the same.
+</p>
+<p>
+Seek() seeks the file pointer to a given location within the file. The parameters are identical to the C function fseek(); <i>origin</i> is one of SEEK_SET (the beginning of the file), SEEK_CUR (the current position of the file pointer) or SEEK_END (the end of the file), and <i>offset</i> is an offset from the origin (measured in bytes). Return false if the seek operation failed for some reason, true otherwise.
+</p>
+<p>
+Tell() should return the position of the file pointer, as an offset in bytes from the origin of the file.
+</p>
+<h2 id="Thesysteminterface">The system interface</h2>
+<p>
+The system interfaces controls how Rocket tells the time, and allows your application to translate strings and output logging messages generated from the library. Rocket always needs a custom system interface, however the only function you need to define is GetElapsedTime(), the others are optional.
+</p>
+<p>
+The system interface is given in &lt;Rocket/Core/SystemInterface.h&gt;. To develop a custom system interface, create a class derived from <i>Rocket::Core::SystemInterface</i> and provide function definitions for the one pure virtual function:
+</p>
+<pre class="wiki">// Get the number of seconds elapsed since the start of the application.
+virtual float GetElapsedTime() = 0;
+</pre><p>
+Provide function definitions for the other virtual functions if required:
+</p>
+<pre class="wiki">// Translate the input string into the translated string.
+virtual int TranslateString(EMP::Core::String&amp; translated, const EMP::Core::String&amp; input);
+
+// Log the specified message.
+virtual bool LogMessage(EMP::Core::Log::Type type, const EMP::Core::String&amp; message);
+</pre><p>
+The GetElapsedTime() function should simply return the number of seconds that have elapsed since the start of the application.
+</p>
+<p>
+TranslateString() is called whenever a text element is constructed from an RML stream. This allows the application to send all text read from file through its string tables.
+</p>
+<p>
+<i>input</i> is the raw text read from the RML. <i>translated</i> should be set to the final text to be given to the text element to render. The total number of changes made to the raw text should be returned; If the number is greater than 0 libRocket will recursively call your translate function to process any new text that was added to the stream (watchout for infinite recursion). If your translation function does all the recursion itself, you can safely return 0 on every call.
+</p>
+<p>
+Note that the translated text can include RML tags and they will be processed as if they were in the original stream; this can be used, for example, to substitute images for certain tokens.
+</p>
+<p>
+The LogMessage() function is called whenever Rocket generates a message. <i>type</i> is one of the logging type, <i>EMP::Core::Log::ERROR</i> for error messages, <i>EMP::Core::Log::ASSERT</i> for failed internal assertions (debug library only), <i>EMP::Core::Log::WARNING</i> for non-fatal warnings, or <i>EMP::Core::Log::INFO</i> for generic information messages. The <i>message</i> parameter is the actual message itself. The function should return true if program execution should continue, or false to generate an interrupt to break execution. This can be useful if you are running inside a debugger to see exactly what an application is doing to trigger a certain message.
+</p>
+<h2 id="Therenderinterface">The render interface</h2>
+<p>
+The render interface is how Rocket sends its generated geometry through to the application to render. It also uses the interface to load textures from external sources and from internally generated pixel data (for font textures). Applications must install a render interface before initialising Rocket.
+</p>
+<p>
+The render interface is given in &lt;EMP/Core/RenderInterface.h&gt;. To develop a custom render interface, create a class derived from <i>EMP::Core::RenderInterface</i> and provide function definitions for the pure virtual functions, and any of the others that you wish to provide functionality for.
+</p>
+<h3 id="Renderingsimplegeometry">Rendering simple geometry</h3>
+<p>
+If you do not provide function definitions for <a href="Interfaces%3Fversion=4.html#Compilingandrenderinggeometry">compiling geometry</a>, or do not compile some geometry, Rocket will call the RenderGeometry() function with geometry to be displayed:
+</p>
+<pre class="wiki">// Called by Rocket when it wants to render geometry that the application does not wish to optimise.
+virtual void RenderGeometry(Rocket::Core::Vertex* vertices, int num_vertices, int* indices, int num_indices, Rocket::Core::TextureHandle texture, const EMP::Core::Vector2f&amp; translation) = 0;
+</pre><p>
+All geometry from Rocket is given in this format of indexed triangles. <i>vertices</i> is an array of vertices making up the geometry. Each vertex is a <i>Rocket::Core::Vertex</i> type, defined in &lt;Rocket/Core/Vertex.h&gt;. <i>num_vertices</i> is number of vertices in the array; no index will be equal to or higher than this number. <i>indices</i> is an array of integer indices, each indexing a single vertex from the vertex array. <i>num_indices</i> is the total number of indices in the array; as all geometry is given in triangles, this will always be a multiple of three. <i>texture</i> is the application-defined handle to the texture to be applied to the geometry; this will be NULL for untextured geometry. Lastly, <i>translation</i> is the 2D translation to be applied to the geometry.
+</p>
+<p>
+All physical coordinates (the vertex positions and the geometry translation) are given in pixel offsets from the top-left of the current context being rendered.
+</p>
+<p>
+Geometry is rendered through the render interface in order, so while you don't necessary have to pass the geometry through to your rendering system immediately (if you're implementing some kind of geometry aggregation for example), it should still be rendered in the order it came through.
+</p>
+<h3 id="Compilingandrenderinggeometry">Compiling and rendering geometry</h3>
+<p>
+Rocket will give you the opportunity to compile all geometry it renders into a format optimal for your rendering system before it falls back to the RenderGeometry() function. It uses the following functions on the render interface to do this:
+</p>
+<pre class="wiki">// Called by Rocket when it wants to compile geometry it believes will be static for the forseeable future.
+virtual Rocket::Core::CompiledGeometryHandle CompileGeometry(Rocket::Core::Vertex* vertices, int num_vertices, int* indices, int num_indices, Rocket::Core::TextureHandle texture);
+
+// Called by Rocket when it wants to render application-compiled geometry.
+virtual void RenderCompiledGeometry(Rocket::Core::CompiledGeometryHandle geometry, const Core::EMP::Vector2f&amp; translation);
+
+// Called by Rocket when it wants to release application-compiled geometry.
+virtual void ReleaseCompiledGeometry(Rocket::Core::CompiledGeometryHandle geometry);
+</pre><p>
+Rocket will call CompileGeometry() with any geometry it renders internally to give the application the choice to compile it. It provides the geometry in the same format as into the RenderGeometry() function above. The returned <i>Rocket::Core::CompiledGeometryHandle</i> is a void pointer type which can be any value you need to uniquely identify the compiled geometry. The NULL (0) value is reserved for the invalid handle, so be sure not to return this as a valid handle! If NULL is returned, the geometry is assumed to have not been compiled and will be rendered through RenderGeometry() instead. The application will only be asked once to compile each geometry.
+</p>
+<p>
+If a compiled geometry handle is returned through CompileGeometry(), Rocket will render the geometry through the RenderCompiledGeometry() function. It takes <i>geometry</i>, the handle previously returned from CompileGeometry(), and <i>translation</i>, the offset from the top-left of the current context the geometry should be rendered at.
+</p>
+<p>
+If the compiled geometry alters or is otherwise not needed any further, Rocket will call ReleaseCompiledGeometry() to request the application to release it.
+</p>
+<p>
+See the DirectX sample (/samples/basic/directx/) and Ogre3D (/samples/basic/ogre3d/) for examples of render interfaces making use of compiled geometry.
+</p>
+<h3 id="Configuringthescissorregion">Configuring the scissor region</h3>
+<p>
+Rocket relies on scissoring regions to clip an element's hidden content. Therefore, these two functions are required to be implemented on all render interfaces:
+</p>
+<pre class="wiki">// Called by Rocket when it wants to enable or disable scissoring to clip content.
+virtual void EnableScissorRegion(bool enable) = 0;
+
+// Called by Rocket when it wants to change the scissor region.
+virtual void SetScissorRegion(int x, int y, int width, int height) = 0;
+</pre><p>
+EnableScissorRegion() is called to enable to disable scissoring on Rocket geometry.
+</p>
+<p>
+SetScissorRegion() is called when Rocket wants to define the current scissor region. The scissor region is given as a rectangle, <i>x</i> and <i>y</i> being the top-left corner (as a pixel offset from the top-left corner of the rendering context). <i>width</i> and <i>height</i> are the dimensions of the rectangle, in pixels. Until the scissor region is changed, all Rocket geometry should be clipped to fall within this region.
+</p>
+<p>
+For example implementations of the scissoring functions, see the sample shell (/samples/shell/) for OpenGL or the DirectX sample (/samples/basic/directx/) for DirectX 9.
+</p>
+<h3 id="Generatingandreleasingtextures">Generating and releasing textures</h3>
+<p>
+Rocket makes calls to the render interface to load, generate and release textures. As this functionality is required by Rocket, these functions must be implemented in all render interfaces.
+</p>
+<pre class="wiki">// Called by Rocket when a texture is required by the library.
+virtual bool LoadTexture(Rocket::Core::TextureHandle&amp; texture_handle,
+                         EMP::Core::Vector2i&amp; texture_dimensions,
+                         const EMP::Core::String&amp; source,
+                         const EMP::Core::String&amp; source_path) = 0;
+
+// Called by Rocket when a texture is required to be built from an internally-generated sequence of pixels.
+virtual bool GenerateTexture(Rocket::Core::TextureHandle&amp; texture_handle,
+                             const EMP::Core::byte* source,
+                             const EMP::Core::Vector2i&amp; source_dimensions) = 0;
+
+// Called by Rocket when a loaded texture is no longer required.
+virtual void ReleaseTexture(Rocket::Core::TextureHandle texture_handle) = 0;
+</pre><p>
+LoadTexture() is called when Rocket wants to load a texture from an external source (usually a file, but this is up to the application). <i>source</i> is the source name specified in the RML (for an image tag) or RCSS (for a decorator image reference). <i>source_path</i> is the path of the referencing document. The <i>texture_handle</i> parameter is a reference to a <i>Rocket::Core::TextureHandle</i> type. This is a void*, and can be set to whatever you need to uniquely identify the loaded texture (except 0, which is reserved for an invalid texture). <i>texture_dimensions</i> should be set to the x- and y-dimensions of the loaded texture.
+</p>
+<p>
+If the LoadTexture() function succeeds in loading the texture, it should return true. Otherwise it should return false.
+</p>
+<p>
+GenerateTexture() is used by the font system to convert raw pixel data to a texture. The <i>texture_handle</i> parameter is a reference to a <i>Rocket::Core::TextureHandle</i> type to be set, as in LoadTexture(). The raw pixel data is given in <i>source</i>; this is an array of unsigned, 8-bit values in RGBA order. It is laid out in tightly-packed rows, so is exactly (source_dimensions.x * source_dimensions.y * 4) bytes in size. The <i>source_dimensions</i> variable is set to the dimensions of the raw texture data.
+</p>
+<p>
+ReleaseTexture() is called with a texture handle once it is no longer required by Rocket.
+</p>
+<p>
+See the sample shell or the DirectX sample for example OpenGL and DirectX 9 texture implementations.
+</p>
+<h3 id="Texeloffsets">Texel offsets</h3>
+<p>
+As Rocket generates texture coordinates, it needs to be aware of texel offsets. By default, it generates texture coordinates to be compatible with OpenGL's texturing model. If this is unsuitable, override the following functions:
+</p>
+<pre class="wiki">// Returns the native horizontal texel offset for the renderer.
+virtual float GetHorizontalTexelOffset();
+
+// Returns the native vertical texel offset for the renderer.
+virtual float GetVerticalTexelOffset();
+</pre><p>
+You will most likely need to do this if you are rendering using DirectX, or a third-party library using DirectX underneath. In this case, return 0.5f from both of these functions, as shown in the DirectX sample.
+</p>
+</div>
+</div>
+<script type="text/javascript">
+   addHeadingLinks(document.getElementById("searchable"), "Link to this section");
+  </script>
+</div>
+</div>
+</div>
+<div id="footer">
+<a id="tracpowered" href="http://trac.edgewall.org/">
+<img src="../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"/>
+</a>
+<p class="left">
+Powered by <a href="http://librocket.com/about"><strong>Trac </strong></a><br/>By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+</p>
+<p id="copyright" class="left clear">
+Copyright &copy; 2007-2010 Code Point Ltd, Shift Technology Ltd.
+</p>
+<ul class="top-level-nav">
+<li><a href="../../frontend/features.html">features.</a></li>
+<li><a "http://librocket.com/wiki/documentation/C%2B%2BManual/href">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../../documentation.html">developer.</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3379591-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+</body>
+</html>

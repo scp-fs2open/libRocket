@@ -1,0 +1,21 @@
+= Element Instancer =
+The `ElementInstancer` is a more advanced item, and the documentation resides in here rather than the [wiki:documentation/LuaManual/APIReference main API reference] because of a "private" usability item that conflicts with the documentation on the other page.
+
+== Element constructor ==
+''ElementInstancers'' are supposed to instance ''Element''s as their name implies. But, according to the API documentation, ''Element'' does not have a constructor.
+
+'''The documentation lied.''' ''Element'' has a constructor, and it looks and acts the same as every other type that has one. There is no other type that has a "hidden" constructor.
+
+ `Element `'''new'''(`string` ''tag'')::
+   Creates a new ''Element'' for use in Lua. It is reference counted and tagged to be able to be garbage collected, so make sure to keep a reference of this ''Element'' around until you do not need it anymore, otherwise it will be released.
+
+__'''Do not ever call the ''Element'' constructor outside of an ''ElementInstancer''.'''__ If you do, there will be memory leaks and errors.
+
+== ElementInstancer ==
+Abstract class ''ElementInstancer''. Get one from C++ by calling ''ElementInstancer.new'', and register it as a tag name by calling ''rocket.RegisterTag''. Make sure to set the ''InstanceElement'' property to an appropriate Lua function.
+
+ `ElementInstancer `'''new'''()::
+   Creates a new ElementInstancer for use in Lua. To put it to use, call ''rocket.RegisterTag'' with this object as the second argument. 
+
+ '''InstanceElement'''`   `=function(`string` ''tag'') return `Element` end::
+   The __only__ appropriate place to use the ''Element.new'' function.

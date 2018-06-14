@@ -1,0 +1,13 @@
+[[PageOutline(1-5, Contents)]]
+= RML Images =
+
+== IMG Element ==
+The ''IMG'' element is used to include images in the document.
+
+''Attributes''[[br]]
+'''src = [wiki:documentation/Glossary#URI uri]''' [wiki:documentation/Glossary#CaseInformation (CT)]
+  The location of the image.
+'''width = [wiki:documentation/Glossary#BasicTypes number]'''  [wiki:documentation/Glossary#CaseInformation (CN)]
+  The width to force the element to, in pixels. If this is unspecified, it will default to the width of the image.
+'''height = [wiki:documentation/Glossary#BasicTypes number]'''  [wiki:documentation/Glossary#CaseInformation (CN)]
+  The height to force the element to, in pixels. If this is unspecified, it will default to the height of the image.

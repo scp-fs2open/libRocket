@@ -1,0 +1,51 @@
+= Overview =
+
+LibRocket is a C++ interface middleware package designed for game applications. At its core it is based on the popular HTML and CSS specifications - we've taken most of the latest implementations used in web browsers now as well as a few of the most useful proposed additions to the specifications. It contains a full set of widgets so you can get creating screens right out of the box.
+
+== Why HTML and CSS? ==
+
+ - There's no point in re-inventing the wheel! The HTML and CSS standards have gone through many revisions and updates and so now offer a very powerful and easy-to-use solution to interface problems.
+ - They are two very widely known standards so you don't have learn a completely new toolset.
+ - Consistency is a cinch: no longer will you have to go through every screen and fix something up every time someone changes their mind. Automatic layout and the separation of content from the visuals guarantees that.
+
+== Templating ==
+
+[[Image(template.gif, nolink, align="right")]]
+LibRocket comes with a powerful templating tool. You can define key elements, such as windows, then re-use these throughout the project. If you want to make a change to the window, change it in one place and every window will reflect the change.
+{{{
+#!html
+<div class="clear">&nbsp;</div>
+}}}
+
+== Form Controls and Input ==
+
+But wait, there's more: you also get access to a full form controls widget set - input fields, text areas, slider bars, drop down lists, as well as the new dynamic data displays, datagrids. All with full source! We've also taken care of all your Drag and Drop needs with element dragging built right into the core.
+
+== Dynamic Data Representation (Model, View, Controller) ==
+
+One of the key parts of any UI is displaying dynamic data - main menus are all well enough but the real test of a UI is how well it can handle the lobby screens, the inventory screens, and the level select screens. LibRocket comes with a powerful collection of classes to detach the data from the output. Data is fetched from a data source, passed through a data formatter, then finally displayed in a datagrid which includes full support for tree-like structures, like Windows Explorer.[[br]]
+[[br]]
+[[Image(datasource.gif, nolink)]]
+
+== Tight scripting Integration ==
+
+The lightweight python plugin exposes all of rockets core features and DOM to the python programmer. The python interface has been modeled around javascript for simplicity and can be used to manipulate any part of a document in real time. Whole games can be written in python once the rocket framework is initialised.
+
+== Extensibility ==
+
+LibRocket doesn't do exactly what you want it to do? No problem! We've bent over backwards to open it up to modification by adding own custom interfaces to it. You can:
+ - set your own log, file, render and system interfaces.
+ - define custom decorators, to display anything you like. For example, the starfield in the demo application, Rocket Invaders from Mars, was a custom decorator.
+ - define custom elements, with their own behaviour, events and display.
+ - add extra features to the XML parser, to make it do whatever you want it do.
+
+== Debugger ==
+
+[[Image(debugger.gif, nolink, align="right")]]
+LibRocket also comes with its own visual debugger to allow you to track down any problems you're having with your interfaces. You can click on any part of the screen and see what the element is, why it looks and acts the way it does, exactly where it gets its style information from, and navigate up and down to any of its children or parents.
+{{{
+#!html
+<div class="clear">&nbsp;</div>
+}}}
+
+For more details on what you receive with Rocket please see the [wiki:documentation/C++Manual/Packages Package Description] page or visit the [http://www.librocket.com/download download] page to get a copy of the FREE trial.

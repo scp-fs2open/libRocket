@@ -1,0 +1,269 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title> Trac Cgi - libRocket</title>
+<link rel="start" href="http://librocket.com/wiki"/><link rel="search" href="http://librocket.com/search"/><link rel="help" href="TracGuide.html"/><link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css"/><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css"/><link rel="icon" href="../chrome/site/trac.ico" type="image/x-icon"/><link rel="shortcut icon" href="../chrome/site/trac.ico" type="image/x-icon"/><link rel="alternate" href="TracCgi%3Fformat=txt" title="Plain Text" type="text/x-trac-wiki"/><style type="text/css">
+</style>
+<script type="text/javascript" src="../chrome/common/js/trac.js"></script>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/base.css"></link>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/content.css"></link>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/discussion.css"></link>
+<style>
+		div.wiki img
+		{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+<div class="widthshell-width">
+<div class="widthshell-minwidth">
+<div class="widthshell-layout">
+<div class="widthshell-container">
+<div class="widthshell-content">
+<div id="background">
+<div style="float:right;width:160px;height:600px;margin-top:110px;margin-right:20px;">
+<script type="text/javascript"><!--
+                        google_ad_client = "pub-5872045433470541";
+                        /* Default, Wide Skyscraper */
+                        google_ad_slot = "3956485030";
+                        google_ad_width = 160;
+                        google_ad_height = 600;
+                //-->
+                </script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+</div>
+<div class="shell">
+<div class="stars">
+<img id="star-1" src="../chrome/site/images/star-red-medium.gif" width="22px" height="22px" alt="Star"/>
+<img id="star-2" src="../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-3" src="../chrome/site/images/star-red-small.gif" width="11px" height="11px" alt="Star"/>
+<img id="star-4" src="../chrome/site/images/star-orange-small.gif" width="16px" height="16px" alt="Star"/>
+<img id="star-5" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-6" src="../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-7" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-8" src="../chrome/site/images/star-red-big.gif" width="33px" height="33px" alt="Star"/>
+<img id="star-9" src="../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-10" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-11" src="../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-12" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+</div>
+<div id="header">
+<a href="documentation.html"><img id="title" src="../chrome/site/images/title.gif" width="256px" height="49px" alt="Rocket"/></a>
+<ul class="top-level-nav">
+<li><a href="frontend/features.html">features.</a></li>
+
+<li><a href="http://github.com/lloydw/librocket">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="documentation.html">developer.</a></li>
+</ul>
+<img id="trail" src="../chrome/site/images/trail-content.gif" width="72px" height="115px" alt="Rocket Trail"/>
+<a href="documentation.html"><img id="rocket" src="../chrome/site/images/rocket-content.gif" width="126px" height="139px" alt="Rocket"/></a>
+</div>
+</div>
+</div>
+<div class="shell">
+<div id="banner">
+<div class="stars">
+<img id="star-13" src="../chrome/site/images/star-black-big.gif" width="49px" height="50px" alt="Star"/>
+<img id="star-14" src="../chrome/site/images/star-black-medium.gif" width="23px" height="23px" alt="Star"/>
+<img id="star-15" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-16" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-17" src="../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-18" src="../chrome/site/images/star-black-tiny.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-19" src="../chrome/site/images/star-black-tiny.gif" width="9px" height="9px" alt="Star"/>
+<img id="star-20" src="../chrome/site/images/star-black-tiny.gif" width="10px" height="10px" alt="Star"/>
+<img id="star-21" src="../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-22" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-23" src="../chrome/site/images/star-black-small.gif" width="13px" height="13px" alt="Star"/>
+</div>
+<img id="banner-bottom-left" src="../chrome/site/images/banner-bottom-left.gif" width="20px" height="19px" alt="Bottom left banner image"/>
+<img id="banner-bottom-right" src="../chrome/site/images/banner-bottom-right.gif" width="20px" height="19px" alt="Bottom right banner image"/>
+<div id="login"><a href="http://librocket.com/login">Login</a> | <a "http://librocket.com/wiki/href">Register</a></div>
+<div id="breadcrumbs">
+<a href="TracCgi.html">TracCgi</a></div>
+<div id="title"> Trac Cgi</div>
+<div id="second-level-nav">
+<span class="nav-item active"><a href="documentation.html">Documentation</a></span>
+<span class="nav-item"><a accesskey="4" href="http://librocket.com/search">Search</a></span>
+</div>
+</div>
+<div id="content-container">
+<div id="content" class="wiki">
+<div class="wikipage">
+<div id="searchable"><h1 id="InstallingTracasCGI">Installing Trac as CGI</h1>
+<p>
+To install Trac as a CGI script, you need to make the <tt>trac.cgi</tt> executable as a CGI by your web server.
+</p>
+<blockquote>
+<p>
+<i>Please note that using Trac via CGI is significantly slower than any other deployment method, such as <a class="wiki" href="TracModPython.html">mod_python</a> or <a class="wiki" href="TracFastCgi.html">FastCGI</a>.</i>
+</p>
+</blockquote>
+<p>
+If you're using <a class="ext-link" href="http://httpd.apache.org/"><span class="icon">Apache HTTPD</span></a>, there are a couple ways to do that:
+</p>
+<ol><li>Use a <tt>ScriptAlias</tt> to map a URL to the <tt>trac.cgi</tt> script
+</li><li>Copy the <tt>trac.cgi</tt> file into the directory for CGI executables used by your web server (commonly named <tt>cgi-bin</tt>). You can also create a symbolic link, but in that case make sure that the <tt>FollowSymLinks</tt> option is enabled for the <tt>cgi-bin</tt> directory.
+</li></ol><p>
+The first option is recommended as it also allows you to map the CGI to a friendly URL.
+</p>
+<p>
+Now, edit the Apache configuration file and add this snippet, file names and locations changed to match your installation:
+</p>
+<pre class="wiki">ScriptAlias /trac /usr/share/trac/cgi-bin/trac.cgi
+</pre><blockquote>
+<p>
+<i>Note that this directive requires the <tt>mod_alias</tt> module to be installed and enabled.</i>
+</p>
+</blockquote>
+<p>
+If you're using Trac with a single project you need to set its location using the <tt>TRAC_ENV</tt> environment variable:
+</p>
+<pre class="wiki">&lt;Location "/trac"&gt;
+  SetEnv TRAC_ENV "/path/to/projectenv"
+&lt;/Location&gt;
+</pre><p>
+Or to use multiple projects you can specify their common parent directory using the <tt>TRAC_ENV_PARENT_DIR</tt> variable:
+</p>
+<pre class="wiki">&lt;Location "/trac"&gt;
+  SetEnv TRAC_ENV_PARENT_DIR "/path/to/project/parent/dir"
+&lt;/Location&gt;
+</pre><blockquote>
+<p>
+<i>Note that the <tt>SetEnv</tt> directive requires the <tt>mod_env</tt> module to be installed and enable.</i>
+</p>
+</blockquote>
+<p>
+This will make Trac available at <tt>http://yourhost.example.org/trac</tt>.
+</p>
+<p>
+If you are using the <a class="ext-link" href="http://httpd.apache.org/docs/suexec.html"><span class="icon">Apache suEXEC</span></a> feature please see <a class="ext-link" href="http://trac.edgewall.org/wiki/ApacheSuexec"><span class="icon">http://trac.edgewall.org/wiki/ApacheSuexec</span></a>.
+</p>
+<p>
+On some systems, you <i>may</i> need to edit the shebang line in the <tt>trac.cgi</tt> file to point to your real Python installation path. On a Windows system you may need to configure Windows to know how to execute a .cgi file (Explorer -&gt; Tools -&gt; Folder Options -&gt; File Types -&gt; CGI).
+</p>
+<h2 id="MappingStaticResources">Mapping Static Resources</h2>
+<p>
+Out of the box, Trac will serve static resources such as style sheets or images itself. For a CGI setup, though, this is highly undesirable, because it results in the CGI script being invoked for documents that could be much more efficiently served by the web server directly.
+</p>
+<p>
+Web servers such as <a class="ext-link" href="http://httpd.apache.org/"><span class="icon">Apache HTTPD</span></a> allow you to create “Aliases” to resources, thereby giving them a virtual URL that doesn't necessarily bear any resemblance to the layout of the servers file system. We already used this capability above when defining a <tt>ScriptAlias</tt> for the CGI script, and we'll use it now to map requests to the static resources to the directory on the file system that contains them, thereby bypassing the processing of such requests by the CGI script.
+</p>
+<p>
+Edit the Apache configuration file again and add the following snippet <strong>before</strong> the <tt>ScriptAlias</tt> for the CGI script , file names and locations changed to match your installation:
+</p>
+<pre class="wiki">Alias /trac/chrome/common /usr/share/trac/htdocs
+&lt;Directory "/usr/share/trac/htdocs"&gt;
+  Order allow,deny
+  Allow from all
+&lt;/Directory&gt;
+</pre><p>
+Note that whatever URL path you mapped the <tt>trac.cgi</tt> script to, the path <tt>/chrome/common</tt> is the path you have to append to that location to intercept requests to the static resources.
+</p>
+<p>
+For example, if Trac is mapped to <tt>/cgi-bin/trac.cgi</tt> on your server, the URL of the Alias should be <tt>/cgi-bin/trac.cgi/chrome/common</tt>.
+</p>
+<p>
+Alternatively, you can set the <tt>htdocs_location</tt> configuration option in <a class="wiki" href="TracIni.html">trac.ini</a>:
+</p>
+<pre class="wiki">[trac]
+htdocs_location = /trac-htdocs
+</pre><p>
+Trac will then use this URL when embedding static resources into HTML pages. Of course, you still need to make the Trac <tt>htdocs</tt> directory available through the web server at the specified URL, for example by copying (or linking) the directory into the document root of the web server:
+</p>
+<pre class="wiki">$ ln -s /usr/share/trac/htdocs /var/www/your_site.com/htdocs/trac-htdocs
+</pre><h2 id="AddingAuthentication">Adding Authentication</h2>
+<p>
+The simplest way to enable authentication with Apache is to create a password file. Use the <tt>htpasswd</tt> program to create the password file:
+</p>
+<pre class="wiki">$ htpasswd -c /somewhere/trac.htpasswd admin
+New password: &lt;type password&gt;
+Re-type new password: &lt;type password again&gt;
+Adding password for user admin
+</pre><p>
+After the first user, you dont need the "-c" option anymore:
+</p>
+<pre class="wiki">$ htpasswd /somewhere/trac.htpasswd john
+New password: &lt;type password&gt;
+Re-type new password: &lt;type password again&gt;
+Adding password for user john
+</pre><blockquote>
+<p>
+<i>See the man page for <tt>htpasswd</tt> for full documentation.</i>
+</p>
+</blockquote>
+<p>
+After you've created the users, you can set their permissions using <a class="wiki" href="TracPermissions.html">TracPermissions</a>.
+</p>
+<p>
+Now, you'll need to enable authentication against the password file in the Apache configuration:
+</p>
+<pre class="wiki">&lt;Location "/trac/login"&gt;
+  AuthType Basic
+  AuthName "Trac"
+  AuthUserFile /somewhere/trac.htpasswd
+  Require valid-user
+&lt;/Location&gt;
+</pre><p>
+If you're hosting multiple projects you can use the same password file for all of them:
+</p>
+<pre class="wiki">&lt;LocationMatch "/trac/[^/]+/login"&gt;
+  AuthType Basic
+  AuthName "Trac"
+  AuthUserFile /somewhere/trac.htpasswd
+  Require valid-user
+&lt;/LocationMatch&gt;
+</pre><p>
+For better security, it is recommended that you either enable SSL or at least use the “Digest” authentication scheme instead of “Basic”. Please read the <a class="ext-link" href="http://httpd.apache.org/docs/2.0/"><span class="icon">Apache HTTPD documentation</span></a> to find out more.
+</p>
+<hr/>
+<p>
+See also: <a class="wiki" href="TracGuide.html">TracGuide</a>, <a class="wiki" href="TracInstall.html">TracInstall</a>, <a class="wiki" href="TracFastCgi.html">TracFastCgi</a>, <a class="wiki" href="TracModPython.html">TracModPython</a>
+</p>
+</div>
+</div>
+<script type="text/javascript">
+   addHeadingLinks(document.getElementById("searchable"), "Link to this section");
+  </script>
+</div>
+</div>
+</div>
+<div id="footer">
+<a id="tracpowered" href="http://trac.edgewall.org/">
+<img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"/>
+</a>
+<p class="left">
+Powered by <a href="http://librocket.com/about"><strong>Trac </strong></a><br/>By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+</p>
+<p id="copyright" class="left clear">
+Copyright &copy; 2007-2010 Code Point Ltd, Shift Technology Ltd.
+</p>
+<ul class="top-level-nav">
+<li><a href="frontend/features.html">features.</a></li>
+<li><a "http://librocket.com/wiki/href">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="documentation.html">developer.</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3379591-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+</body>
+</html>

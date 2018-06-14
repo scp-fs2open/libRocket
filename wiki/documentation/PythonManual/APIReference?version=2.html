@@ -1,0 +1,606 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>API Reference - libRocket</title>
+<link rel="start" href="http://librocket.com/wiki"/><link rel="search" href="http://librocket.com/search"/><link rel="help" href="../../TracGuide.html"/><link rel="stylesheet" href="../../../chrome/common/css/trac.css" type="text/css"/><link rel="stylesheet" href="../../../chrome/common/css/wiki.css" type="text/css"/><link rel="icon" href="../../../chrome/site/trac.ico" type="image/x-icon"/><link rel="shortcut icon" href="../../../chrome/site/trac.ico" type="image/x-icon"/><link rel="alternate" href="APIReference%3Fversion=2&amp;format=txt" title="Plain Text" type="text/x-trac-wiki"/><style type="text/css">
+</style>
+<script type="text/javascript" src="../../../chrome/common/js/trac.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/base.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/content.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/discussion.css"></link>
+<style>
+		div.wiki img
+		{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+<div class="widthshell-width">
+<div class="widthshell-minwidth">
+<div class="widthshell-layout">
+<div class="widthshell-container">
+<div class="widthshell-content">
+<div id="background">
+<div style="float:right;width:160px;height:600px;margin-top:110px;margin-right:20px;">
+<script type="text/javascript"><!--
+                        google_ad_client = "pub-5872045433470541";
+                        /* Default, Wide Skyscraper */
+                        google_ad_slot = "3956485030";
+                        google_ad_width = 160;
+                        google_ad_height = 600;
+                //-->
+                </script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+</div>
+<div class="shell">
+<div class="stars">
+<img id="star-1" src="../../../chrome/site/images/star-red-medium.gif" width="22px" height="22px" alt="Star"/>
+<img id="star-2" src="../../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-3" src="../../../chrome/site/images/star-red-small.gif" width="11px" height="11px" alt="Star"/>
+<img id="star-4" src="../../../chrome/site/images/star-orange-small.gif" width="16px" height="16px" alt="Star"/>
+<img id="star-5" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-6" src="../../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-7" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-8" src="../../../chrome/site/images/star-red-big.gif" width="33px" height="33px" alt="Star"/>
+<img id="star-9" src="../../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-10" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-11" src="../../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-12" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+</div>
+<div id="header">
+<a href="../../documentation.html"><img id="title" src="../../../chrome/site/images/title.gif" width="256px" height="49px" alt="Rocket"/></a>
+<ul class="top-level-nav">
+<li><a href="../../frontend/features.html">features.</a></li>
+
+<li><a href="http://github.com/lloydw/librocket">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../../documentation.html">developer.</a></li>
+</ul>
+<img id="trail" src="../../../chrome/site/images/trail-content.gif" width="72px" height="115px" alt="Rocket Trail"/>
+<a href="../../documentation.html"><img id="rocket" src="../../../chrome/site/images/rocket-content.gif" width="126px" height="139px" alt="Rocket"/></a>
+</div>
+</div>
+</div>
+<div class="shell">
+<div id="banner">
+<div class="stars">
+<img id="star-13" src="../../../chrome/site/images/star-black-big.gif" width="49px" height="50px" alt="Star"/>
+<img id="star-14" src="../../../chrome/site/images/star-black-medium.gif" width="23px" height="23px" alt="Star"/>
+<img id="star-15" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-16" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-17" src="../../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-18" src="../../../chrome/site/images/star-black-tiny.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-19" src="../../../chrome/site/images/star-black-tiny.gif" width="9px" height="9px" alt="Star"/>
+<img id="star-20" src="../../../chrome/site/images/star-black-tiny.gif" width="10px" height="10px" alt="Star"/>
+<img id="star-21" src="../../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-22" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-23" src="../../../chrome/site/images/star-black-small.gif" width="13px" height="13px" alt="Star"/>
+</div>
+<img id="banner-bottom-left" src="../../../chrome/site/images/banner-bottom-left.gif" width="20px" height="19px" alt="Bottom left banner image"/>
+<img id="banner-bottom-right" src="../../../chrome/site/images/banner-bottom-right.gif" width="20px" height="19px" alt="Bottom right banner image"/>
+<div id="login"><a href="http://librocket.com/login">Login</a> | <a "http://librocket.com/wiki/documentation/PythonManual/href">Register</a></div>
+<div id="breadcrumbs">
+<a href="../../documentation.html">documentation</a> <strong>&#8249;</strong> <a href="../PythonManual.html">PythonManual</a> <strong>&#8249;</strong> <a href="APIReference.html">APIReference</a></div>
+<div id="title">API Reference</div>
+<div id="second-level-nav">
+<span class="nav-item active"><a href="../../documentation.html">Documentation</a></span>
+<span class="nav-item"><a accesskey="4" href="http://librocket.com/search">Search</a></span>
+</div>
+</div>
+<div id="content-container">
+<div id="content" class="wiki">
+<table id="info" summary="Revision info"><tbody><tr>
+<th scope="col">
+Version 2 (modified by lloydw, 10 years ago)
+</th></tr><tr>
+<td class="message">--</td>
+</tr>
+</tbody></table>
+<div class="wikipage">
+<div id="searchable"><p>
+<div class="wiki-toc"><h4>Contents</h4><ol><li><a href="APIReference%3Fversion=2.html#APIReference">API Reference</a><ol><li><a href="APIReference%3Fversion=2.html#Module">Module</a></li><li>
+<a href="APIReference%3Fversion=2.html#BasicTypes">Basic Types</a></li><li>
+<a href="APIReference%3Fversion=2.html#DataSource">DataSource</a></li><li>
+<a href="APIReference%3Fversion=2.html#Element">Element</a></li><li>
+<a href="APIReference%3Fversion=2.html#ElementText">ElementText</a></li><li>
+<a href="APIReference%3Fversion=2.html#Document">Document</a></li><li>
+<a href="APIReference%3Fversion=2.html#Event">Event</a></li><li>
+<a href="APIReference%3Fversion=2.html#Context">Context</a></li></ol><li><a href="APIReference%3Fversion=2.html#ControlsAPIReference">Controls API Reference</a><ol><li><a href="APIReference%3Fversion=2.html#ElementForm">ElementForm</a></li><li>
+<a href="APIReference%3Fversion=2.html#ElementFormControl">ElementFormControl</a></li><li>
+<a href="APIReference%3Fversion=2.html#ElementFormControlSelect">ElementFormControlSelect</a></li><li>
+<a href="APIReference%3Fversion=2.html#ElementFormControlDataSelect">ElementFormControlDataSelect</a></li><li>
+<a href="APIReference%3Fversion=2.html#ElementFormControlInput">ElementFormControlInput</a></li><li>
+<a href="APIReference%3Fversion=2.html#ElementFormControlTextArea">ElementFormControlTextArea</a></li><li>
+<a href="APIReference%3Fversion=2.html#ElementTabSet">ElementTabSet</a></li><li>
+<a href="APIReference%3Fversion=2.html#ElementDataGrid">ElementDataGrid</a></li><li>
+<a href="APIReference%3Fversion=2.html#ElementDataGridRow">ElementDataGridRow</a></li></ol></li></ol></div>
+</p>
+<h1 id="APIReference">API Reference</h1>
+<h2 id="Module">Module</h2>
+<dl><dt><strong>CreateContext</strong>(<i>name</i>, <i>dimensions</i>)</dt><dd>
+Creates and returns a new context called <i>name</i>, with initial dimensions of <i>dimensions</i>. The dimensions are a <i>Vector2i</i> type. The name of the context must be unique; if it is not, None will be returned.
+</dd></dl>
+<dl><dt><strong>GetContext(<i>name</i>)</strong></dt><dd>
+Returns the context called <i>name</i>. If no such context exists, None will be returned.
+</dd></dl>
+<dl><dt><strong>LoadFontFace</strong>(<i>font_path</i>)</dt><dd>
+Loads the font face at <i>font_path</i>. The function will return True if the font face was loaded, False if not.
+</dd></dl>
+<h2 id="BasicTypes">Basic Types</h2>
+<dl><dt><strong>class</strong> Vector2i(<i>x</i>, <i>y</i>)</dt><dd>
+Constructs a two-dimensional integral vector.
+</dd></dl>
+<dl><dt><strong>class</strong> Vector2f(<i>x</i>, <i>y</i>)</dt><dd>
+Constructs a two-dimensional floating-point vector.
+</dd></dl>
+<dl><dt><strong>class</strong> Colourb(<i>red</i>, <i>green</i>, <i>blue</i>, <i>alpha</i>)</dt><dd>
+Constructs a colour with four channels, each from 0 to 255.
+</dd></dl>
+<h2 id="DataSource">DataSource</h2>
+<p>
+<strong>class</strong> DataSource(<i>name</i>)
+</p>
+<p>
+Abstract DataSource Interface.
+</p>
+<dl><dt><strong>GetNumRows</strong>(<i>table_name</i>)</dt><dd>
+Return the number of rows in the given table
+</dd></dl>
+<dl><dt><strong>GetRow</strong>(<i>table_name</i>, <i>index</i>, <i>columns</i>)</dt><dd>
+Return a list of the column values in string form
+</dd></dl>
+<dl><dt><strong>NotifyRowAdd</strong>(<i>table_name</i>, <i>first_row_added</i>, <i>num_rows_added</i>)</dt><dd>
+Notify listeners that rows have been added to the data source.
+</dd></dl>
+<dl><dt><strong>NotifyRowRemove</strong>(<i>table_name</i>, <i>first_row_removed</i>, <i>num_rows_removed</i>)</dt><dd>
+Notify listeners that rows have been removed from the data source.
+</dd></dl>
+<dl><dt><strong>NotifyRowChange</strong>(<i>table_name</i>, <i>first_row_changed</i>, <i>num_rows_changed</i>)</dt><dd>
+Notify listeners that rows have been changed on the data source.
+</dd></dl>
+<dl><dt><strong>NotifyRowChange</strong>(<i>table_name</i>)</dt><dd>
+Notify listeners that all rows on the data source have changed.
+</dd></dl>
+<h2 id="Element">Element</h2>
+<p>
+<strong>class</strong> Element
+</p>
+<p>
+The <i>Element</i> class has no constructor; it must be instantiated through a <i><a class="wiki" href="APIReference.html#Document">Document</a></i> object instead. It has the following methods and properties:
+</p>
+<dl><dt><strong>AddEventListener</strong>(<i>event</i>, <i>listener</i>[, <i>in_capture_phase</i>])</dt><dd>
+Attaches <i>listener</i> to this element, listening for occurrences of <i>event</i> in either the bubble or capture phase. If not specified, <i>in_capture_phase</i> will default to False.<br/><i>NOTE: Events added from python cannot be removed.</i>
+</dd></dl>
+<dl><dt><strong>AppendChild</strong>(<i>element</i>)</dt><dd>
+Appends <i>element</i> as a child to this element.
+</dd></dl>
+<dl><dt><strong>Blur</strong>()</dt><dd>
+Removes input focus from this element.
+</dd></dl>
+<dl><dt><strong>Click</strong>()</dt><dd>
+Fakes a click on this element.
+</dd></dl>
+<dl><dt><strong>DispatchEvent</strong>(<i>event</i>, <i>parameters</i>, <i>interruptible</i>)</dt><dd>
+Dispatches an event to this element. The event is of type <i>event</i>. Parameters to the event are given in the dictionary <i>parameters</i>; the dictionary must only contain string keys and floating-point, integer or string values. <i>interruptible</i> determines if the event can be forced to stop propagation early.
+</dd></dl>
+<dl><dt><strong>Focus</strong>()</dt><dd>
+Gives input focus to this element.
+</dd></dl>
+<dl><dt><strong>GetAttribute</strong>(<i>name</i>)</dt><dd>
+Returns the value of the attribute named <i>name</i>. If no such attribute exists, the empty string will be returned.
+</dd></dl>
+<dl><dt><strong>GetElementById</strong>(<i>id</i>)</dt><dd>
+Returns the descendant element with an id of <i>id</i>.
+</dd></dl>
+<dl><dt><strong>GetElementsByTagName</strong>(<i>tag_name</i>)</dt><dd>
+Returns a list of all descendant elements with the tag of <i>tag_name</i>.
+</dd></dl>
+<dl><dt><strong>HasAttribute</strong>(<i>name</i>)</dt><dd>
+Returns True if the element has a value for the attribute named <i>name</i>, False if not.
+</dd></dl>
+<dl><dt><strong>HasChildNodes</strong>()</dt><dd>
+Returns True if the element has at least one child node, false if not.
+</dd></dl>
+<dl><dt><strong>InsertBefore</strong>(<i>element</i>, <i>adjacent_element</i>)</dt><dd>
+Inserts the element <i>element</i> as a child of this element, directly before <i>adjacent_element</i> in the list of children.
+</dd></dl>
+<dl><dt><strong>RemoveAttribute</strong>(<i>name</i>)</dt><dd>
+Removes the attribute named <i>name</i> from the element.
+</dd></dl>
+<dl><dt><strong>RemoveChild</strong>(<i>element</i>)</dt><dd>
+Removes the child element <i>element</i> from this element.
+</dd></dl>
+<dl><dt><strong>ReplaceChild</strong>(<i>inserted_element</i>, <i>replaced_element</i>)</dt><dd>
+Replaces the child element <i>replaced_element</i> with <i>inserted_element</i> in this element's list of children. If <i>replaced_element</i> is not a child of this element, <i>inserted_element</i> will be appended onto the list instead.
+</dd></dl>
+<dl><dt><strong>ScrollIntoView</strong>(<i>align_with_top</i>)</dt><dd>
+Scrolls this element into view if its ancestors have hidden overflow. If <i>align_with_top</i> is True, the element's top edge will be aligned with the top (or as close as possible to the top) of its ancestors' viewing windows. If False, its bottom edge will be aligned to the bottom.
+</dd></dl>
+<dl><dt><strong>SetAttribute</strong>(<i>name</i>, <i>value</i>)</dt><dd>
+Sets the value of the attribute named <i>name</i> to <i>value</i>.
+</dd></dl>
+<dl><dt><strong>attributes</strong></dt><dd>
+The array of attributes on the element. Each element has the read-only properties <i>name</i> and <i>value</i>. Read-only.
+</dd></dl>
+<dl><dt><strong>child_nodes</strong></dt><dd>
+The array of child nodes on the element. Read-only.
+</dd></dl>
+<dl><dt><strong>class_name</strong></dt><dd>
+The space-separated list of classes on the element.
+</dd></dl>
+<dl><dt><strong>client_left</strong></dt><dd>
+The distance between the left border edge and the left client edge of the element. Read-only.
+</dd></dl>
+<dl><dt><strong>client_height</strong></dt><dd>
+The height of the element's client area. Read-only.
+</dd></dl>
+<dl><dt><strong>client_top</strong></dt><dd>
+The distance between the top border edge and the top client edge of the element. Read-only.
+</dd></dl>
+<dl><dt><strong>client_width</strong></dt><dd>
+The width of the element's client area. Read-only.
+</dd></dl>
+<dl><dt><strong>first_child</strong></dt><dd>
+The first child of the element, or None if the client has no children. Read-only.
+</dd></dl>
+<dl><dt><strong>id</strong></dt><dd>
+The ID of the element, or the empty string if the element has no ID.
+</dd></dl>
+<dl><dt><strong>inner_rml</strong></dt><dd>
+The element's RML content.
+</dd></dl>
+<dl><dt><strong>last_child</strong></dt><dd>
+The last child of the element, or None if the client has no children. Read-only.
+</dd></dl>
+<dl><dt><strong>next_sibling</strong></dt><dd>
+The element's next sibling, or None if it is the last sibling. Read-only.
+</dd></dl>
+<dl><dt><strong>offset_height</strong></dt><dd>
+The height of the element, excluding margins. Read-only.
+</dd></dl>
+<dl><dt><strong>offset_left</strong></dt><dd>
+The distance between the element's offset parent's left border edge and this element's left border edge. Read-only.
+</dd></dl>
+<dl><dt><strong>offset_parent</strong></dt><dd>
+The element's offset parent. Read only.
+</dd></dl>
+<dl><dt><strong>offset_top</strong></dt><dd>
+The distance between the element's offset parent's top border edge and this element's top border edge. Read-only.
+</dd></dl>
+<dl><dt><strong>offset_width</strong></dt><dd>
+The width of the element, excluding margins. Read-only.
+</dd></dl>
+<dl><dt><strong>owner_document</strong></dt><dd>
+The document this element is part of. Read-only.
+</dd></dl>
+<dl><dt><strong>parent_node</strong></dt><dd>
+The element this element is directly parented to. Read-only.
+</dd></dl>
+<dl><dt><strong>previous_sibling</strong></dt><dd>
+The element's previous sibling, or None if it is the first sibling. Read-only.
+</dd></dl>
+<dl><dt><strong>scroll_height</strong></dt><dd>
+The height of this element's content. This will be at least as high as the client height. Read-only.
+</dd></dl>
+<dl><dt><strong>scroll_left</strong></dt><dd>
+The offset between the left edge of this element's client area and the left edge of the content area.
+</dd></dl>
+<dl><dt><strong>scroll_top</strong></dt><dd>
+The offset between the top edge of this element's client area and the top edge of the content area.
+</dd></dl>
+<dl><dt><strong>scroll_width</strong></dt><dd>
+The width of this element's content. This will be at least as wide as the client width. Read-only.
+</dd></dl>
+<dl><dt><strong>style</strong></dt><dd>
+An object used to access this element's style information. Individual RCSS properties can be accessed by using the name of the property as a Python property on the object itself (ie, element.style.width = "40px").
+</dd></dl>
+<dl><dt><strong>tag_name</strong></dt><dd>
+The tag name used to instance this element. Read-only.
+</dd></dl>
+<h2 id="ElementText">ElementText</h2>
+<p>
+<strong>class</strong> IElementText
+</p>
+<p>
+<i>IElementText</i> derives from <i>Element</i>. <i>IElementText</i> is an interface, and therefore cannot be instanced directly. A concrete <i>ElementText</i> must be instantiated through a <i><a class="wiki" href="APIReference.html#Document">Document</a></i> object instead. It has the following property:
+</p>
+<dl><dt><strong>text</strong></dt><dd>
+The raw text content of the text element in UTF-8 encoding.
+</dd></dl>
+<h2 id="Document">Document</h2>
+<p>
+<strong>class</strong> Document
+</p>
+<p>
+<i>Document</i> derives from <i>Element</i>. <i>Document</i> has no constructor; it must be instantiated through a <i><a class="wiki" href="APIReference.html#Context">Context</a></i> object instead, either by loading an external RML file or creating an empty document. It has the following methods and properties:
+</p>
+<dl><dt><strong>PullToFront</strong>()</dt><dd>
+Pulls the document in front of other documents within its context with a similar z-index.
+</dd></dl>
+<dl><dt><strong>PushToBack</strong>()</dt><dd>
+Pushes the document behind other documents within its context with a similar z-index.
+</dd></dl>
+<dl><dt><strong>Show</strong>([<i>flags</i>])</dt><dd>
+Shows the document. <i>flags</i> is either <i>NONE</i>, <i>FOCUS</i> or <i>MODAL</i>. <i>flags</i> defaults to <i>FOCUS</i>.
+</dd></dl>
+<dl><dt><strong>Hide</strong>()</dt><dd>
+Hides the document.
+</dd></dl>
+<dl><dt><strong>Close</strong>()</dt><dd>
+Hides and closes the document, destroying its contents.
+</dd></dl>
+<dl><dt><strong>CreateElement</strong>(<i>tag_name</i>)</dt><dd>
+Instances an element with a tag of <i>tag_name</i>.
+</dd></dl>
+<dl><dt><strong>CreateTextNode</strong>(<i>text</i>)</dt><dd>
+Instances a text element containing the string <i>text</i>.
+</dd></dl>
+<dl><dt><strong>title</strong></dt><dd>
+The title of the document, as initially set by the &lt;title&gt; tag in the document's header.
+</dd></dl>
+<dl><dt><strong>context</strong></dt><dd>
+The context the document belongs to. Read-only.
+</dd></dl>
+<h2 id="Event">Event</h2>
+<p>
+<strong>class</strong> Event
+</p>
+<p>
+The Event class has no constructor; it is generated internally. It has the following methods and properties:
+</p>
+<dl><dt><strong>StopPropagation</strong>()</dt><dd>
+Stops the propagation of the event through the event cycle, if allowed.
+</dd></dl>
+<dl><dt><strong>current_element</strong></dt><dd>
+The element the event has propagated to. Read-only.
+</dd></dl>
+<dl><dt><strong>type</strong></dt><dd>
+The string name of the event. Read-only.
+</dd></dl>
+<dl><dt><strong>target_element</strong></dt><dd>
+The element the event was originally targeted at. Read-only.
+</dd></dl>
+<dl><dt><strong>parameters</strong></dt><dd>
+A dictionary like object containing all the parameters in the event.
+</dd></dl>
+<h2 id="Context">Context</h2>
+<p>
+<strong>class</strong> Context
+</p>
+<p>
+The <i>Context</i> class has no constructor; it must be instantiated through the <i>CreateContext()</i> function. It has the following methods and properties:
+</p>
+<dl><dt><strong>AddEventListener</strong>(<i>event</i>, <i>script</i>, <i>element_context</i>, <i>in_capture_phase</i>)</dt><dd>
+Adds the inline Python script, <i>script</i>, as an event listener to the context. <i>element_context</i> is an optional Element; if it is not None, then the script will be executed as if it was bound to that element.
+</dd></dl>
+<dl><dt><strong>AddMouseCursor</strong>(<i>cursor_document</i>)</dt><dd>
+Adds a cursor document loaded by another context into this context. The cursor document will be returned.
+</dd></dl>
+<dl><dt><strong>CreateDocument</strong>(<i>tag</i>)</dt><dd>
+Creates a new document with the tag name of <i>tag</i>.
+</dd></dl>
+<dl><dt><strong>LoadDocument</strong>(<i>document_path</i>)</dt><dd>
+Attempts to load a document from the RML file found at <i>document_path</i>. If successful, the document will be returned with a reference count of one.
+</dd></dl>
+<dl><dt><strong>LoadMouseCursor</strong>(<i>cursor_document_path</i>)</dt><dd>
+Attempts to load a document from the RML file found at <i>cursor_document_path</i> as a cursor. If successful, the cursor's document will be returned with a reference count of one.
+</dd></dl>
+<dl><dt><strong>Render</strong>()</dt><dd>
+Renders the context.
+</dd></dl>
+<dl><dt><strong>ShowMouseCursor</strong>(<i>show</i>)</dt><dd>
+If <i>show</i> is True, this shows the mouse cursor, otherwise hides it.
+</dd></dl>
+<dl><dt><strong>UnloadAllDocuments</strong>()</dt><dd>
+Closes all documents currently loaded with the context.
+</dd></dl>
+<dl><dt><strong>UnloadAllMouseCursors</strong>()</dt><dd>
+Unloads all cursors currently loaded with the context.
+</dd></dl>
+<dl><dt><strong>UnloadDocument</strong>(<i>document</i>)</dt><dd>
+Unloads a specific document within the context.
+</dd></dl>
+<dl><dt><strong>UnloadMouseCursor</strong>(<i>cursor_name</i>)</dt><dd>
+Unloads a specific cursor by name.
+</dd></dl>
+<dl><dt><strong>Update</strong>()</dt><dd>
+Updates the context.
+</dd></dl>
+<dl><dt><strong>dimensions</strong></dt><dd>
+The dimensions of the context, as a <i>Vector2i</i> type.
+</dd></dl>
+<dl><dt><strong>documents</strong></dt><dd>
+Returns an array of the documents within the context. This can be looked up as an array or a dictionary. Read-only.
+</dd></dl>
+<dl><dt><strong>focus_element</strong></dt><dd>
+Returns the leaf of the context's focus tree. Read-only.
+</dd></dl>
+<dl><dt><strong>name</strong></dt><dd>
+The name of the context, specified at construction. Read-only.
+</dd></dl>
+<h1 id="ControlsAPIReference">Controls API Reference</h1>
+<h2 id="ElementForm">ElementForm</h2>
+<p>
+<strong>class</strong> ElementForm
+</p>
+<p>
+<i>ElementForm</i> derives from <i>Element</i>. The form element has the following method:
+</p>
+<dl><dt><strong>Submit</strong>(<i>submit_value</i>)</dt><dd>
+Submits the form with a submit value of <i>submit_value</i>.
+</dd></dl>
+<h2 id="ElementFormControl">ElementFormControl</h2>
+<p>
+<strong>class</strong> IElementFormControl
+</p>
+<p>
+<i>IElementFormControl</i> derives from <i>Element</i>. The form element control has the following properties:
+</p>
+<dl><dt><strong>disabled</strong></dt><dd>
+The disabled status of the control, either True or False.
+</dd></dl>
+<dl><dt><strong>name</strong></dt><dd>
+The name of the control, initial set with the "name" attribute.
+</dd></dl>
+<dl><dt><strong>value</strong></dt><dd>
+The current value of the control.
+</dd></dl>
+<h2 id="ElementFormControlSelect">ElementFormControlSelect</h2>
+<p>
+<strong>class</strong> ElementFormControlSelect
+</p>
+<p>
+<i>ElementFormControlSelect</i> derives from <i>IElementFormControl</i>. The control has the following methods and properties:
+</p>
+<dl><dt><strong>Add</strong>(<i>rml</i>, <i>value</i>[, <i>before</i>])</dt><dd>
+Adds a new option to the select box. The new option has the string value of <i>value</i> and is represented by the elements created by the RML string <i>rml</i>. The new option will be inserted by the index specified by <i>before</i>; if this is out of bounds (the default), then the new option will be appended onto the list. The index of the new option will be returned.
+</dd></dl>
+<dl><dt><strong>Remove</strong>(<i>index</i>)</dt><dd>
+Removes an existing option from the selection box.
+</dd></dl>
+<dl><dt><strong>options</strong></dt><dd>
+The array of options available in the select box. Each entry in the array has the property <i>value</i>, the string value of the option, and <i>element</i>, the root of the element hierarchy that represents the option in the list.
+</dd></dl>
+<dl><dt><strong>selection</strong></dt><dd>
+The index of the currently selected option.
+</dd></dl>
+<h2 id="ElementFormControlDataSelect">ElementFormControlDataSelect</h2>
+<p>
+<strong>class</strong> ElementFormControlDataSelect
+</p>
+<p>
+<i>ElementFormControlDataSelect</i> derives from <i>ElementFormControlSelect</i>. It has the following additional method:
+</p>
+<dl><dt><strong>SetDataSource</strong>(<i>data_source_name</i>)</dt><dd>
+Sets the name and table of the new data source to be used by the select box.
+</dd></dl>
+<h2 id="ElementFormControlInput">ElementFormControlInput</h2>
+<p>
+<strong>class</strong> ElementFormControlInput
+</p>
+<p>
+<i>ElementFormControlInput</i> derives from <i>IElementFormControl</i>. The control has the following properties, only appropriate on the relevant types:
+</p>
+<dl><dt><strong>checked</strong></dt><dd>
+Relevant for <i>radio</i> and <i>checkbox</i> types. The checked status of the input.
+</dd></dl>
+<dl><dt><strong>max_length</strong></dt><dd>
+Relevant for <i>text</i> types. The maximum number of characters permitted in the text field.
+</dd></dl>
+<dl><dt><strong>size</strong></dt><dd>
+Relevant for <i>text</i> types. The approximate number of characters the text field shows horizontally at once.
+</dd></dl>
+<dl><dt><strong>max</strong></dt><dd>
+Relevant for <i>range</i> types. The value of the control on the bottom / right of the slider.
+</dd></dl>
+<dl><dt><strong>min</strong></dt><dd>
+Relevant for <i>range</i> types. The value of the control on the top / left of the slider.
+</dd></dl>
+<dl><dt><strong>step</strong></dt><dd>
+Relevant for <i>range</i> types. The step the control's value changes in.
+</dd></dl>
+<h2 id="ElementFormControlTextArea">ElementFormControlTextArea</h2>
+<p>
+<strong>class</strong> ElementFormControlTextArea
+</p>
+<p>
+<i>ElementFormControlTextArea</i> derives from <i>IElementFormControl</i>. The control has the following properties:
+</p>
+<dl><dt><strong>cols</strong></dt><dd>
+The approximate number of characters the text area shows horizontally at once.
+</dd></dl>
+<dl><dt><strong>max_length</strong></dt><dd>
+The maximum number of characters permitted in the text area.
+</dd></dl>
+<dl><dt><strong>rows</strong></dt><dd>
+The number of lines the text area shows at once.
+</dd></dl>
+<dl><dt><strong>word_wrap</strong></dt><dd>
+True if lines are split to fit into the text area, False if not.
+</dd></dl>
+<h2 id="ElementTabSet">ElementTabSet</h2>
+<p>
+<strong>class</strong> ElementTabSet
+</p>
+<p>
+<i>ElementTabSet</i> derives from <i>Element</i>. The control has the following methods and properties:
+</p>
+<dl><dt><strong>SetPanel</strong>(<i>index</i>, <i>rml</i>)</dt><dd>
+Sets the contents of a panel to the RML content <i>rml</i>. If <i>index</i> is out-of-bounds, a new panel will be added at the end.
+</dd></dl>
+<dl><dt><strong>SetTab</strong>(<i>index</i>, <i>rml</i>)</dt><dd>
+Sets the contents of a tab to the RML content <i>rml</i>. If <i>index</i> is out-of-bounds, a new tab will be added at the end.
+</dd></dl>
+<dl><dt><strong>num_tabs</strong></dt><dd>
+The number of tabs in the tab set. Read-only.
+</dd></dl>
+<h2 id="ElementDataGrid">ElementDataGrid</h2>
+<p>
+<strong>class<i> ElementDataGrid
+</i></strong></p>
+<p>
+<i>ElementDataGrid</i> derives from <i>Element</i>. The data grid has the following methods:
+</p>
+<dl><dt><strong>AddColumn</strong>(<i>fields</i>, <i>formatter</i>, <i>initial_width</i>, <i>header_rml</i>)</dt><dd>
+Adds a new column to the data grid. The column will read the columns <i>fields</i> (in CSV format) from the grid's data source, processing it through the data formatter named <i>formatter</i>. <i>header_rml</i> specifies the RML content of the column's header.
+</dd></dl>
+<dl><dt><strong>SetDataSource</strong>(<i>data_source_name</i>)</dt><dd>
+Sets the name and table of the new data source to be used by the data grid.
+</dd></dl>
+<h2 id="ElementDataGridRow">ElementDataGridRow</h2>
+<p>
+<strong>class</strong> ElementDataGridRow
+</p>
+<p>
+<i>ElementDataGridRow</i> derives from <i>Element</i>. The data grid row has the following property:
+</p>
+<dl><dt><strong>row_expanded</strong></dt><dd>
+The expanded state of the row, either True or False.
+</dd></dl>
+</div>
+</div>
+<script type="text/javascript">
+   addHeadingLinks(document.getElementById("searchable"), "Link to this section");
+  </script>
+</div>
+</div>
+</div>
+<div id="footer">
+<a id="tracpowered" href="http://trac.edgewall.org/">
+<img src="../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"/>
+</a>
+<p class="left">
+Powered by <a href="http://librocket.com/about"><strong>Trac </strong></a><br/>By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+</p>
+<p id="copyright" class="left clear">
+Copyright &copy; 2007-2010 Code Point Ltd, Shift Technology Ltd.
+</p>
+<ul class="top-level-nav">
+<li><a href="../../frontend/features.html">features.</a></li>
+<li><a "http://librocket.com/wiki/documentation/PythonManual/href">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../../documentation.html">developer.</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3379591-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+</body>
+</html>

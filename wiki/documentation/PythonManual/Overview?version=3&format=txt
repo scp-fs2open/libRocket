@@ -1,0 +1,19 @@
+= Getting Started with RocketPython =
+
+== Overview ==
+
+RocketPython can be used in an application that extends or embeds Python. The only limitation is that your application initialises Rocket with the necessary System and Render interfaces, but these can easily be done from a custom Python module.
+
+To start using RocketPython simply import the module as you would any other extension. RocketPython will then plug itself into the running Rocket instance. It is important to import RocketPython before you create any Rocket Contexts, Documents or Elements otherwise you will not have access to these items from Python.
+
+For a full list of accessable classes and methods please see the RocketPython [wiki:documentation/PythonManual/APIReference API Reference].
+
+== Requirements ==
+
+RocketPython requires [http://www.python.org Python 2.5] and [http://www.boost.org Boost::Python 1.34].
+
+== Getting Started ==
+
+If you're developing on Windows you can [attachment:rocket_support.zip?format=raw download] our pre-built support package which includes both of these libraries.
+
+The best place to start exploring RocketPython is to look at the PyInvaders sample application which is a reword of the standard Invaders sample but with python support. There is also a step by step [wiki:documentation/tutorials/PythonEventSystem tutorial] describing the steps taken to do the conversion.

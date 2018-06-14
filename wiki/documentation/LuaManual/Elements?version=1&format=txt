@@ -1,0 +1,129 @@
+[[PageOutline(1-5, Contents)]]
+= Elements =
+
+== Interface ==
+
+The Lua interface for Rocket elements closely resembles [http://developer.mozilla.org/en/docs/DOM:element Gecko's HTML DOM element interface], similarly to the C++ element interface.
+
+=== Properties ===
+
+|| '''Rocket property''' || '''Brief description''' || '''Equivalent DOM property''' ||
+|| ''absolute_left'' || The distance from the context's left edge and the element's left border. || ||
+|| ''absolute_top'' || The distance from the context's top edge and the element's top border. || ||
+|| ''attributes'' || All attributes associated with an element. || ''attributes'' ||
+|| ''child_nodes'' || All child nodes of an element. || ''childNodes'' ||
+|| ''class_name'' || Gets/sets the class of the element. || ''className'' ||
+|| ''client_height'' || The inner height of an element. || ''clientHeight'' ||
+|| ''client_left'' || The width of the left border of an element. || ''clientLeft'' ||
+|| ''client_top'' || The width of the top border of an element. || ''clientTop'' ||
+|| ''client_width'' || The inner width of an element. || ''clientWidth'' ||
+|| ''first_child'' || The first direct child node of an element. || ''firstChild'' ||
+|| ''id'' || Gets/sets the id of the element. || ''id'' ||
+|| ''inner_rml'' || Gets/sets the markup and content of the element. || ''innerHTML'' ||
+|| ''last_child'' || The last direct child node of an element. || ''lastChild'' ||
+|| ''next_sibling'' || The node immediately following the given one in the tree. || ''nextSibling'' ||
+|| ''offset_height'' || The height of an element, relative to the layout. || ''offsetHeight'' ||
+|| ''offset_left'' || The distance from this element's left border to its offset parent's left border. || ''offsetLeft'' ||
+|| ''offset_parent'' || The element from which all offset calculations are currently computed. || ''offsetParent'' ||
+|| ''offset_top'' || The distance from this element's top border to its offset parent's top border. || ''offsetTop'' ||
+|| ''offset_width'' || The width of an element, relative to the layout. || ''offsetWidth'' ||
+|| ''owner_document'' || The document that this node is in. || ''ownerDocument'' ||
+|| ''parent_node'' || The parent element of this node. || ''parentNode'' ||
+|| ''previous_sibling'' || The node immediately preceding the given one in the tree. || ''previousSibling'' ||
+|| ''scroll_height'' || The scroll view height of an element. || ''scrollHeight'' ||
+|| ''scroll_left'' || Gets/sets the left scroll offset of an element. || ''scrollLeft'' ||
+|| ''scroll_top'' || Gets/sets the top scroll offset of an element. || ''scrollTop'' ||
+|| ''scroll_width'' || The scroll view width of an element. || ''scrollWidth'' ||
+|| ''style'' || An object representing the declarations of an element's style attributes. || ''style'' ||
+|| ''tag_name'' || The name of the tag for the given element. || ''tagName'' ||
+
+==== Table returning properties ====
+There are three properties of Elements that return tables of data. They are ''child_nodes'', ''attributes'', and ''style''. They are implemented in C++ as [wiki:documentation/LuaManual/ProxyTables proxy tables] with regards to their Lua interface.
+
+The ''child_nodes'' property is accessed as an array; it is indexed numerically, from the front or back, and its length can be queried by getting the actual Lua table from the proxy table, and using the Lua length operator(#) on that table.
+
+''child_nodes'' is an array of element types. The array only includes visible elements; Lua has no way of querying [wiki:documentation/C++Manual/HiddenElements hidden elements]. The following example iterates over all of an element's children, printing their tag names, ids and classes:
+
+{{{
+for key,child in ipairs(element.child_nodes:GetTable()) do
+    local address = child.tag_name
+
+    if child.id != "" then
+        address .. "#" .. child.id
+    end
+
+    --class_name is a space-separated list of class names. We want to turn that in to a comma-separated list
+    --and then compile that in to a table. Think of it as a string.split function (Lua doesn't have one)
+    local classes = loadstring("return {"..child.class_name:gsub(" ",",").."}")()
+    for notused,class in pairs(classes) do
+        address .. "." .. class
+    end
+
+    print address
+end
+}}}
+
+''attributes'' is a table of attribute types, with a string key and a [wiki:documentation/LuaManual/Variant variant] value. The following example iterates over an element's attributes, printing their names and values:
+
+{{{
+for name,attribute in pairs(element.attributes:GetTable()) do
+    print key .. ": " .. attribute
+end
+}}}
+
+
+The ''style'' property operates identically to its counterpart in Javascript. Properties are accessed as members of the ''style'' property by name and can be read or written to. The value of a property is always an unparsed string in this context; ie, "200px", "center", "rgb(255,0,0)", etc.
+
+The following example demonstrates uses of the ''style'' property:
+
+{{{
+element.style.width = "150px";
+if element.style.float != "none":
+	element.style.clear = "left";
+}}}
+
+=== Methods ===
+
+|| '''Rocket methods''' || '''Brief description''' || '''Equivalent DOM method''' ||
+|| ''AddEventListener()'' || Register an event handler to a specific event type on the element. || ''addEventListener()'' ||
+|| ''AppendChild()'' || Insert a node as the last child node of this element. || ''appendChild()'' ||
+|| ''Blur()'' || Removes keyboard focus from the current element. || ''blur()'' ||
+|| ''Click()'' || Simulates a click on the current element. || ''click()'' ||
+|| ''DispatchEvent()'' || Dispatch an event to this node in the DOM. || ''dispatchEvent()'' ||
+|| ''Focus()'' || Gives keyboard focus to the current element. || ''focus()'' ||
+|| ''GetAttribute()'' || Retrieve the value of the named attribute from the current node. || ''getAttribute()'' ||
+|| ''GetElementById()'' || Returns an object reference to the identified element. || ''getElementById()'' ||
+|| ''GetElementsByTagName()'' || Retrieve a set of all descendant elements, of a particular tag name, from the current element. || ''getElementsByTagName()'' ||
+|| ''HasAttribute()'' || Check if the element has the specified attribute, or not. || ''hasAttribute()'' ||
+|| ''HasChildNodes()'' || Check if the element has any child nodes, or not. || ''hasChildNodes()'' ||
+|| ''InsertBefore()'' || Inserts the first node before the second, child, node in the DOM. || ''insertBefore()'' ||
+|| ''RemoveAttribute()'' || Remove the named attribute from the current node. || ''removeAttribute()'' ||
+|| ''RemoveChild()'' || Removes a child node from the current element. || ''removeChild()'' ||
+|| ''ReplaceChild()'' || Replaces one child node in the current element with another. || ''replaceChild()'' ||
+|| ''ScrollIntoView()'' || Scrolls the page until the element gets into the view. || ''scrollIntoView()'' ||
+|| ''SetAttribute()'' || Set the value of the named attribute from the current node. || ''setAttribute()'' ||
+
+== Dispatching events ==
+
+Events can be generated on an element from within Lua with the ''DispatchEvent()'' function. When calling this function, the parameters are given as a Lua table; Rocket will convert this into a Rocket dictionary when the C++ event is created.
+
+{{{
+element.DispatchEvent("open", {"object" = "trapdoor", "priority" = 11}, false)
+}}}
+
+Parameter keys must be strings, and values must be strings, integers, floating-point, boolean, or Lua userdata.
+
+== Creating elements ==
+
+Elements can be created dynamically in Lua using the document's ''CreateElement()'' or ''CreateTextNode()'' method. The following code sample uses ''CreateElement()'' to dynamically create a form control.
+
+{{{
+input_element = document.CreateElement("input")
+input_element.SetAttribute("type", "radio")
+input_element.SetAttribute("name", "graphics")
+input_element.SetAttribute("value", "ok")
+document.AppendChild(input_element)
+
+text_element = document.CreateTextNode("OK")
+document.AppendChild(text_element)
+}}}

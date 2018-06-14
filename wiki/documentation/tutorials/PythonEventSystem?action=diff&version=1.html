@@ -1,0 +1,204 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title> Python Event System - libRocket</title>
+<link rel="start" href="http://librocket.com/wiki"/><link rel="search" href="http://librocket.com/search"/><link rel="help" href="../../TracGuide.html"/><link rel="stylesheet" href="../../../chrome/common/css/trac.css" type="text/css"/><link rel="stylesheet" href="../../../chrome/common/css/wiki.css" type="text/css"/><link rel="stylesheet" href="../../../chrome/common/css/diff.css" type="text/css"/><link rel="icon" href="../../../chrome/site/trac.ico" type="image/x-icon"/><link rel="shortcut icon" href="../../../chrome/site/trac.ico" type="image/x-icon"/><link rel="next" href="PythonEventSystem%3Faction=diff&amp;version=2.html" title="Version 2"/><style type="text/css">
+</style>
+<script type="text/javascript" src="../../../chrome/common/js/trac.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/base.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/content.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/discussion.css"></link>
+<style>
+		div.wiki img
+		{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+<div class="widthshell-width">
+<div class="widthshell-minwidth">
+<div class="widthshell-layout">
+<div class="widthshell-container">
+<div class="widthshell-content">
+<div id="background">
+<div style="float:right;width:160px;height:600px;margin-top:110px;margin-right:20px;">
+<script type="text/javascript"><!--
+                        google_ad_client = "pub-5872045433470541";
+                        /* Default, Wide Skyscraper */
+                        google_ad_slot = "3956485030";
+                        google_ad_width = 160;
+                        google_ad_height = 600;
+                //-->
+                </script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+</div>
+<div class="shell">
+<div class="stars">
+<img id="star-1" src="../../../chrome/site/images/star-red-medium.gif" width="22px" height="22px" alt="Star"/>
+<img id="star-2" src="../../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-3" src="../../../chrome/site/images/star-red-small.gif" width="11px" height="11px" alt="Star"/>
+<img id="star-4" src="../../../chrome/site/images/star-orange-small.gif" width="16px" height="16px" alt="Star"/>
+<img id="star-5" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-6" src="../../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-7" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-8" src="../../../chrome/site/images/star-red-big.gif" width="33px" height="33px" alt="Star"/>
+<img id="star-9" src="../../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-10" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-11" src="../../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-12" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+</div>
+<div id="header">
+<a href="../../documentation.html"><img id="title" src="../../../chrome/site/images/title.gif" width="256px" height="49px" alt="Rocket"/></a>
+<ul class="top-level-nav">
+<li><a href="../../frontend/features.html">features.</a></li>
+
+<li><a href="http://github.com/lloydw/librocket">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../../documentation.html">developer.</a></li>
+</ul>
+<img id="trail" src="../../../chrome/site/images/trail-content.gif" width="72px" height="115px" alt="Rocket Trail"/>
+<a href="../../documentation.html"><img id="rocket" src="../../../chrome/site/images/rocket-content.gif" width="126px" height="139px" alt="Rocket"/></a>
+</div>
+</div>
+</div>
+<div class="shell">
+<div id="banner">
+<div class="stars">
+<img id="star-13" src="../../../chrome/site/images/star-black-big.gif" width="49px" height="50px" alt="Star"/>
+<img id="star-14" src="../../../chrome/site/images/star-black-medium.gif" width="23px" height="23px" alt="Star"/>
+<img id="star-15" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-16" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-17" src="../../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-18" src="../../../chrome/site/images/star-black-tiny.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-19" src="../../../chrome/site/images/star-black-tiny.gif" width="9px" height="9px" alt="Star"/>
+<img id="star-20" src="../../../chrome/site/images/star-black-tiny.gif" width="10px" height="10px" alt="Star"/>
+<img id="star-21" src="../../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-22" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-23" src="../../../chrome/site/images/star-black-small.gif" width="13px" height="13px" alt="Star"/>
+</div>
+<img id="banner-bottom-left" src="../../../chrome/site/images/banner-bottom-left.gif" width="20px" height="19px" alt="Bottom left banner image"/>
+<img id="banner-bottom-right" src="../../../chrome/site/images/banner-bottom-right.gif" width="20px" height="19px" alt="Bottom right banner image"/>
+<div id="login"><a href="http://librocket.com/login">Login</a> | <a "http://librocket.com/wiki/documentation/tutorials/href">Register</a></div>
+<div id="breadcrumbs">
+<a href="../../documentation.html">documentation</a> <strong>&#8249;</strong> <a href="../tutorials.1.html">tutorials</a> <strong>&#8249;</strong> <a href="PythonEventSystem.html">PythonEventSystem</a></div>
+<div id="title"> Python Event System</div>
+<div id="second-level-nav">
+<span class="nav-item active"><a href="../../documentation.html">Documentation</a></span>
+<span class="nav-item"><a accesskey="4" href="http://librocket.com/search">Search</a></span>
+</div>
+</div>
+<div id="content-container">
+<div id="content" class="wiki">
+<h1>Changes from
+<a href="PythonEventSystem%3Fversion=1.html">Version 1</a> of
+<a href="PythonEventSystem.html">documentation/tutorials/PythonEventSystem</a></h1>
+<form method="post" id="prefs" action="PythonEventSystem.html"><div><input type="hidden" name="__FORM_TOKEN" value="a669ff33c84a83d396ad829a"/></div>
+<div>
+<input type="hidden" name="action" value="diff"/>
+<input type="hidden" name="version" value="1"/>
+<input type="hidden" name="old_version" value/>
+<label>View differences <select name="style">
+<option value="inline" selected="selected">inline</option>
+<option value="sidebyside">side by side</option>
+</select></label>
+<div class="field">
+Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2"/>
+<label for="contextlines">lines around each change</label>
+</div>
+<fieldset id="ignore">
+<legend>Ignore:</legend>
+<div class="field">
+<input type="checkbox" id="blanklines" name="ignoreblanklines"/>
+<label for="blanklines">Blank lines</label>
+</div>
+<div class="field">
+<input type="checkbox" id="case" name="ignorecase"/>
+<label for="case">Case changes</label>
+</div>
+<div class="field">
+<input type="checkbox" id="whitespace" name="ignorewhitespace"/>
+<label for="whitespace">White space changes</label>
+</div>
+</fieldset>
+<div class="buttons">
+<input type="submit" name="update" value="Update"/>
+</div>
+</div>
+</form>
+<dl id="overview">
+<dt class="property author">Author:</dt>
+<dd class="author">lloydw <span class="ipnr">(IP: 192.168.0.1)</span></dd>
+<dt class="property time">Timestamp:</dt>
+<dd class="time">01/03/08 11:31:35 (10 years ago)</dd>
+<dt class="property message">Comment:</dt>
+<dd class="message"><p>
+--
+</p>
+</dd>
+</dl>
+<div class="diff">
+<div id="legend">
+<h3>Legend:</h3>
+<dl>
+<dt class="unmod"></dt><dd>Unmodified</dd>
+<dt class="add"></dt><dd>Added</dd>
+<dt class="rem"></dt><dd>Removed</dd>
+<dt class="mod"></dt><dd>Modified</dd>
+</dl>
+</div>
+<ul class="entries">
+<li class="entry">
+<h2>documentation/tutorials/PythonEventSystem</h2>
+<table class="inline" summary="Differences">
+<colgroup><col class="lineno"/><col class="lineno"/><col class="content"/></colgroup>
+<thead><tr>
+<th title="Version ">v0</th>
+<th title="Version 1">v1</th>
+<th>&nbsp;</th>
+</tr></thead><tbody class="add"><tr class="first"><th>&nbsp;</th><th>1</th><td class="r"><ins>[[PageOutline]]</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>2</th><td class="r"><ins>= Python Event Tutorial =</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>3</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>4</th><td class="r"><ins>The Python interface to Rocket exposes a DOM API in a very similar way to Javascript. Python code can be attached to any event in the RML definition which is turn can dynamically update any part of the document including open other documents. Full source code to the final PyInvaders application can be found in the samples folder once the Python plugin has been installed.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>5</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>6</th><td class="r"><ins>== Step 1: Setting up the Python environment ==</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>7</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>8</th><td class="r"><ins>The first thing we need to do is initialise python in our application, once we have done this we can start executing scripts. We're going to make a PythonInterface class that will hide all the python intricacies.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>9</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>10</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>11</th><td class="r"><ins>/**</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>12</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; Creates and maintains the python interface to Invaders.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>13</th><td class="r"><ins>&nbsp;*/</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>14</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>15</th><td class="r"><ins>class PythonInterface</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>16</th><td class="r"><ins>{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>17</th><td class="r"><ins>public:</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>18</th><td class="r"><ins>&nbsp; &nbsp; static bool Initialise();</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>19</th><td class="r"><ins>&nbsp; &nbsp; static void Shutdown();</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>20</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>21</th><td class="r"><ins>private:</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>22</th><td class="r"><ins>&nbsp; &nbsp; PythonInterface();</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>23</th><td class="r"><ins>&nbsp; &nbsp; ~PythonInterface();</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>24</th><td class="r"><ins>};</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>25</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>26</th><td class="r"><ins>}}}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>27</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>28</th><td class="r"><ins>We then implement these methods. </ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>29</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>30</th><td class="r"><ins>''NOTE: Its a good idea to forcibly import the rocket Python module, this ensures all boost bindings have been done and that you can proceed to expose your own classes that rely on these bindings having taken place.''</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>31</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>32</th><td class="r"><ins>''NOTE: For more information Python initialisation and shutdown please see the Python documentation at [http://docs.python.org]''</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>33</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>34</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>35</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>36</th><td class="r"><ins>bool PythonInterface::Initialise()</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>37</th><td class="r"><ins>{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>38</th><td class="r"><ins>&nbsp; &nbsp; Py_Initialize();</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>39</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>40</th><td class="r"><ins>&nbsp; &nbsp; // Pull in the rocket python module.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>41</th><td class="r"><ins>&nbsp; &nbsp; Py_XDECREF(PyImport_ImportModule("rocket"));</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>42</th><td class="r"><ins>&nbsp; &nbsp; return true;</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>43</th><td class="r"><ins>}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>44</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>45</th><td class="r"><ins>void PythonInterface::Shutdown()</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>46</th><td class="r"><ins>{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>47</th><td class="r"><ins>&nbsp; &nbsp; Py_Finalize();</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>48</th><td class="r"><ins>}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>49</th><td class="r"><ins>}}}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>50</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>51</th><td class="r"><ins>PythonInterface::Initialise should be called before rocket is initialised, this ensures the Python bindings are available when rocket starts up.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>52</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>53</th><td class="r"><ins>PythonInterface::Shutdown should be called after you've released all contexts but before you call Rocket::Shutdown(). This ensures all python objects are released before rocket does its final cleanup.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>54</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>55</th><td class="r"><ins>== Step 2: Replacing the Event System ==</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>56</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>57</th><td class="r"><ins>We can now completely remove the exiting event system from ''RocketInvaders'' as the Python bindings will do all the event management for us. We will however need some way of starting invaders from script. I suggest you do this with an ''autoexec.py'' script, that would look something like this:</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>58</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>59</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>60</th><td class="r"><ins>import rocket</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>61</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>62</th><td class="r"><ins>context = rocket.GetContext('main')</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>63</th><td class="r"><ins>context.LoadDocument('data/background.rml').Show()</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>64</th><td class="r"><ins>context.LoadDocument('data/main_menu.rml').Show()</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>65</th><td class="r"><ins>}}}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>66</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>67</th><td class="r"><ins>To run this script, we simply need to import it at application start up. Add an import helper to the PythonInterface and call it just before the main shell loop.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>68</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>69</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>70</th><td class="r"><ins>bool PythonInterface::Import(const EMP::Core::String&amp; name)</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>71</th><td class="r"><ins>{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>72</th><td class="r"><ins>&nbsp; &nbsp; PyObject* module = PyImport_ImportModule(name.CString());</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>73</th><td class="r"><ins>&nbsp; &nbsp; if (!module)</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>74</th><td class="r"><ins>&nbsp; &nbsp; {</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>75</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; PrintError();</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>76</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; return false;</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>77</th><td class="r"><ins>&nbsp; &nbsp; }</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>78</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>79</th><td class="r"><ins>&nbsp; &nbsp; Py_DECREF(module);</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>80</th><td class="r"><ins>&nbsp; &nbsp; return true;</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>81</th><td class="r"><ins>}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>82</th><td class="r"><ins>}}}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>83</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>84</th><td class="r"><ins>PythonInterface::Import("autoexec");</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>85</th><td class="r"><ins>Shell::EventLoop(GameLoop);</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>86</th><td class="r"><ins>}}}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>87</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>88</th><td class="r"><ins>At this point the ''RocketInvaders'' will now run, however you'll get a nasty script error as Python attempts to execute the ''onload'' event in mainmenu.rml. Update the ''onload'' and ''onclose'' events to use Python script which will correctly display and hide the logo.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>89</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>90</th><td class="r"><ins>&lt;body template="window" onload="document.context.LoadDocument('data/logo.rml').Show()" onclose="document.context.logo.Close()"&gt;</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>91</th><td class="r"><ins>}}} </ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>92</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>93</th><td class="r"><ins>You will now have to go through each event defined in RML updating it with equivalent Python calls.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>94</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>95</th><td class="r"><ins>RocketPython parses any semi-colons in an event as a delimiter. So you can place multiple Python statements on a single line, semi-colon separated. This comes in useful when you want to execute two statements at once, for example you probably want to do the following for the ''Start Game'' button.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>96</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>97</th><td class="r"><ins>document.context.LoadDocument('data/start_game.rml').Show(); document.Close()</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>98</th><td class="r"><ins>}}}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>99</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>100</th><td class="r"><ins>I've simplified this further by by placing a LoadMenu function in the shared template window.rml, that loads a new document, closing the existing one.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>101</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>102</th><td class="r"><ins>== Step 3: Exposing Game Functions ==</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>103</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>104</th><td class="r"><ins>The above takes care of most of the menu flow, except for a couple items, including the starting of the actual game and exiting. Lets tackle exiting first as that the easier of the two.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>105</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>106</th><td class="r"><ins>Our Python interface class will now have to expose a Python module (with the help of boost::python - ''for full documentation see [http://www.boost.org]'').</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>107</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>108</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>109</th><td class="r"><ins>BOOST_PYTHON_MODULE(game)</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>110</th><td class="r"><ins>{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>111</th><td class="r"><ins>&nbsp; &nbsp; python::def("Shutdown", &amp;Shell::RequestExit);</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>112</th><td class="r"><ins>}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>113</th><td class="r"><ins>}}}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>114</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>115</th><td class="r"><ins>This creates a module called ''game'' and places a ''Shutdown'' method within it. We now update the Initialise function to initialise this module at startup.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>116</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>117</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>118</th><td class="r"><ins>bool PythonInterface::Initialise()</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>119</th><td class="r"><ins>{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>120</th><td class="r"><ins>&nbsp; &nbsp; // Initialise python</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>121</th><td class="r"><ins>&nbsp; &nbsp; Py_Initialize();</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>122</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>123</th><td class="r"><ins>&nbsp; &nbsp; // Import rocket</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>124</th><td class="r"><ins>&nbsp; &nbsp; if (!Import("rocket"))</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>125</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; return false;</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>126</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>127</th><td class="r"><ins>&nbsp; &nbsp; // Define our game specific interface</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>128</th><td class="r"><ins>&nbsp; &nbsp; initgame();</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>129</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>130</th><td class="r"><ins>&nbsp; &nbsp; return true;</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>131</th><td class="r"><ins>}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>132</th><td class="r"><ins>}}}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>133</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>134</th><td class="r"><ins>We can now call the ''Shutdown'' function from main_menu.rml as follows</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>135</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>136</th><td class="r"><ins>&lt;button onclick="import game;game.Shutdown()"&gt;Exit&lt;/button&gt;</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>137</th><td class="r"><ins>}}}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>138</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>139</th><td class="r"><ins>If you have a lot of functions that call game, you can place the ''import game'' in the document header, or in one of your template files.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>140</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>141</th><td class="r"><ins>Using the above code we can extrapolate this throughout the game and have a complete functioning menu system. You will however need to expose more of the GameDetails class to Python so that the ''start_game'' screen can save the difficulty and colour selection.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>142</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>143</th><td class="r"><ins>Your game module should look something like this:</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>144</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>145</th><td class="r"><ins>BOOST_PYTHON_MODULE(game)</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>146</th><td class="r"><ins>{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>147</th><td class="r"><ins>&nbsp; &nbsp; python::def("Shutdown", &amp;Shell::RequestExit);</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>148</th><td class="r"><ins>&nbsp; &nbsp; python::def("SetPaused", &amp;GameDetails::SetPaused);</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>149</th><td class="r"><ins>&nbsp; &nbsp; python::def("SetDifficulty", &amp;GameDetails::SetDifficulty);</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>150</th><td class="r"><ins>&nbsp; &nbsp; python::def("SetDefenderColour", &amp;GameDetails::SetDefenderColour);</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>151</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>152</th><td class="r"><ins>&nbsp; &nbsp; python::enum_&lt;GameDetails::Difficulty&gt;("difficulty")</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>153</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; .value("HARD", GameDetails::HARD)</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>154</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; .value("EASY", GameDetails::EASY)</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>155</th><td class="r"><ins>&nbsp; &nbsp; ;</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>156</th><td class="r"><ins>}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>157</th><td class="r"><ins>}}}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>158</th><td class="r"><ins>== Step 4: Custom Elements ==</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>159</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>160</th><td class="r"><ins>The next problem we'll hit when converting ''RocketInvaders'' is the ElementGame does not have a Python interface. Thus we can't give it focus when we start the game which means the defender cannot be moved until the user clicks the game with the mouse. To fix this, we need to define ElementGame to Python and register the Python instancer with Rocket::Factory instead of the C++ instancer.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>161</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>162</th><td class="r"><ins>Lets define a static method on ElementGame to do this and call it from our game modules initialisation.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>163</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>164</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>165</th><td class="r"><ins>void ElementGame::InitialisePythonInterface()</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>166</th><td class="r"><ins>{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>167</th><td class="r"><ins>&nbsp; &nbsp; PyObject* object = python::class_&lt;ElementGame, </ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>168</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Rocket::Core::Python::ElementWrapper&lt;ElementGame&gt;,</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>169</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; python::bases&lt;Rocket::Core::Element&gt;, </ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>170</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; boost::noncopyable &gt;("ElementGame", python::init&lt;const char*&gt;())</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>171</th><td class="r"><ins>&nbsp; &nbsp; .ptr();</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>172</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>173</th><td class="r"><ins>&nbsp; &nbsp; Rocket::Core::Factory::RegisterElementInstancer("game", </ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>174</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; new Rocket::Core::Python::ElementInstancer(object))-&gt;RemoveReference();</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>175</th><td class="r"><ins>}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>176</th><td class="r"><ins>}}}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>177</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>178</th><td class="r"><ins>== Step 5: Key and end game bindings ==</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>179</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>180</th><td class="r"><ins>We can now get into the game, however the game will never finish as theres no key bindings for processing the ESCAPE key and nothing will make the game exit when the game is over. Fixing the key binding is easy, simply drop in a OnKeyDown handler and make it launch the pause menu.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>181</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>182</th><td class="r"><ins>OnGameOver is a bit more tricky, as the old Invaders would call EventManager::LoadWindow directly from C++. We're going to have to add a game_over flag to game and make the GameElement check this state every update and fire a custom OnGameOver event.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>183</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>184</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>185</th><td class="r"><ins>// Updates the game.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>186</th><td class="r"><ins>void ElementGame::OnUpdate()</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>187</th><td class="r"><ins>{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>188</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; game-&gt;Update();</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>189</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>190</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; if (game-&gt;IsGameOver())</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>191</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DispatchEvent("gameover", EMP::Core::Dictionary(), false);</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>192</th><td class="r"><ins>}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>193</th><td class="r"><ins>}}}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>194</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>195</th><td class="r"><ins>== Step 6: Python Data Formatters ==</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>196</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>197</th><td class="r"><ins>We're still using C++ data formatters, these can be moved into python for simplicity.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>198</th><td class="r"><ins>{{{</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>199</th><td class="r"><ins>class NameDataFormatter(rocket.DataFormatter):</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>200</th><td class="r"><ins>&nbsp; &nbsp; def __init__(self):</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>201</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; rocket.DataFormatter.__init__(self, "name")</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>202</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>203</th><td class="r"><ins>&nbsp; &nbsp; def FormatData(self, raw_data):</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>204</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; """ </ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>205</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; Data format:</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>206</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; raw_data[0] is the name.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>207</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; raw_data[1] is a bool - True means the name has to be entered. False means the name has been entered already.</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>208</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; """</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>209</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>210</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; formatted_data = ""</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>211</th><td class="r"><ins></ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>212</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; if (raw_data[1] == "1"):</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>213</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; formatted_data = "&lt;input id=\"player_input\" type=\"text\" name=\"name\" onchange=\"game.SetHighScoreName(event.value)\" /&gt;"</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>214</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; else:</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>215</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; formatted_data = raw_data[0]</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>216</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>217</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; return formatted_data</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>218</th><td class="r"><ins>}}}</ins>&nbsp;</td></tr><tr><th>&nbsp;</th><th>219</th><td class="r"><ins></ins>&nbsp;</td></tr><tr class="last"><th>&nbsp;</th><th>220</th><td class="r"><ins>A lot more code could be moved from C++ into Python, for example the HighScore system. Its just a matter of taking the principles you have learnt here and applying them.</ins>&nbsp;</td></tr></tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<a id="tracpowered" href="http://trac.edgewall.org/">
+<img src="../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"/>
+</a>
+<p class="left">
+Powered by <a href="http://librocket.com/about"><strong>Trac </strong></a><br/>By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+</p>
+<p id="copyright" class="left clear">
+Copyright &copy; 2007-2010 Code Point Ltd, Shift Technology Ltd.
+</p>
+<ul class="top-level-nav">
+<li><a href="../../frontend/features.html">features.</a></li>
+<li><a "http://librocket.com/wiki/documentation/tutorials/href">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../../documentation.html">developer.</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3379591-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+</body>
+</html>

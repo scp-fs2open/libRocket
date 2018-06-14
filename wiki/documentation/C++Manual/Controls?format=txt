@@ -1,0 +1,13 @@
+[[PageOutline(1-5, Contents)]]
+= Controls plugin =
+
+== Initialisation ==
+
+To use the Controls plugin, include the main header Rocket/Controls.h and call the ''Rocket::Controls::Initialise()'' function after Rocket itself has been initialised. This will set up the instancers for the custom elements in the Controls package.
+
+== Element packages ==
+
+The Controls plugin includes three element packages:
+ * [wiki:documentation/C++Manual/Controls/Form Form controls]; a comprehensive set of form controls.
+ * [wiki:documentation/C++Manual/Controls/DataGrid Data grids]; elements for positioning and rendering dynamic, tabulated data.
+ * [wiki:documentation/C++Manual/Controls/TabSet Tab sets]; elements for partitioning content into panels.

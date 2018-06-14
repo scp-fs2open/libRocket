@@ -1,0 +1,398 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title> Visual Formatting Model Details - libRocket</title>
+<link rel="start" href="http://librocket.com/wiki"/><link rel="search" href="http://librocket.com/search"/><link rel="help" href="../../TracGuide.html"/><link rel="stylesheet" href="../../../chrome/common/css/trac.css" type="text/css"/><link rel="stylesheet" href="../../../chrome/common/css/wiki.css" type="text/css"/><link rel="icon" href="../../../chrome/site/trac.ico" type="image/x-icon"/><link rel="shortcut icon" href="../../../chrome/site/trac.ico" type="image/x-icon"/><link rel="alternate" href="VisualFormattingModelDetails%3Fformat=txt" title="Plain Text" type="text/x-trac-wiki"/><style type="text/css">
+</style>
+<script type="text/javascript" src="../../../chrome/common/js/trac.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/base.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/content.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/discussion.css"></link>
+<style>
+		div.wiki img
+		{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+<div class="widthshell-width">
+<div class="widthshell-minwidth">
+<div class="widthshell-layout">
+<div class="widthshell-container">
+<div class="widthshell-content">
+<div id="background">
+<div style="float:right;width:160px;height:600px;margin-top:110px;margin-right:20px;">
+<script type="text/javascript"><!--
+                        google_ad_client = "pub-5872045433470541";
+                        /* Default, Wide Skyscraper */
+                        google_ad_slot = "3956485030";
+                        google_ad_width = 160;
+                        google_ad_height = 600;
+                //-->
+                </script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+</div>
+<div class="shell">
+<div class="stars">
+<img id="star-1" src="../../../chrome/site/images/star-red-medium.gif" width="22px" height="22px" alt="Star"/>
+<img id="star-2" src="../../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-3" src="../../../chrome/site/images/star-red-small.gif" width="11px" height="11px" alt="Star"/>
+<img id="star-4" src="../../../chrome/site/images/star-orange-small.gif" width="16px" height="16px" alt="Star"/>
+<img id="star-5" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-6" src="../../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-7" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-8" src="../../../chrome/site/images/star-red-big.gif" width="33px" height="33px" alt="Star"/>
+<img id="star-9" src="../../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-10" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-11" src="../../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-12" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+</div>
+<div id="header">
+<a href="../../documentation.html"><img id="title" src="../../../chrome/site/images/title.gif" width="256px" height="49px" alt="Rocket"/></a>
+<ul class="top-level-nav">
+<li><a href="../../frontend/features.html">features.</a></li>
+
+<li><a href="http://github.com/lloydw/librocket">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../../documentation.html">developer.</a></li>
+</ul>
+<img id="trail" src="../../../chrome/site/images/trail-content.gif" width="72px" height="115px" alt="Rocket Trail"/>
+<a href="../../documentation.html"><img id="rocket" src="../../../chrome/site/images/rocket-content.gif" width="126px" height="139px" alt="Rocket"/></a>
+</div>
+</div>
+</div>
+<div class="shell">
+<div id="banner">
+<div class="stars">
+<img id="star-13" src="../../../chrome/site/images/star-black-big.gif" width="49px" height="50px" alt="Star"/>
+<img id="star-14" src="../../../chrome/site/images/star-black-medium.gif" width="23px" height="23px" alt="Star"/>
+<img id="star-15" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-16" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-17" src="../../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-18" src="../../../chrome/site/images/star-black-tiny.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-19" src="../../../chrome/site/images/star-black-tiny.gif" width="9px" height="9px" alt="Star"/>
+<img id="star-20" src="../../../chrome/site/images/star-black-tiny.gif" width="10px" height="10px" alt="Star"/>
+<img id="star-21" src="../../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-22" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-23" src="../../../chrome/site/images/star-black-small.gif" width="13px" height="13px" alt="Star"/>
+</div>
+<img id="banner-bottom-left" src="../../../chrome/site/images/banner-bottom-left.gif" width="20px" height="19px" alt="Bottom left banner image"/>
+<img id="banner-bottom-right" src="../../../chrome/site/images/banner-bottom-right.gif" width="20px" height="19px" alt="Bottom right banner image"/>
+<div id="login"><a href="http://librocket.com/login">Login</a> | <a "http://librocket.com/wiki/documentation/RCSS/href">Register</a></div>
+<div id="breadcrumbs">
+<a href="../../documentation.html">documentation</a> <strong>&#8249;</strong> <a href="../RCSS.html">RCSS</a> <strong>&#8249;</strong> <a href="VisualFormattingModelDetails.html">VisualFormattingModelDetails</a></div>
+<div id="title"> Visual Formatting Model Details</div>
+<div id="second-level-nav">
+<span class="nav-item active"><a href="../../documentation.html">Documentation</a></span>
+<span class="nav-item"><a accesskey="4" href="http://librocket.com/search">Search</a></span>
+</div>
+</div>
+<div id="content-container">
+<div id="content" class="wiki">
+<div class="wikipage">
+<div id="searchable"><p>
+<div class="wiki-toc"><h4>Contents</h4><ol><li><a href="VisualFormattingModelDetails.html#Visualformattingmodeldetails">Visual formatting model details</a><ol><li><a href="VisualFormattingModelDetails.html#Definitionofcontainingblock">Definition of 'containing block'</a></li><li>
+<a href="VisualFormattingModelDetails.html#Contentwidth:thewidthproperty">Content width: the 'width' property</a></li><li>
+<a href="VisualFormattingModelDetails.html#Computingwidthsandmargins">Computing widths and margins</a></li><li>
+<a href="VisualFormattingModelDetails.html#Minimumandmaximumwidths:min-widthandmax-width">Minimum and maximum widths: 'min-width' and 'max-width'</a></li><li>
+<a href="VisualFormattingModelDetails.html#Contentheight:theheightproperty">Content height: the 'height' property</a></li><li>
+<a href="VisualFormattingModelDetails.html#Computingheightsandmargins">Computing heights and margins</a></li><li>
+<a href="VisualFormattingModelDetails.html#Minimumandmaximumheights:min-heightandmax-height">Minimum and maximum heights: 'min-height' and 'max-height'</a></li><li>
+<a href="VisualFormattingModelDetails.html#Lineheightcalculations:theline-heightandvertical-alignproperties">Line height calculations: the 'line-height' and 'vertical-align' &hellip;</a></li></ol></li></ol></div>
+</p>
+<h1 id="Visualformattingmodeldetails">Visual formatting model details</h1>
+<h2 id="Definitionofcontainingblock">Definition of 'containing block'</h2>
+<p>
+During layout, the containing block of an element is fixed when the element is encountered in the document tree. It is sized as follows:
+</p>
+<ol><li>For the root element of the document (the 'body' element), the containing block is the size of the document's context.
+</li><li>For other elements (other than absolutely positioned elements), the containing block is the size of the nearest block ancestor's content area. If the block ancestor does not have a fixed height (ie, its 'height' property is set to 'auto'), the height of the containing block is given by the height of the nearest block ancestor's fixed content area. This may end up as the height of the context.
+</li><li>If the element is positioned 'fixed' or 'absolute', its containing block is given by the padded size of the nearest block element with a 'position' other than 'static', or the root if no such element exists. Like other elements, they will look further back in order to get a fixed height.
+</li></ol><h2 id="Contentwidth:thewidthproperty">Content width: the 'width' property</h2>
+<p>
+<i>width</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> &lt;length&gt; | &lt;percentage&gt; | auto
+</td></tr><tr><td> <i>Initial:</i> </td><td> auto
+</td></tr><tr><td> <i>Applies to:</i> </td><td> block and replaced inline elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> relative to the width of the containing block
+</td></tr></table>
+<p>
+This property only applies to block boxes and inline boxes with an intrinsic width. Other inline boxes are sized by their content.
+</p>
+<p>
+Values have the following meaning:
+</p>
+<dl><dt>length</dt><dd>
+Specifies a fixed width.
+</dd><dt>percentage</dt><dd>
+Specifies a width relative to the width of the box's containing block.
+</dd><dt>auto</dt><dd>
+The width depends on the values of other properties. See below.
+</dd></dl>
+<pre class="wiki">/* Fixes the width of input elements of class 'text' to 12 times their line height. */
+input.text
+{
+    width: 12em;
+}
+</pre><h2 id="Computingwidthsandmargins">Computing widths and margins</h2>
+<p>
+If any of a box's 'width', 'margin-left' or 'margin-right' are set to 'auto', then they are evaluated when the box is sized. Depending on the box type, they are set as follows:
+</p>
+<ul><li>For an inline non-replaced box, any 'auto' margins are set to '0'. 'width' is ignored.
+</li><li>For an inline replaced box, 'auto' margins are set to '0'. A 'width' of 'auto' is set to the element's intrinsic width.
+</li><li>For a block box, the formula 'margin-left' + 'border-left-width' + 'padding-left' + 'width' + 'padding-right' + 'border-right-width' + 'margin-right' = containing block width must hold true. If 'width' is 'auto', then any 'auto' margins are set to '0' and the box width is set to the appropriate value. Otherwise, the inequality in the equation is split evenly between the auto-margins.
+</li></ul><p>
+This is different from the CSS equation in the following ways:
+</p>
+<ul><li>The 'left' and 'right' properties cannot be set to 'auto'.
+</li><li>Floating and positioned boxes are evaluated like normal boxes.
+</li></ul><h2 id="Minimumandmaximumwidths:min-widthandmax-width">Minimum and maximum widths: 'min-width' and 'max-width'</h2>
+<p>
+<i>min-width</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> &lt;length&gt; | &lt;percentage&gt;
+</td></tr><tr><td> <i>Initial:</i> </td><td> 0px
+</td></tr><tr><td> <i>Applies to:</i> </td><td> block and replaced inline elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> relative to the width of the containing block
+</td></tr></table>
+<p>
+<i>max-width</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> &lt;length&gt; | &lt;percentage&gt;
+</td></tr><tr><td> <i>Initial:</i> </td><td> -1
+</td></tr><tr><td> <i>Applies to:</i> </td><td> block and replaced inline elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> relative to the width of the containing block
+</td></tr></table>
+<p>
+Values have the following meaning:
+</p>
+<dl><dt>length</dt><dd>
+Specifies a fixed minimum or maximum width.
+</dd><dt>percentage</dt><dd>
+Specifies a minimum or maximum width relative to the width of the containing block.
+</dd></dl>
+<p>
+Note that there is no 'auto' value for 'max-width'; instead, if it is a negative number there is no maximum width.
+</p>
+<p>
+When evaluating 'width', if the computed width is greater than 'max-width', then the width is computed again, this time substituting 'max-width' for 'width'. If the computed value is less than 'min-width', the the width is computed again, this time substituting 'min-width' for 'width'.
+</p>
+<h2 id="Contentheight:theheightproperty">Content height: the 'height' property</h2>
+<p>
+<i>height</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> &lt;length&gt; | &lt;percentage&gt; | auto
+</td></tr><tr><td> <i>Initial:</i> </td><td> auto
+</td></tr><tr><td> <i>Applies to:</i> </td><td> block and replaced inline elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> relative to the height of the containing block
+</td></tr></table>
+<p>
+This property only applies to block boxes and inline boxes with an intrinsic height. Other inline boxes are sized by their content.
+</p>
+<p>
+Values have the following meaning:
+</p>
+<dl><dt>length</dt><dd>
+Specifies a fixed height.
+</dd><dt>percentage</dt><dd>
+Specifies a height relative to the height of the box's containing block.
+</dd><dt>auto</dt><dd>
+The width depends on the values of other properties. See below.
+</dd></dl>
+<pre class="wiki">/* Fixes the height of the background div to 100% of its containing block. */
+div#background
+{
+    height : 100%;
+}
+</pre><h2 id="Computingheightsandmargins">Computing heights and margins</h2>
+<p>
+If any of a box's 'height', 'margin-top' or 'margin-bottom' are set to 'auto', then they are evaluated when the box is sized. Depending on the box type, they are set as follows:
+</p>
+<ul><li>For an inline non-replaced box, any 'auto' margins are set to '0'. 'height' is ignored.
+</li><li>For an inline replaced box, 'auto' margins are set to '0'. A 'height' of 'auto' is set to the element's intrinsic width.
+</li><li>For a block box with a fixed height, the formula 'margin-top' + 'border-top-width' + 'padding-top' + 'height' + 'padding-bottom' + 'border-bottom-width' + 'margin-bottom' = containing block height must hold true. The inequality in the equation is split evenly between the auto-margins.
+</li><li>For a block box with an 'auto' height, any 'auto' margins are set to '0', and the height will stretch to fit the box's content exactly.
+</li></ul><p>
+This is different from the CSS equation in the following ways:
+</p>
+<ul><li>The 'top' and 'bottom' properties cannot be set to 'auto'.
+</li><li>Floating and positioned boxes are evaluated like normal boxes.
+</li><li>Block boxes with a fixed height will resolve 'auto' vertical margins similarly to horizontal margins.
+</li></ul><h2 id="Minimumandmaximumheights:min-heightandmax-height">Minimum and maximum heights: 'min-height' and 'max-height'</h2>
+<p>
+<i>min-height</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> &lt;length&gt; | &lt;percentage&gt;
+</td></tr><tr><td> <i>Initial:</i> </td><td> 0px
+</td></tr><tr><td> <i>Applies to:</i> </td><td> block and replaced inline elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> relative to the height of the containing block
+</td></tr></table>
+<p>
+<i>max-height</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> &lt;length&gt; | &lt;percentage&gt;
+</td></tr><tr><td> <i>Initial:</i> </td><td> -1
+</td></tr><tr><td> <i>Applies to:</i> </td><td> block and replaced inline elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> relative to the height of the containing block
+</td></tr></table>
+<p>
+Values have the following meaning:
+</p>
+<dl><dt>length</dt><dd>
+Specifies a fixed minimum or maximum height.
+</dd><dt>percentage</dt><dd>
+Specifies a minimum or maximum height relative to the height of the containing block.
+</dd></dl>
+<p>
+Note that there is no 'auto' value for 'max-height'; instead, if it is a negative number there is no maximum height.
+</p>
+<p>
+When evaluating 'height', if the computed width is greater than 'max-height', then the height is computed again, this time substituting 'max-height' for 'height'. If the computed value is less than 'min-height', the the width is computed again, this time substituting 'min-height' for 'height'. A block box with a 'height' of 'auto' will never set its height below 'min-height' or above 'max-height'; this may result in overflow.
+</p>
+<h2 id="Lineheightcalculations:theline-heightandvertical-alignproperties">Line height calculations: the 'line-height' and 'vertical-align' properties</h2>
+<p>
+The height of a line box is determined as follows:
+</p>
+<ol><li>The height of each inline element is calculated.
+</li><li>The inline boxes are aligned vertically (by their 'vertical-align' property)
+</li><li>The line box height is given by distance between the top edge of the highest box and the bottom edge of the lowest box.
+</li></ol><p>
+Note that vertical padding, margins and borders of inline boxes are not taken into account when determining line box height, although they are rendered.
+</p>
+<p>
+<i>line-height</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> &lt;number&gt; | &lt;length&gt; | &lt;percentage&gt;
+</td></tr><tr><td> <i>Initial:</i> </td><td> 1.2
+</td></tr><tr><td> <i>Applies to:</i> </td><td> all elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> yes
+</td></tr><tr><td> <i>Percentages:</i> </td><td> relative to the the font size of the element itself
+</td></tr></table>
+<p>
+This property determines the minimal height of the element's inline boxes.
+</p>
+<p>
+Values for this property have the following meanings:
+</p>
+<dl><dt>number</dt><dd>
+The line height is set to the element's font height scaled by this number.
+</dd><dt>length</dt><dd>
+The line height is set to this fixed value.
+</dd><dt>percentage</dt><dd>
+The line height is set to the element's font height scaled by the percentage.
+</dd></dl>
+<pre class="wiki">/* Three ways of setting the same line-height. */
+div
+{
+    line-height: 1.3;
+    line-height: 1.3em;
+    line-height: 130%;
+}
+</pre><p>
+<i>vertical-align</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> baseline | sub | super | text-top | text-bottom | middle | top | bottom | &lt;percentage&gt; | &lt;length&gt;
+</td></tr><tr><td> <i>Initial:</i> </td><td> baseline
+</td></tr><tr><td> <i>Applies to:</i> </td><td> inline-level elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> relative to the element's line-height
+</td></tr></table>
+<p>
+This property affects the vertical positioning of an inline box within the line box.
+</p>
+<p>
+The values have the following meanings:
+</p>
+<dl><dt>baseline</dt><dd>
+Align the baseline of the inline box with the baseline of the line box.
+</dd><dt>sub</dt><dd>
+Set the baseline of the inline box to an appropriate height for rendering subscript.
+</dd><dt>super</dt><dd>
+Set the baseline of the inline box to an appropriate height for rendering superscript.
+</dd><dt>text-top</dt><dd>
+Align the top of the inline box with the top of the parent box's font.
+</dd><dt>text-bottom</dt><dd>
+Align the bottom of the inline box with the bottom of the parent box's font.
+middle:
+Align the midpoint of the box with the bottom of the parent box's font plus half the ex height.
+</dd><dt>top</dt><dd>
+Align the top of the inline box with the top of the line box.
+</dd><dt>bottom</dt><dd>
+Align the bottom of the inline box with the bottom of the line box.
+</dd><dt>percentage</dt><dd>
+Raise or lower the element from the baseline by the line-height scaled by this percentage.
+</dd><dt>length</dt><dd>
+Raise or lower the element from the baseline by a fixed amount.
+</dd></dl>
+<pre class="wiki">/* Sample RCSS for defining a superscript tag. */
+super
+{
+    vertical-align: super;
+}
+
+/* Sample RML demonstrating rendering a superscript. */
+&lt;p&gt;
+    Better than ever before!&lt;super&gt;*&lt;/super&gt;
+&lt;/p&gt;
+</pre></div>
+</div>
+<script type="text/javascript">
+   addHeadingLinks(document.getElementById("searchable"), "Link to this section");
+  </script>
+</div>
+</div>
+</div>
+<div id="footer">
+<a id="tracpowered" href="http://trac.edgewall.org/">
+<img src="../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"/>
+</a>
+<p class="left">
+Powered by <a href="http://librocket.com/about"><strong>Trac </strong></a><br/>By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+</p>
+<p id="copyright" class="left clear">
+Copyright &copy; 2007-2010 Code Point Ltd, Shift Technology Ltd.
+</p>
+<ul class="top-level-nav">
+<li><a href="../../frontend/features.html">features.</a></li>
+<li><a "http://librocket.com/wiki/documentation/RCSS/href">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../../documentation.html">developer.</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3379591-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+</body>
+</html>

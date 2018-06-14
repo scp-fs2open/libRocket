@@ -1,0 +1,19 @@
+RML is based loosely around [http://www.w3.org/TR/xhtml1/ XHTML 1.0] and [http://www.w3.org/TR/1999/REC-html401-19991224/ HTML 4.01], however element names are (mostly) open-ended in RML and can be used in any way that is logical for your application. All documents follow strict XML1.0 specification and where possible all Rocket elements follow their HTML equivalent.
+
+RML maintains the core components of HTML4, including CSS and scripting (via the Python plugin). It provides a number of basic elements including input fields, radio buttons and check boxes as well as more complex enhancements such as templates and datagrids.
+
+'''Contents'''
+
+ 1. [wiki:documentation/RML/Elements Elements] - The basic RML element.
+ 1. [wiki:documentation/RML/Documents Documents] - The HEAD and BODY of a document.
+ 1. [wiki:documentation/RML/Images Images] - Referencing images.
+ 1. [wiki:documentation/RML/StyleSheets Style Sheets] - Adding style to RML documents.
+ 1. [wiki:documentation/RML/Forms Forms] - User-input forms.
+ 1. [wiki:documentation/RML/Controls Controls] - Tabsets and window handles.
+ 1. [wiki:documentation/RML/DataDisplay Data Display] - Data grids and data selects.
+ 1. [wiki:documentation/RML/Templates Templates] - Making all your windows look consistent.
+ 1. [wiki:documentation/RML/Events Events] - Mouse clicks, movement, key presses, text entry.
+
+'''Appendix'''
+ a. [wiki:documentation/RML/ElementIndex Element index]
+ a. [wiki:documentation/RML/HTML4StyleSheet HTML4 style sheet]

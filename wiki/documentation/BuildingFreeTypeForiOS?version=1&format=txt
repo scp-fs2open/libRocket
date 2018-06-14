@@ -1,0 +1,5 @@
+= Building FreeType for iOS =
+
+The only dependencies libRocket has is on the [http://www.freetype.org/ FreeType] library. The library has build configurations for most platforms, but unfortunately not iOS. This document describes how to build libfreetype.a as a universal binary for iOS and the Mac (i386, x86_64, arm6, arm7).
+
+NOTE: You can download a prebuilt version of these libraries from the [/download download] section.

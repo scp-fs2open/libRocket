@@ -1,0 +1,24 @@
+= Differences between Python and Lua =
+
+== Proxy Tables ==
+See [wiki:documentation/LuaManual/ProxyTables this wiki page] for more information. The general idea is that because Lua doesn't expose a way to iterate over a table, you must call ''proxy:GetTable()'' to get a true table that is able to be iterated over. Otherwise, access to individual items is exactly the same as Python. Not all functions that would return a table return a ''proxy table'', and every single one that does is outlined on the [wiki:documentation/LuaManual/ProxyTables proxy tables page].
+
+== Constructors ==
+Instead of looking like C with `local vec = Vector2i(3,5)`, types with constructors have a function named ''new'' that is not called from a specific object, but returns a new item with that type. The correct way is to do `local vec = Vector2i.new(3,5)`.
+
+== Semantics/Syntax ==
+Of course, Lua is going to look different from Python because of how the language is written. Where Python  uses the 'dot' notation for both calling functions and property access, it is different for Lua. Method calls in Lua use the 'colon' notation, and property access is done with the 'dot' notation. When looking at the [wiki:documentation/LuaManual/APIReference API reference], almost everything is called from an actual object. Exceptions to that rule are constructors (''new''), ''Element.As'', ''Log'', ''DocumentFocus'', and the ''rocket'' table.
+
+Again, referencing the [wiki:documentation/LuaManual/APIReference API reference], anything with a type to the left is a method and is called with the 'colon' notation from an object. Example, defining an inline event: `onclick="document:Focus()"`. Anything in the API reference with NO type to the left, and a type in parenthesis to the right is a property and will be called with the 'dot' notation from an object. Building on the previous example defining an inline event: `onclick="document:Focus() print(element.id)"`
+
+As shown in the example with ''Focus'' and ''print'', things in inline events do not have to be separated by semicolons like they do in Python, though it is not incorrect to do so.
+
+== Specific type and function differences ==
+[wiki:documentation/LuaManual/Colours Colourb and Colourf] in Lua have a ''rgba'' property, where Python does not.
+
+Lua has no classes, and casting from one type to another is important. Casting an ''Element'' to one of its child classes is proved through the ''Element.As'' table. To convert an ''Element'' named ''ele'' to a child type (in this case, ''Document'') looks like `local doc = Element.As.Document(ele)`. No casting functionality is provided for other types.
+
+The ''Log'' type/function is not defined in the ''rocket'' table like it is in Python. To print to the Log explicitly, you must call ''Log.Message''. The global Lua function 'print' has been adapted to output to the Log, and otherwise acts the same as the vanilla "print" function.
+
+== Scope ==
+The scope of functions declared anywhere is global, where in Python scripts in .rml files have their own environment. Because of this, beware of functions having the same name. To avoid this, put the functions in a table named after the file it is in (or any other unique name) or make Lua modules for the files (not available in Lua 5.2).

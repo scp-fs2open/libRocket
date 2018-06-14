@@ -1,0 +1,8 @@
+= Loading fonts =
+
+The ''rocket'' table in Lua exposes the ''LoadFontFace()'' function for loading a supported font file from Lua. The function takes a single string as a parameter, the file name of the font to load.
+
+{{{
+rocket:LoadFontFace("../assets/Delicious-Roman.ttf")
+rocket:LoadFontFace("../assets/Delicious-Bold.ttf")
+}}}

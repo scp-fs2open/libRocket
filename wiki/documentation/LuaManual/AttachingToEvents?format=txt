@@ -1,0 +1,61 @@
+= Attaching To Events =
+
+
+== Statically in RML ==
+The easiest way to attach to events with Lua is to write your code directly into the RML files, using the on* attributes. When the event is fired three local variables are set up, ''document'', ''event'' and ''element''.
+
+||[wiki:documentation/LuaManual/Elements element]||The element that is currently being processed||
+||[wiki:documentation/LuaManual/Documents document]||The document the element that is currently being processed belongs to||
+||[wiki:documentation/LuaManual/Events event]||The event that is currently being processed||
+
+Example:
+{{{
+<button onclick="print('Clicked!')"/>
+}}}
+
+All standard Lua semantics apply to inline event scripts. You can have multiple statements on one line separated by a space or a semicolon.
+
+Example:
+{{{
+<button onclick="print('Line 1');print('Line 2') print('Line 3')"/>
+}}}
+
+
+== Dynamically from Lua Code ==
+
+The Lua version of AddEventListener is modeled directly on Javascript. This allows you to bind any callable Lua object (free function or method) or string to an event.
+
+Method 1:
+{{{
+element = document.GetElementById('button')
+element.AddEventListener('click', "print('Line 1');print('Line 2') print('Line 3')", true)
+}}}
+
+Method 2:
+{{{
+function OnClick()
+  local i = 0
+  while i < 10 do
+    print('Line ' .. i)
+    i = i + 1
+  end
+end
+
+element = document.GetElementById('button')
+element.AddEventListener('click', OnClick, true)
+}}}
+
+The same rules for inline event scripts apply when a string is passed as the second argument. 
+
+However, if a function is passed in, then there is one caveat. If the function requires one of the local variables (event,element,document), then that variable ''must'' be in the correct position in the parameters list. The order is the order in the previous sentence: ''event'' first, ''element'' second, ''document'' third. If you only need ''event'', then you can have the function only take one argument. If you need only ''document'', then you must have the other two parameter slots before the document parameter. And, because it is in Lua, they may have any name. 
+
+{{{
+--a function needing only event
+function printEvent(event) print(event) end
+
+--a function needing only element, and wanting to use its own name
+function printElement(_, invader) print(invader) end
+
+--a function needing only document, but naming the other arguments just in case they are needed later
+function printDocument(event,element,document) print(document) end
+}}}

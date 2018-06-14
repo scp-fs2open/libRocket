@@ -1,0 +1,9 @@
+[[PageOutline(1-5, Contents)]]
+= RML Images =
+
+== IMG Element ==
+The ''IMG'' element is used to include images in the document.
+
+''Attributes''[[br]]
+'''src = [wiki:documentation/Glossary#URI uri]''' [wiki:documentation/Glossary#CaseInformation (CT)]
+  The location of the image.

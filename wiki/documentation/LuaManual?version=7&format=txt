@@ -1,0 +1,27 @@
+This is a work in progress.
+
+= Lua Manual =
+
+The Lua interface to Rocket has been designed to resemble Javascript as closely as possible. Due the nature of the language, this is more possible in Lua than C++. 
+
+The goal of the Lua interface with regards to the existing Python interface is to be able to have questions about either Python or Lua, and besides syntax, they have the same answers or solutions. The Python interface came first, and due to this, the Lua interface is based heavily off of the Python interface. It is easy to notice that the documentation looks almost exactly the same, but with the words Lua and Python interchanged. If you have read through the Python manual before, then the differences between Lua and Python will be highlighted on a separate page.
+
+The functionality of Rocket is described fully in the [wiki:documentation/C++Manual C++ Manual]; this manual defines the Lua interface to the Rocket objects described there. Not all aspects of Rocket are accessible from Lua; for example, custom decorators can only be created in C++. However the vast majority is accessible, enabling you to easily and efficiently develop the functionality of your documents.
+
+== Integrating Lua ==
+ 
+ 1. [wiki:documentation/LuaManual/Overview Overview]
+ 1. [wiki:documentation/LuaManual/EmbeddingScript Embedding script]
+ 1. [wiki:documentation/LuaManual/Fonts Loading fonts]
+ 1. [wiki:documentation/LuaManual/AttachingToEvents Attaching to Events]
+
+== Interfaces ==
+
+ 1. [wiki:documentation/LuaManual/Elements Elements]
+ 1. [wiki:documentation/LuaManual/Documents Documents]
+ 1. [wiki:documentation/LuaManual/Contexts Contexts]
+ 1. [wiki:documentation/LuaManual/Events Events]
+
+== Appendix ==
+
+ a. [wiki:documentation/LuaManual/APIReference API reference]

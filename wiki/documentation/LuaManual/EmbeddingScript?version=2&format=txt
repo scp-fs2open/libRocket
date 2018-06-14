@@ -1,0 +1,70 @@
+[[PageOutline(1-5, Contents)]]
+= Embedding Lua script =
+
+When using the Lua plugin, Lua code can be embedded into RML files. Inline responses to events are executed as Lua code. Functions, structures and variables can be declared or included with the <script> tag, then referenced from the inline code.
+
+== Inline event responses ==
+
+The Lua plugin installs an event listener instancer to execute inline event responses as Lua code. For example, in the following sample the element will run the print command when it is clicked:
+
+{{{
+<button onclick="print 'Hello world!'" />
+}}}
+
+Separate lines can be separated by semi-colons like Javascript, or just by a space like Lua.
+
+{{{
+<button onclick="print 'Hello'; print 'world!'" />
+}}}
+The only limitation is that string literals must be in single quotes (' ') rather than double quotes (" ") because of the way that double quotes signal an end of RML attributes.
+
+Three local variables are accessible to inline event handlers. These are:
+ * ''event'': The event currently being processed (ie, the event that triggered the handler).
+ * ''element'': The element currently responding to the event.
+ * ''document'': The owner document of the current element.
+
+{{{
+<button onclick="print element.tag_name" />
+<button onclick="print event.mouse_x .. ', ' .. event.mouse_y" />
+}}}
+
+See the [wiki:documentation/LuaManual/Elements element], [wiki:documentation/LuaManual/Documents document] and [wiki:documentation/LuaManual/Events event] documentation for their full Lua interfaces.
+
+== Embedding Lua into RML ==
+
+Lua code can be embedded into an RML document with the <script> tag. Similarly to Javascript, the script can be included from a separate file with the ''src'' attribute, or otherwise declared inline as loose content within the <script> tag. Any code embedded in this manner will be compiled with the document and will be available to inline event handlers in the RML. For example, the following document declares a Lua function in the <script> tag and calls it from an element's ''onclick'' hander.
+
+{{{
+<rml>
+	<head>
+		<script>
+function Test()
+	print 'Hello world!'
+end
+		</script>
+	</head>
+	<body>
+		<button onclick="Test()">Continue</button>
+	</body>
+</rml>
+}}}
+
+The following sample uses the ''test.lua'' file instead of declaring the script inline (it is assumed the Lua file declares a ''Test()'' function).
+
+{{{
+<rml>
+	<head>
+		<script src="test.lua">
+	</head>
+	<body>
+		<button onclick="Test()">Continue</button>
+	</body>
+</rml>
+}}}
+
+A document can include multiple <script> tags.
+
+== Scope ==
+The scope of the functions and variables created in the RML files is global. To avoid two functions or variables from having the same name, make sure to put them in a table that is uniquely named. In LuaInvaders, the table is named after the file, to see an example. Alternatively, be incredibly careful with naming everything.
+
+Because they are global, it is possible to call functions defined in other RML files, or any loose .lua files that have been loaded.

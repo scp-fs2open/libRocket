@@ -1,0 +1,8 @@
+= Drag Tutorial =
+
+libRocket has a few ways of implementing dragging of elements, such as:
+ * the <handle> tag, as used by the documents in the sample applications
+ * setting an element's 'drag' property to 'drag' or 'drag-drop' and listening to the raw drag events ('dragstart', 'dragend', etc) and animating element positions manually
+ * setting an element's 'drag' property to 'clone'
+
+This tutorial shows how to use 'drag: clone;' to implement dragging items between multiple inventory windows.

@@ -1,0 +1,24 @@
+= Elements =
+
+Rocket has no prior understanding of XML elements other than the built-in [wiki:documentation/RML/ElementIndex element types]. 
+
+When parsing a tag Rocket will look up custom elements associated with the tag name and fall back to a generic element. Very few custom elements are required as most of the power in Rocket comes from styling elements with [wiki:documentation/RCSS RCSS] to produce the desired layout.
+
+The user is encouraged to follow standard HTML guidelines where possible to improve readability across the community. For more information on setting up Rocket to emulate HTML4 see [wiki:documentation/RML/HTML4StyleSheet Appendix: HTML4 Style Sheet].
+
+== Global Attributes ==
+
+Elements have a base set of attributes that are common to across all types.
+
+''Attributes''[[br]]
+'''id = [wiki:documentation/Glossary#BasicTypes id]''' [wiki:documentation/Glossary#CaseInformation (CI)]
+  The unique identifier for the element in this document.
+
+'''class = [wiki:documentation/Glossary#BasicTypes cdata]''' [wiki:documentation/Glossary#CaseInformation (CI)]
+  Assigns a class name or set of class names to an element. Any number of elements may be assigned the same class name or names. Multiple class names must be separated by white space characters. See [wiki:documentation/RCSS RCSS]
+
+'''style = [wiki:documentation/Glossary#BasicTypes cdata]''' [wiki:documentation/Glossary#CaseInformation (CS)]
+  Specifies inline style information for the element. See [wiki:documentation/RCSS RCSS]
+
+'''on* events = [wiki:documentation/Glossary#BasicTypes cdata]''' [wiki:documentation/Glossary#CaseInformation (CS)]
+  Event bindings. See [wiki:documentation/RML/Events Events]

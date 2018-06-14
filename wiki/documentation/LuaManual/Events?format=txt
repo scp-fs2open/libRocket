@@ -1,0 +1,26 @@
+[[PageOutline(1-5, Contents)]]
+= Events =
+
+When an event is sent to Lua, three local variables are set up in the context of the called function.
+  ''event'' - The event object[[br]]
+  ''document'' - The document in which the event fired[[br]]
+  ''element'' - The element context in which the event fired[[br]]
+
+== Event Interface ==
+
+=== Properties ===
+
+|| '''Lua property''' || '''Brief description''' || '''Equivalent C++ method''' ||
+|| ''current_element'' || The current element in the event propagation. || ''GetCurrentElement()'' ||
+|| ''target_element'' || The element the event was originally targeted at. || ''GetTargetElement()'' ||
+|| ''type'' || The type of the event. || ''GetType()'' ||
+|| ''parameters'' || Dictionary style container of all the parameters in the event || ''GetParameters()'' ||
+
+=== Methods ===
+
+Events have a single Lua method, ''StopPropagation()'', which interrupts the event propagation if allowed by the event (ie, if it is interruptible).
+
+
+=== Event Parameters ===
+
+The ''Event.parameters'' property is implemented as as a [wiki:documentation/LuaManual/ProxyTables proxy table] in regards to the C++ interface with Lua; indexed by string only.

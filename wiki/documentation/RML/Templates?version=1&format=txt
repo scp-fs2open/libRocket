@@ -1,0 +1,20 @@
+= RML Templates =
+
+== TEMPLATE Element ==
+
+The ''TEMPLATE'' element is used in place of the ''RML'' element when defining a template.
+
+''Attributes''[[br]]
+'''name = [wiki:documentation/Glossary#BasicTypes cdata]''' [wiki:documentation/Glossary#CaseInformation (CI)]
+  The name of the template. Must be unique. Is used by other RML documents to reference the template.
+
+'''content = [wiki:documentation/Glossary#BasicTypes idref]''' [wiki:documentation/Glossary#CaseInformation (CI)]
+  The id of the tag that the content will be put into.
+
+== BODY Element ==
+
+The ''BODY'' element can contain a link to a template.
+
+'''Attributes''[[br]]
+'''template = [wiki:documentation/Glossary#BasicTypes cdata]''' [wiki:documentation/Glossary#CaseInformation (CI)]
+  The name of the template to use. All child elements under the ''BODY'' element will be loaded into the template.

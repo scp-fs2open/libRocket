@@ -1,0 +1,365 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title> Trac Reports - libRocket</title>
+<link rel="start" href="http://librocket.com/wiki"/><link rel="search" href="http://librocket.com/search"/><link rel="help" href="TracGuide.html"/><link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css"/><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css"/><link rel="icon" href="../chrome/site/trac.ico" type="image/x-icon"/><link rel="shortcut icon" href="../chrome/site/trac.ico" type="image/x-icon"/><link rel="alternate" href="TracReports%3Fformat=txt" title="Plain Text" type="text/x-trac-wiki"/><style type="text/css">
+</style>
+<script type="text/javascript" src="../chrome/common/js/trac.js"></script>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/base.css"></link>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/content.css"></link>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/discussion.css"></link>
+<style>
+		div.wiki img
+		{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+<div class="widthshell-width">
+<div class="widthshell-minwidth">
+<div class="widthshell-layout">
+<div class="widthshell-container">
+<div class="widthshell-content">
+<div id="background">
+<div style="float:right;width:160px;height:600px;margin-top:110px;margin-right:20px;">
+<script type="text/javascript"><!--
+                        google_ad_client = "pub-5872045433470541";
+                        /* Default, Wide Skyscraper */
+                        google_ad_slot = "3956485030";
+                        google_ad_width = 160;
+                        google_ad_height = 600;
+                //-->
+                </script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+</div>
+<div class="shell">
+<div class="stars">
+<img id="star-1" src="../chrome/site/images/star-red-medium.gif" width="22px" height="22px" alt="Star"/>
+<img id="star-2" src="../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-3" src="../chrome/site/images/star-red-small.gif" width="11px" height="11px" alt="Star"/>
+<img id="star-4" src="../chrome/site/images/star-orange-small.gif" width="16px" height="16px" alt="Star"/>
+<img id="star-5" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-6" src="../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-7" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-8" src="../chrome/site/images/star-red-big.gif" width="33px" height="33px" alt="Star"/>
+<img id="star-9" src="../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-10" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-11" src="../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-12" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+</div>
+<div id="header">
+<a href="documentation.html"><img id="title" src="../chrome/site/images/title.gif" width="256px" height="49px" alt="Rocket"/></a>
+<ul class="top-level-nav">
+<li><a href="frontend/features.html">features.</a></li>
+
+<li><a href="http://github.com/lloydw/librocket">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="documentation.html">developer.</a></li>
+</ul>
+<img id="trail" src="../chrome/site/images/trail-content.gif" width="72px" height="115px" alt="Rocket Trail"/>
+<a href="documentation.html"><img id="rocket" src="../chrome/site/images/rocket-content.gif" width="126px" height="139px" alt="Rocket"/></a>
+</div>
+</div>
+</div>
+<div class="shell">
+<div id="banner">
+<div class="stars">
+<img id="star-13" src="../chrome/site/images/star-black-big.gif" width="49px" height="50px" alt="Star"/>
+<img id="star-14" src="../chrome/site/images/star-black-medium.gif" width="23px" height="23px" alt="Star"/>
+<img id="star-15" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-16" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-17" src="../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-18" src="../chrome/site/images/star-black-tiny.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-19" src="../chrome/site/images/star-black-tiny.gif" width="9px" height="9px" alt="Star"/>
+<img id="star-20" src="../chrome/site/images/star-black-tiny.gif" width="10px" height="10px" alt="Star"/>
+<img id="star-21" src="../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-22" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-23" src="../chrome/site/images/star-black-small.gif" width="13px" height="13px" alt="Star"/>
+</div>
+<img id="banner-bottom-left" src="../chrome/site/images/banner-bottom-left.gif" width="20px" height="19px" alt="Bottom left banner image"/>
+<img id="banner-bottom-right" src="../chrome/site/images/banner-bottom-right.gif" width="20px" height="19px" alt="Bottom right banner image"/>
+<div id="login"><a href="http://librocket.com/login">Login</a> | <a "http://librocket.com/wiki/href">Register</a></div>
+<div id="breadcrumbs">
+<a href="TracReports.html">TracReports</a></div>
+<div id="title"> Trac Reports</div>
+<div id="second-level-nav">
+<span class="nav-item active"><a href="documentation.html">Documentation</a></span>
+<span class="nav-item"><a accesskey="4" href="http://librocket.com/search">Search</a></span>
+</div>
+</div>
+<div id="content-container">
+<div id="content" class="wiki">
+<div class="wikipage">
+<div id="searchable"><h1 id="TracReports">Trac Reports</h1>
+<p>
+</p><div class="wiki-toc"><h4>Table of Contents</h4><ul><li><a href="TracGuide.html">Index</a></li><li><a href="TracInstall.html">Installation</a></li><li><a href="TracUpgrade.html">Upgrading</a></li><li><a href="TracIni.html">Configuration</a></li><li><a href="TracAdmin.html">Administration</a></li><li><a href="TracBackup.html">Backup</a></li><li><a href="TracLogging.html">Logging</a></li><li><a href="TracPermissions.html">Permissions</a></li><li><a href="TracWiki.html">The Wiki</a></li><li><a href="WikiFormatting.html">Wiki Formatting</a></li><li><a href="TracTimeline.html">Timeline</a></li><li><a href="TracBrowser.html">Repository Browser</a></li><li><a href="TracChangeset.html">Changesets</a></li><li><a href="TracRoadmap.html">Roadmap</a></li><li><a href="TracTickets.html">Tickets</a></li><li><a href="TracQuery.html">Ticket Queries</a></li><li class="active"><a href="TracReports.html">Reports</a></li><li><a href="TracRss.html">RSS Support</a></li><li><a href="TracNotification.html">Notification</a></li><li><a href="TracInterfaceCustomization.html">Customization</a></li><li><a href="TracPlugins.html">Plugins</a></li></ul></div><p>
+</p>
+<p>
+The Trac reports module provides a simple, yet powerful reporting facility
+to present information about tickets in the Trac database.
+</p>
+<p>
+Rather than have its own report definition format, <a class="wiki" href="TracReports.html">TracReports</a> relies on standard SQL
+<tt>SELECT</tt> statements for custom report definition.
+</p>
+<blockquote>
+<p>
+<strong>Note:</strong> <i>The report module is being phased out in its current form because it seriously limits the ability of the Trac team to make adjustments to the underlying database schema. We believe that the <a class="wiki" href="TracQuery.html">query module</a> is a good replacement that provides more flexibility and better usability. While there are certain reports that cannot yet be handled by the query module, we intend to further enhance it so that at some point the reports module can be completely removed. This also means that there will be no major enhancements to the report module anymore.</i>
+</p>
+</blockquote>
+<blockquote>
+<p>
+<i>You can already completely replace the reports module by the query module simply by disabling the former in <a class="wiki" href="TracIni.html">trac.ini</a>:</i>
+</p>
+<pre class="wiki">  [components]
+  trac.ticket.report.* = disabled
+</pre><p>
+<i>This will make the query module the default handler for the “View Tickets” navigation item. We encourage you to try this configuration and report back what kind of features of reports you are missing, if any.</i>
+</p>
+</blockquote>
+<p>
+A report consists of these basic parts:
+</p>
+<ul><li><strong>ID</strong> -- Unique (sequential) identifier
+</li><li><strong>Title</strong> -- Descriptive title
+</li><li><strong>Description</strong> -- A brief description of the report, in <a class="wiki" href="WikiFormatting.html">WikiFormatting</a> text.
+</li><li><strong>Report Body</strong> -- List of results from report query, formatted according to the methods described below.
+</li><li><strong>Footer</strong> -- Links to alternative download formats for this report.
+</li></ul><h2 id="ChangingSortOrder">Changing Sort Order</h2>
+<p>
+Simple reports - ungrouped reports to be specific - can be changed to be sorted by any column simply by clicking the column header.
+</p>
+<p>
+If a column header is a hyperlink (red), click the column you would like to sort by. Clicking the same header again reverses the order.
+</p>
+<h2 id="AlternativeDownloadFormats">Alternative Download Formats</h2>
+<p>
+Aside from the default HTML view, reports can also be exported in a number of alternative formats.
+At the bottom of the report page, you will find a list of available data formats. Click the desired link to
+download the alternative report format.
+</p>
+<h3 id="Comma-delimited-CSVCommaSeparatedValues">Comma-delimited - CSV (Comma Separated Values)</h3>
+<p>
+Export the report as plain text, each row on its own line, columns separated by a single comma (',').
+<strong>Note:</strong> Carriage returns, line feeds, and commas are stripped from column data to preserve the CSV structure.
+</p>
+<h3 id="Tab-delimited">Tab-delimited</h3>
+<p>
+Like above, but uses tabs (\t) instead of comma.
+</p>
+<h3 id="RSS-XMLContentSyndication">RSS - XML Content Syndication</h3>
+<p>
+All reports support syndication using XML/RSS 2.0. To subscribe to an RSS feed, click the orange 'XML' icon at the bottom of the page. See <a class="wiki" href="TracRss.html">TracRss</a> for general information on RSS support in Trac.
+</p>
+<hr/>
+<h2 id="CreatingCustomReports">Creating Custom Reports</h2>
+<p>
+<i>Creating a custom report requires a comfortable knowledge of SQL.</i>
+</p>
+<p>
+A report is basically a single named SQL query, executed and presented by
+Trac. Reports can be viewed and created from a custom SQL expression directly
+in from the web interface.
+</p>
+<p>
+Typically, a report consists of a SELECT-expression from the 'ticket' table,
+using the available columns and sorting the way you want it.
+</p>
+<h2 id="Ticketcolumns">Ticket columns</h2>
+<p>
+The <i>ticket</i> table has the following columns:
+</p>
+<ul><li>id
+</li><li>time
+</li><li>changetime
+</li><li>component
+</li><li>severity
+</li><li>priority
+</li><li>owner
+</li><li>reporter
+</li><li>cc
+</li><li>version
+</li><li>milestone
+</li><li>status
+</li><li>resolution
+</li><li>summary
+</li><li>description
+</li></ul><p>
+See <a class="wiki" href="TracTickets.html">TracTickets</a> for a detailed description of the column fields.
+</p>
+<p>
+<strong>all active tickets, sorted by priority and time</strong>
+</p>
+<p>
+<strong>Example:</strong> <i>All active tickets, sorted by priority and time</i>
+</p>
+<pre class="wiki">SELECT id AS ticket, status, severity, priority, owner, 
+       time as created, summary FROM ticket 
+  WHERE status IN ('new', 'assigned', 'reopened')
+  ORDER BY priority, time
+</pre><hr/>
+<h2 id="AdvancedReports:DynamicVariables">Advanced Reports: Dynamic Variables</h2>
+<p>
+For more flexible reports, Trac supports the use of <i>dynamic variables</i> in report SQL statements.
+In short, dynamic variables are <i>special</i> strings that are replaced by custom data before query execution.
+</p>
+<h3 id="UsingVariablesinaQuery">Using Variables in a Query</h3>
+<p>
+The syntax for dynamic variables is simple, any upper case word beginning with '$' is considered a variable.
+</p>
+<p>
+Example:
+</p>
+<pre class="wiki">SELECT id AS ticket,summary FROM ticket WHERE priority='$PRIORITY'
+</pre><p>
+To assign a value to $PRIORITY when viewing the report, you must define it as an argument in the report URL, leaving out the the leading '$'.
+</p>
+<p>
+Example:
+</p>
+<pre class="wiki"> http://projects.edgewall.com/trac/reports/14?PRIORITY=high
+</pre><p>
+To use multiple variables, separate them with an '&amp;'.
+</p>
+<p>
+Example:
+</p>
+<pre class="wiki"> http://projects.edgewall.com/trac/reports/14?PRIORITY=high&amp;SEVERITY=critical
+</pre><h3 id="SpecialConstantVariables">Special/Constant Variables</h3>
+<p>
+There is one <i>magic</i> dynamic variable to allow practical reports, its value automatically set without having to change the URL.
+</p>
+<ul><li>$USER -- Username of logged in user.
+</li></ul><p>
+Example (<i>List all tickets assigned to me</i>):
+</p>
+<pre class="wiki">SELECT id AS ticket,summary FROM ticket WHERE owner='$USER'
+</pre><hr/>
+<h2 id="AdvancedReports:CustomFormatting">Advanced Reports: Custom Formatting</h2>
+<p>
+Trac is also capable of more advanced reports, including custom layouts,
+result grouping and user-defined CSS styles. To create such reports, we'll use
+specialized SQL statements to control the output of the Trac report engine.
+</p>
+<h2 id="SpecialColumns">Special Columns</h2>
+<p>
+To format reports, <a class="wiki" href="TracReports.html">TracReports</a> looks for 'magic' column names in the query
+result. These 'magic' names are processed and affect the layout and style of the
+final report.
+</p>
+<h3 id="Automaticallyformattedcolumns">Automatically formatted columns</h3>
+<ul><li><strong>ticket</strong> -- Ticket ID number. Becomes a hyperlink to that ticket.
+</li><li><strong>created, modified, date, time</strong> -- Format cell as a date and/or time.
+</li></ul><ul><li><strong>description</strong> -- Ticket description field, parsed through the wiki engine.
+</li></ul><p>
+<strong>Example:</strong>
+</p>
+<pre class="wiki">SELECT id as ticket, created, status, summary FROM ticket 
+</pre><h3 id="Customformattingcolumns">Custom formatting columns</h3>
+<p>
+Columns whose names begin and end with 2 underscores (Example: <strong><tt>__color__</tt></strong>) are
+assumed to be <i>formatting hints</i>, affecting the appearance of the row.
+</p>
+<ul><li><strong><tt>__group__</tt></strong> -- Group results based on values in this column. Each group will have its own header and table.
+</li><li><strong><tt>__color__</tt></strong> -- Should be a numeric value ranging from 1 to 5 to select a pre-defined row color. Typically used to color rows by issue priority.
+</li><li><strong><tt>__style__</tt></strong> -- A custom CSS style expression to use for the current row.
+</li></ul><p>
+<strong>Example:</strong> <i>List active tickets, grouped by milestone, colored by priority</i>
+</p>
+<pre class="wiki">SELECT p.value AS __color__,
+     t.milestone AS __group__,
+     (CASE owner WHEN 'daniel' THEN 'font-weight: bold; background: red;' ELSE '' END) AS __style__,
+       t.id AS ticket, summary
+  FROM ticket t,enum p
+  WHERE t.status IN ('new', 'assigned', 'reopened') 
+    AND p.name=t.priority AND p.type='priority'
+  ORDER BY t.milestone, p.value, t.severity, t.time
+</pre><p>
+<strong>Note:</strong> A table join is used to match <i>ticket</i> priorities with their
+numeric representation from the <i>enum</i> table.
+</p>
+<h3 id="Changinglayoutofreportrows">Changing layout of report rows</h3>
+<p>
+By default, all columns on each row are display on a single row in the HTML
+report, possibly formatted according to the descriptions above. However, it's
+also possible to create multi-line report entries.
+</p>
+<ul><li><strong><tt>column_</tt></strong> -- <i>Break row after this</i>. By appending an underscore ('_') to the column name, the remaining columns will be be continued on a second line.
+</li></ul><ul><li><strong><tt>_column_</tt></strong> -- <i>Full row</i>. By adding an underscore ('_') both at the beginning and the end of a column name, the data will be shown on a separate row.
+</li></ul><ul><li><strong><tt>_column</tt></strong> -- <i>Hide data</i>. Prepending an underscore ('_') to a column name instructs Trac to hide the contents from the HTML output. This is useful for information to be visible only if downloaded in other formats (like CSV or RSS/XML).
+</li></ul><p>
+<strong>Example:</strong> <i>List active tickets, grouped by milestone, colored by priority, with description and multi-line layout</i>
+</p>
+<pre class="wiki">SELECT p.value AS __color__,
+       t.milestone AS __group__,
+       (CASE owner 
+          WHEN 'daniel' THEN 'font-weight: bold; background: red;' 
+          ELSE '' END) AS __style__,
+       t.id AS ticket, summary AS summary_,             -- ## Break line here
+       component,version, severity, milestone, status, owner,
+       time AS created, changetime AS modified,         -- ## Dates are formatted
+       description AS _description_,                    -- ## Uses a full row
+       changetime AS _changetime, reporter AS _reporter -- ## Hidden from HTML output
+  FROM ticket t,enum p
+  WHERE t.status IN ('new', 'assigned', 'reopened') 
+    AND p.name=t.priority AND p.type='priority'
+  ORDER BY t.milestone, p.value, t.severity, t.time
+</pre><h3 id="Reportingoncustomfields">Reporting on custom fields</h3>
+<p>
+If you have added custom fields to your tickets (experimental feature in v0.8, see <a class="wiki" href="TracTicketsCustomFields.html">TracTicketsCustomFields</a>), you can write a SQL query to cover them. You'll need to make a join on the ticket_custom table, but this isn't especially easy.
+</p>
+<p>
+If you have tickets in the database <i>before</i> you declare the extra fields in trac.ini, there will be no associated data in the ticket_custom table. To get around this, use SQL's "LEFT OUTER JOIN" clauses. See TracIniReportCustomFieldSample for some examples.
+</p>
+<hr/>
+<p>
+See also: <a class="wiki" href="TracTickets.html">TracTickets</a>, <a class="wiki" href="TracQuery.html">TracQuery</a>, <a class="wiki" href="TracGuide.html">TracGuide</a>
+</p>
+</div>
+</div>
+<script type="text/javascript">
+   addHeadingLinks(document.getElementById("searchable"), "Link to this section");
+  </script>
+</div>
+</div>
+</div>
+<div id="footer">
+<a id="tracpowered" href="http://trac.edgewall.org/">
+<img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"/>
+</a>
+<p class="left">
+Powered by <a href="http://librocket.com/about"><strong>Trac </strong></a><br/>By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+</p>
+<p id="copyright" class="left clear">
+Copyright &copy; 2007-2010 Code Point Ltd, Shift Technology Ltd.
+</p>
+<ul class="top-level-nav">
+<li><a href="frontend/features.html">features.</a></li>
+<li><a "http://librocket.com/wiki/href">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="documentation.html">developer.</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3379591-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+</body>
+</html>
+

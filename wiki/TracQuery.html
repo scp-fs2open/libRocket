@@ -1,0 +1,258 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title> Trac Query - libRocket</title>
+<link rel="start" href="http://librocket.com/wiki"/><link rel="search" href="http://librocket.com/search"/><link rel="help" href="TracGuide.html"/><link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css"/><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css"/><link rel="icon" href="../chrome/site/trac.ico" type="image/x-icon"/><link rel="shortcut icon" href="../chrome/site/trac.ico" type="image/x-icon"/><link rel="alternate" href="TracQuery%3Fformat=txt" title="Plain Text" type="text/x-trac-wiki"/><style type="text/css">
+</style>
+<script type="text/javascript" src="../chrome/common/js/trac.js"></script>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/base.css"></link>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/content.css"></link>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/discussion.css"></link>
+<style>
+		div.wiki img
+		{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+<div class="widthshell-width">
+<div class="widthshell-minwidth">
+<div class="widthshell-layout">
+<div class="widthshell-container">
+<div class="widthshell-content">
+<div id="background">
+<div style="float:right;width:160px;height:600px;margin-top:110px;margin-right:20px;">
+<script type="text/javascript"><!--
+                        google_ad_client = "pub-5872045433470541";
+                        /* Default, Wide Skyscraper */
+                        google_ad_slot = "3956485030";
+                        google_ad_width = 160;
+                        google_ad_height = 600;
+                //-->
+                </script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+</div>
+<div class="shell">
+<div class="stars">
+<img id="star-1" src="../chrome/site/images/star-red-medium.gif" width="22px" height="22px" alt="Star"/>
+<img id="star-2" src="../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-3" src="../chrome/site/images/star-red-small.gif" width="11px" height="11px" alt="Star"/>
+<img id="star-4" src="../chrome/site/images/star-orange-small.gif" width="16px" height="16px" alt="Star"/>
+<img id="star-5" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-6" src="../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-7" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-8" src="../chrome/site/images/star-red-big.gif" width="33px" height="33px" alt="Star"/>
+<img id="star-9" src="../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-10" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-11" src="../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-12" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+</div>
+<div id="header">
+<a href="documentation.html"><img id="title" src="../chrome/site/images/title.gif" width="256px" height="49px" alt="Rocket"/></a>
+<ul class="top-level-nav">
+<li><a href="frontend/features.html">features.</a></li>
+
+<li><a href="http://github.com/lloydw/librocket">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="documentation.html">developer.</a></li>
+</ul>
+<img id="trail" src="../chrome/site/images/trail-content.gif" width="72px" height="115px" alt="Rocket Trail"/>
+<a href="documentation.html"><img id="rocket" src="../chrome/site/images/rocket-content.gif" width="126px" height="139px" alt="Rocket"/></a>
+</div>
+</div>
+</div>
+<div class="shell">
+<div id="banner">
+<div class="stars">
+<img id="star-13" src="../chrome/site/images/star-black-big.gif" width="49px" height="50px" alt="Star"/>
+<img id="star-14" src="../chrome/site/images/star-black-medium.gif" width="23px" height="23px" alt="Star"/>
+<img id="star-15" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-16" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-17" src="../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-18" src="../chrome/site/images/star-black-tiny.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-19" src="../chrome/site/images/star-black-tiny.gif" width="9px" height="9px" alt="Star"/>
+<img id="star-20" src="../chrome/site/images/star-black-tiny.gif" width="10px" height="10px" alt="Star"/>
+<img id="star-21" src="../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-22" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-23" src="../chrome/site/images/star-black-small.gif" width="13px" height="13px" alt="Star"/>
+</div>
+<img id="banner-bottom-left" src="../chrome/site/images/banner-bottom-left.gif" width="20px" height="19px" alt="Bottom left banner image"/>
+<img id="banner-bottom-right" src="../chrome/site/images/banner-bottom-right.gif" width="20px" height="19px" alt="Bottom right banner image"/>
+<div id="login"><a href="http://librocket.com/login">Login</a> | <a "http://librocket.com/wiki/href">Register</a></div>
+<div id="breadcrumbs">
+<a href="TracQuery.html">TracQuery</a></div>
+<div id="title"> Trac Query</div>
+<div id="second-level-nav">
+<span class="nav-item active"><a href="documentation.html">Documentation</a></span>
+<span class="nav-item"><a accesskey="4" href="http://librocket.com/search">Search</a></span>
+</div>
+</div>
+<div id="content-container">
+<div id="content" class="wiki">
+<div class="wikipage">
+<div id="searchable"><h1 id="TracTicketQueries">Trac Ticket Queries</h1>
+<p>
+</p><div class="wiki-toc"><h4>Table of Contents</h4><ul><li><a href="TracGuide.html">Index</a></li><li><a href="TracInstall.html">Installation</a></li><li><a href="TracUpgrade.html">Upgrading</a></li><li><a href="TracIni.html">Configuration</a></li><li><a href="TracAdmin.html">Administration</a></li><li><a href="TracBackup.html">Backup</a></li><li><a href="TracLogging.html">Logging</a></li><li><a href="TracPermissions.html">Permissions</a></li><li><a href="TracWiki.html">The Wiki</a></li><li><a href="WikiFormatting.html">Wiki Formatting</a></li><li><a href="TracTimeline.html">Timeline</a></li><li><a href="TracBrowser.html">Repository Browser</a></li><li><a href="TracChangeset.html">Changesets</a></li><li><a href="TracRoadmap.html">Roadmap</a></li><li><a href="TracTickets.html">Tickets</a></li><li class="active"><a href="TracQuery.html">Ticket Queries</a></li><li><a href="TracReports.html">Reports</a></li><li><a href="TracRss.html">RSS Support</a></li><li><a href="TracNotification.html">Notification</a></li><li><a href="TracInterfaceCustomization.html">Customization</a></li><li><a href="TracPlugins.html">Plugins</a></li></ul></div><p>
+</p>
+<p>
+In addition to <a class="wiki" href="TracReports.html">reports</a>, Trac provides support for <i>custom ticket queries</i>, used to display lists of tickets meeting a specified set of criteria.
+</p>
+<p>
+To configure and execute a custom query, switch to the <i>View Tickets</i> module from the navigation bar, and select the <i>Custom Query</i> link.
+</p>
+<h2 id="Filters">Filters</h2>
+<p>
+When you first go to the query page the default filters will display all open tickets, or if you're logged in it will display open tickets assigned to you. Current filters can be removed by clicking the button to the right with the minus sign on the label. New filters are added from the pulldown list in the bottom-right corner of the filters box. Filters with either a text box or a pulldown menu of options can be added multiple times to perform an <i>or</i> of the criteria.
+</p>
+<p>
+You can use the fields just below the filters box to group the results based on a field, or display the full description for each ticket.
+</p>
+<p>
+Once you've edited your filters click the <i>Update</i> button to refresh your results.
+</p>
+<h2 id="NavigatingTickets">Navigating Tickets</h2>
+<p>
+Clicking on one of the query results will take you to that ticket. You can navigate through the results by clicking the <i>Next Ticket</i> or <i>Previous Ticket</i> links just below the main menu bar, or click the <i>Back to Query</i> link to return to the query page.
+</p>
+<p>
+You can safely edit any of the tickets and continue to navigate through the results using the <i>Next/Previous/Back to Query</i> links after saving your results. When you return to the query <i>any tickets which was edited</i> will be displayed with italicized text. If one of the tickets was edited such that <span style="color: grey">it no longer matches the query criteria </span> the text will also be greyed. Lastly, if <strong>a new ticket matching the query critera has been created</strong>, it will be shown in bold.
+</p>
+<p>
+The query results can be refreshed and cleared of these status indicators by clicking the <i>Update</i> button again.
+</p>
+<h2 id="SavingQueries">Saving Queries</h2>
+<p>
+While Trac does not yet allow saving a named query and somehow making it available in a navigable list, you can save references to queries in Wiki content, as described below.
+</p>
+<h3 id="UsingTracLinks">Using <a class="wiki" href="TracLinks.html">TracLinks</a></h3>
+<p>
+You may want to save some queries so that you can come back to them later. You can do this by making a link to the query from any Wiki page.
+</p>
+<pre class="wiki">[query:status=new|assigned|reopened&amp;version=1.0 Active tickets against 1.0]
+</pre><p>
+Which is displayed as:
+</p>
+<blockquote>
+<p>
+[query:status=new|assigned|reopened&amp;version=1.0 Active tickets against 1.0]
+</p>
+</blockquote>
+<p>
+This uses a very simple query language to specify the criteria (see <a class="wiki" href="TracQuery.html#QueryLanguage">Query Language</a>).
+</p>
+<p>
+Alternatively, you can copy the query string of a query and paste that into the Wiki link, including the leading <tt>?</tt> character:
+</p>
+<pre class="wiki">[query:?status=new&amp;status=assigned&amp;status=reopened&amp;group=owner Assigned tickets by owner]
+</pre><p>
+Which is displayed as:
+</p>
+<blockquote>
+<p>
+[query:?status=new&amp;status=assigned&amp;status=reopened&amp;group=owner Assigned tickets by owner]
+</p>
+</blockquote>
+<h3 id="UsingtheTicketQueryMacro">Using the <tt>[[TicketQuery]]</tt> Macro</h3>
+<p>
+The <tt>[[TicketQuery]]</tt> macro lets you display lists of tickets matching certain criteria anywhere you can use <a class="wiki" href="WikiFormatting.html">WikiFormatting</a>.
+</p>
+<p>
+Example:
+</p>
+<pre class="wiki">[[TicketQuery(version=1.0|2.0&amp;resolution=duplicate)]]
+</pre><p>
+This is displayed as:
+</p>
+<blockquote>
+<p>
+</p><div class="system-message"><strong>Error: Failed to load processor <code>TicketQuery</code></strong><pre>No macro or processor named 'TicketQuery' found</pre></div><p>
+</p>
+</blockquote>
+<p>
+Just like the <a class="wiki" href="TracQuery.html#UsingTracLinks">query: wiki links</a>, the parameter of this macro expects a query string formatted according to the rules of the simple <a class="wiki" href="TracQuery.html#QueryLanguage">ticket query language</a>.
+</p>
+<p>
+A more compact representation without the ticket summaries is also available:
+</p>
+<pre class="wiki">[[TicketQuery(version=1.0|2.0&amp;resolution=duplicate, compact)]]
+</pre><p>
+This is displayed as:
+</p>
+<blockquote>
+<p>
+</p><div class="system-message"><strong>Error: Failed to load processor <code>TicketQuery</code></strong><pre>No macro or processor named 'TicketQuery' found</pre></div><p>
+</p>
+</blockquote>
+<h3 id="QueryLanguage">Query Language</h3>
+<p>
+<tt>query:</tt> <a class="wiki" href="TracLinks.html">TracLinks</a> and the <tt>[[TicketQuery]]</tt> macro both use a mini “query language” for specifying query filters. Basically, the filters are separate by ampersands (<tt>&amp;</tt>). Each filter then consists of the ticket field name, an operator, and one or more values. More than one value are separated by a pipe (<tt>|</tt>), meaning that the filter matches any of the values.
+</p>
+<p>
+The available operators are:
+</p>
+<table class="wiki">
+<tr><td> <strong>=</strong> </td><td> the field content exactly matches the one of the values
+</td></tr><tr><td> <strong>~=</strong> </td><td> the field content contains one or more of the values
+</td></tr><tr><td> <strong>^=</strong> </td><td> the field content starts with one of the values
+</td></tr><tr><td> <strong>$=</strong> </td><td> the field content ends with one of the values
+</td></tr></table>
+<p>
+All of these operators can also be negated:
+</p>
+<table class="wiki">
+<tr><td> <strong>!=</strong> </td><td> the field content matches none of the values
+</td></tr><tr><td> <strong>!~=</strong> </td><td> the field content does not contain any of the values
+</td></tr><tr><td> <strong>!^=</strong> </td><td> the field content does not start with any of the values
+</td></tr><tr><td> <strong>!$=</strong> </td><td> the field content does not end with any of the values
+</td></tr></table>
+<hr/>
+<p>
+See also: <a class="wiki" href="TracTickets.html">TracTickets</a>, <a class="wiki" href="TracReports.html">TracReports</a>, <a class="wiki" href="TracGuide.html">TracGuide</a>
+</p>
+</div>
+</div>
+<script type="text/javascript">
+   addHeadingLinks(document.getElementById("searchable"), "Link to this section");
+  </script>
+</div>
+</div>
+</div>
+<div id="footer">
+<a id="tracpowered" href="http://trac.edgewall.org/">
+<img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"/>
+</a>
+<p class="left">
+Powered by <a href="http://librocket.com/about"><strong>Trac </strong></a><br/>By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+</p>
+<p id="copyright" class="left clear">
+Copyright &copy; 2007-2010 Code Point Ltd, Shift Technology Ltd.
+</p>
+<ul class="top-level-nav">
+<li><a href="frontend/features.html">features.</a></li>
+<li><a "http://librocket.com/wiki/href">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="documentation.html">developer.</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3379591-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+</body>
+</html>

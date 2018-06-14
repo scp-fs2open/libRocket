@@ -1,0 +1,126 @@
+{{{
+#!html
+<div class="left-col">
+	
+<div id="content-top"><!--<h1 style="margin-left:10px; padding-top:10px;color:#c30">NEWS</h1>--></div>
+<div id="content-middle">
+<div class="post">
+<h2>Wooords arrives on the App Store - Powered by libRocket</h2>
+<p class="date">21 Jul 2011</p>
+<p><object width="600" height="362"><param name="movie" value="http://www.youtube.com/v/ulK5Wxnd-zo?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/Mqt7CavpoNo?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="600" height="362"></embed></object></p>
+<p>As far as I'm aware Wooords is the first app on the App Store that uses libRocket as a UI. It has some nice tween effects to slide elements in out and uses data grids for the leaderboards.</p>
+</div>
+<div class="post">
+<h2>libRocket 1.2.1 Released.</h2>
+<p class="date">01 Dec 2010</p>
+<p>
+<strong>Features</strong>
+<ul>
+  <li>Added SFML sample (Thanks to Nuno Silva)</li>
+  <li>Added CMake files for Mac, Linux and Windows (not fully tested on Windows, Thanks to Hilton Medeiro)</li>
+  <li>Added Xcode project for iOS and OSX</li>
+  <li>Upgraded to Freetype 2.4.3</li>
+  <li>Upgraded Ogre sample for Ogre 1.7.2</li>
+</ul>
+
+<strong>API Changes:</strong>
+<ul>
+  <li>All handle types have been changed for void*'s to uintptr_t's for better 64bit support</li>
+</ul>
+
+<strong>Fixes:</strong>
+<ul>
+  <li>Fixed stack overflow in treeview</li>
+  <li>Fixed Rocket::Core::Variant trample in 64bit version, due to Rocket::Core::String being bigger than 16 bytes (Thanks to Hilton Medeiro)</li>
+  <li>Fixed 64bit pointer to string conversion used in the Font system</li>
+</ul>
+</p>
+</div>
+<h2>Linux compilation fixed and CMake build script included.</h2>
+<p class="date">09 Nov 2010</p>
+<p>We've just pushed an update to the <a href="http://github.com/lloydw/libRocket">repository</a> that adds a CMake build script and fixes issues with compilation on Linux.</p>
+</div>
+<div class="post">
+<h2>Community members Video of libRocket in Action</h2>
+<p class="date">07 Oct 2010</p>
+<p><object width="600" height="362"><param name="movie" value="http://www.youtube.com/v/Mqt7CavpoNo?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/Mqt7CavpoNo?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="600" height="362"></embed></object></p>
+<p>Saw this great video of libRocket in action on YouTube</p>
+<p class="quote"><em>
+This is a quick video of a lightweight game engine I'm getting together.
+Horde3D rendering, libRocket GUI, and Lua for scripting.
+</em></p>
+<p class="quote"><em>
+The libRocket integration was just finished. It's really a great UI library (HTML/CSS based, provides automatic handles, scrolling windows, etc.). I was also very impressed by the way which it generates geometry to be rendered and passes it to an application provided function/class. That made it fairly unobtrusive to implement.
+</em></p>
+</div>
+<div class="post">
+<h2>Updated support libraries include arm7 architecture</h2>
+<p class="date">17 Sep 2010</p>
+<p>We've just updated the libRocket support archive to include a libfreetype.a with arm7 architecture support.</p>
+<p>For full details on how to build your own version of libfreetype.a see <a href="/wiki/documentation/BuildingFreeTypeForiOS">this page</a>.
+</div>
+<div class="post">
+<h2>Xcode project now available</h2>
+<p class="date">11 Sep 2010</p>
+<p>We've added an Xcode project to the <a href="http://github.com/lloydw/libRocket">repository</a> which includes OSX and iOS targets.</p>
+</div>
+<div class="post">
+<h2>libRocket removes licensing fees and switches all code to the MIT license</h2>
+<p class="date">08 Sep 2010</p>
+<p>This is very exciting news for everybody in the community, for the new libRocket 1.2 release the entire engine is being open sourced under the MIT license.</p>
+<p>This switch means that any project may use libRocket for any purpose at no charge.</p>
+<p>You can now download version 1.2 of the libRocket from the <a href="http://librocket.com/download">download</a> section, or grab a copy directly from our <a href="http://github.com/lloydw/libRocket">github</a> repository.</p>
+</p>
+</div>
+<div class="post">
+<h2>Kong switches to libRocket</h2>
+<p>SpaceDude sent word that the freeware 3d shooter has now integrated libRocket into his freeware game <a href="http://www.konggame.co.uk/">Kong</a>.</p>
+<div>
+<a href="http://www.konggame.co.uk/"><img style="float:right;" src="/chrome/site/images/kong.jpg" width="259px" height="194px" alt="Kong" /></a>
+<p style="padding-top:50px;padding-left:25px;padding-right:25px;"><em>I now have a GUI which is easy to maintain and doesn't contain much boilerplate code if any.</em></p>
+<p style="text-align:right;padding-right:300px;">- Martin Sherburn (Lead Programmer)</p>
+<div style="clear: both"></div>
+</div>
+<p>Here's the offical description:</p>
+<p class="quote">Kong is a freeware top-down shooter game featuring monkeys with a thirst for blood in a full 3D environment. The rules are simple, pick up as many health/armor packs and weapons as you can before blowing your enemies into smithereens. The game currently features three game modes including deathmatch, team deathmatch and capture the flag with plans to introduce a number of new game modes. Computer controlled bots are provided as target practise but the real fun comes from playing in multiplayer over a local area network or the internet.
+</em></p>
+
+</div>
+</div>
+<div id="content-bottom"></div>
+</div>
+
+<div class="right-col">
+<p class="intro">libRocket is the C++ user interface middleware package based on the HTML and CSS standards. It is designed as a complete solution for any project's interface needs.</p>
+	
+<p>libRocket uses the time-tested open standards XHTML1.0 and CSS2.0 (while borrowing features from HTML5 and CSS3), and extends them with features suited towards real-time applications. Because of this, you don't have to learn a whole new proprietary technology like other packages in this middleware space.</p>
+
+<p class="intro">Packed with features!</p>
+<ul>
+   <li>Cross platform architecture (Windows, Mac, Linux, iPhone, ...).</li>
+   <li>Dynamic layout system.</li>
+   <li>Efficient application-wide styling, with a custom-built templating engine.</li>
+   <li>Fully featured user control set: buttons, sliders, drop-downs, etc.</li>
+   <li>Runtime visual debugging suite.</li>
+   <li>Easily integrated and extensible with Python scripting.</li>
+</ul>
+	
+<p class="intro">Extensible:</p>
+	
+<ul>
+   <li>Abstracted interfaces for plugging in to any game engine (samples for OpenGL, DirectX and Ogre3d).</li>
+   <li>Decorator engine allowing custom application-specific effects that can be applied to any element.</li>
+   <li>Generic event system that binds seamlessly into existing projects.</li>
+</ul>
+
+<p class="intro">What users are saying:</p>
+	
+<ul>
+   <li>Thanks again for the wonderful tool and support, you're work is absolutely recommended</li>
+   <li>... very usable and well engineered</li>
+   <li>libRocket's DataGrids make developing tables so easy!</li>
+</ul>
+
+</div>
+
+}}}

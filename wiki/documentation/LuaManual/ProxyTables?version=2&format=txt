@@ -1,0 +1,58 @@
+== Proxy Tables ==
+== Problem to solve ==
+The problem with Lua tables is that building them isn't an inexpensive operation when done once per frame, or even once per event if it is a large table. When a property or function in Lua calls in to C++ and that function would return a collection of items, proxy tables will forgo the table building unless explicitly told to do so.
+
+This is one of the more noticeable areas where the Lua implementation varies from Python, and subsequently Javascript.[wiki:documentation/LuaManual/ProxyTables#Why Why?]
+
+== How ==
+All proxy tables will override the usual ''!__index'' and/or ''!__newindex'' Lua metamethods. They hook in to the access and setting of tables when the items don't exist directly in the table. At all times, the table of a proxy table will be similar to
+{{{
+proxy_table = 
+{ 
+GetTable = function() call_c_function() end 
+__index = function() __index_function_in_c() end
+__newindex = function() __newindex_function_in_c() end
+}
+--userdata has a reference to the C++ pointer object to retrieve the data from
+userdata:setmetatable(proxy_table) 
+}}}
+It is done all in C++, so that is not exactly how that happens, but it is an accurate enough representation for why the next example would trigger the ''!__index'' and ''!__newindex'' metamethods.
+{{{
+--userdata is the same as the previous code block, with proxy_table
+--as the metatable
+local item = userdata["name"]
+--or
+local item = userdata.name
+--or
+local item = userdata[3]
+--newindexes
+userdata["name"] = "apple"
+userdata.name = "orange"
+userdtata[2] = "banana"
+--
+local item = userdata.name --would still trigger an __index metamethod, but still return 'orange'
+}}}
+Because ''name'' and ''3'' doesn't exist on the actual table, it triggers the metamethods. The ''!__newindex'' does NOT actually add the item to the table, only adds the item to the C++ object using appropriate get/set methods available.
+
+== I want the actual table ==
+Getting the actual table is no problem. Every single proxy table has a method named ''GetTable()''. This will build a table of key,value pairs. Depending on the needs, sometimes the tables are indexed by both integer keys and string keys. In this case, a table value is duplicated and set to both the integer and string indexes.
+
+Using the ''GetTable()'' function is the only way to to be able to iterate over the table, but beware of the ones that are indexed by both integer keys and string keys. If using pairs(), then iteration will hit each value twice: once for its integer key and once for its string key. To hit each value only once, use ipairs() to iterate only over the integer keys.
+
+== Why ==
+The Lua language is fairly simple. It does not have an iterator metamethod like it does for some other operations, and because of this, the ''GetTable()'' method exists for proxy tables. It is a tradeoff of performance for being a little less intuitive. However, accessing individual items is fast and intuitive, because the syntax is the same as if it were an actual value in the table.
+
+== List of proxy tables ==
+This is an exhaustive list of functions and properties that return proxy tables. If you think that this is out of date or incorrect, then the file names in the source code will tell you if you are correct. If the file name ends with "Proxy.cpp", then it is proxy table, with the exception of "ElementStyle.cpp".
+
+{{{
+Context.documents --read only, index by integer and string
+Element.attributes --read only, index by string
+Element.child_nodes --read only, index by integer
+Element.style --read & write, index by string
+Event.parameters --read only, index by string
+--From RocketControls
+ElementFormControlSelect.options --[[read only, index by integer
+      each index item is a table with two named values, {"element"=Element,"value"=string} ]]
+}}}
+A function that returns a table that is NOT a proxy table is ''rocket.contexts''. It is read only and indexed by both string and integer.

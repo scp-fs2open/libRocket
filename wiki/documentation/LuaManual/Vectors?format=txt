@@ -1,0 +1,68 @@
+= Vectors =
+Vectors (''Vector2i'' and ''Vector2f'') are basic types. They have a few methods and properties, and overloaded operators. Vector2i has properties ''x'' and ''y'' of type `int`, and Vector2f has properties ''x'' and ''y'' of type `float`.
+
+
+== Overloaded operators ==
+
+These operators are overloaded using the Lua metamethods. Both ''Vector2i'' and ''Vector2f'' share these operator overloads, of course specialized for their type. Operators are binary operators, meaning they have two operands. This is transparent in Lua, so an example below is given to show which parameter is which.
+{{{
+--Lua code
+local vecA = Vector2f.new(1.2,3.1)
+local vecB = Vecotr2f.new(0.0,1.7)
+local vecC = vecA + vecB
+}}}
+If, while looking in the documentation, you want to understand the example above, vecA will be the ''lhs'' (left-hand side) parameter,  vecB will be the ''rhs'' (right-hand side) parameter to the below overloaded operators, and vecC will be of the type to the left of the word "operator".
+
+Below, `type` will be float for Vector2f and int for Vector2i. `Vector` will be Vector2i or Vector2f depending on the type of the object being used.
+
+ `Vector `operator '''*'''(`Vector` ''lhs'', `type` ''rhs'')::
+   Multiplication
+
+ `Vector `operator '''/'''(`Vector` ''lhs'', `type` ''rhs'')::
+   Division
+
+ `Vector `operator '''+'''(`Vector` ''lhs'', `Vector` ''rhs'')::
+   Addition
+
+ `Vector `operator '''-'''(`Vector` ''lhs'', `Vector` ''rhs'')::
+   Subtraction
+
+ `bool `operator '''=='''(`Vector` ''lhs'', `Vector` ''rhs'')::
+   Equality
+
+== Vector2f ==
+
+ `Vector2f `'''new'''(`float` ''x'',`float` ''y'')::
+   Creates a new Vector2f for use in Lua.
+
+ `float `'''DotProduct'''(`Vector2f` ''other'')::
+   Does a dot product between this object and ''other''.
+
+ `Vector2f `'''Normalise'''()::
+   Returns a new vector that has the value of this vector if it were normalized.
+
+ `Vector2f `'''Rotate'''(`float` ''theta'')::
+   Returns a new vector that has the value of this vector if it were rotated by ''theta'' around the origin.
+
+ '''x'''`   `(`float`)::
+   ''x'' property. Read & write.
+
+ '''y'''`   `(`float`)::
+   ''y'' property. Read & write.
+
+ '''magnitude'''`   `(`float`)::
+   sqrt(''x''^2^ + ''y''^2^)  . Read-only.
+
+== Vector2i ==
+
+ `Vector2i `'''new'''(`int` ''x'',`int` ''y'')::
+   Creates a new Vector2i for use in Lua.
+
+ '''x'''`   `(`int`)::
+   ''x'' property. Read & write.
+
+ '''y'''`   `(`int`)::
+   ''y'' property. Read & write.
+
+ '''magnitude'''`   `(`float`)::
+   sqrt(''x''^2^ + ''y''^2^)  . Read-only.

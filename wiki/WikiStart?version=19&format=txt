@@ -1,0 +1,80 @@
+{{{
+#!html
+<div class="left-col">
+	
+<div id="content-top"><!--<h1 style="margin-left:10px; padding-top:10px;color:#c30">NEWS</h1>--></div>
+<div id="content-middle">
+<div class="post">
+<h2>Updated support libraries include arm7 architecture</h2>
+<p class="date">17 Sep 2010</p>
+<p>We've just updated the libRocket support archive to include a libfreetype.a with arm7 architecture support.</p>
+<p>For full details on how to build your own version of libfreetype.a see <a href="/wiki/documentation/BuildingFreeTypeForiOS">this page</a>.
+</div>
+<div class="post">
+<h2>Xcode project now available</h2>
+<p class="date">11 Sep 2010</p>
+<p>We've added an Xcode project to the <a href="http://github.com/lloydw/libRocket">repository</a> which includes OSX and iOS targets.</p>
+</div>
+<div class="post">
+<h2>libRocket removes licensing fees and switches all code to the MIT license</h2>
+<p class="date">8 Sep 2010</p>
+<p>This is very exciting news for everybody in the community, for the new libRocket 1.2 release the entire engine is being open sourced under the MIT license.</p>
+<p>This switch means that any project may use libRocket for any purpose at no charge.</p>
+<p>You can now download version 1.2 of the libRocket from the <a href="http://librocket.com/download">download</a> section, or grab a copy directly from our <a href="http://github.com/lloydw/libRocket">github</a> repository.</p>
+</p>
+</div>
+<div class="post">
+<h2>Kong switches to libRocket</h2>
+<p>SpaceDude sent word that the freeware 3d shooter has now integrated libRocket into his freeware game <a href="http://www.konggame.co.uk/">Kong</a>.</p>
+<div>
+<a href="http://www.konggame.co.uk/"><img style="float:right;" src="/chrome/site/images/kong.jpg" width="259px" height="194px" alt="Kong" /></a>
+<p style="padding-top:50px;padding-left:25px;padding-right:25px;"><em>I now have a GUI which is easy to maintain and doesn't contain much boilerplate code if any.</em></p>
+<p style="text-align:right;padding-right:300px;">- Martin Sherburn (Leader Programmer)</p>
+<div style="clear: both"></div>
+</div>
+<p>Here's the offical description:</p>
+<p class="quote">Kong is a freeware top-down shooter game featuring monkeys with a thirst for blood in a full 3D environment. The rules are simple, pick up as many health/armor packs and weapons as you can before blowing your enemies into smithereens. The game currently features three game modes including deathmatch, team deathmatch and capture the flag with plans to introduce a number of new game modes. Computer controlled bots are provided as target practise but the real fun comes from playing in multiplayer over a local area network or the internet.
+</em></p>
+
+</div>
+</div>
+<div id="content-bottom"></div>
+</div>
+
+<div class="right-col">
+<p class="intro">libRocket is the C++ user interface middleware package based on the HTML and CSS standards. It is designed as a complete solution for any project's interface needs.</p>
+	
+
+<p>libRocket uses the time-tested open standards XHTML1.0 and CSS2.0 (while borrowing features from HTML5 and CSS3), and extends them with features suited towards real-time applications. Because of this, you don't have to learn a whole new proprietary technology like other packages in this middleware space.</p>
+
+
+<p class="intro">Packed with features!</p>
+<ul>
+   <li>Cross platform architecture (Windows, Mac, Linux, iPhone, ...).</li>
+
+   <li>Dynamic layout system.</li>
+   <li>Efficient application-wide styling, with a custom-built templating engine.</li>
+		
+   <li>Fully featured open source user control set: buttons, sliders, drop-downs, etc.</li>
+		
+   <li>Runtime visual debugging suite.</li>
+		
+   <li>Easily integrated and extensible with Python scripting.</li>
+	
+</ul>
+	
+<p class="intro">Extensible:</p>
+	
+<ul>
+
+   <li>Abstracted interfaces for plugging in to any game engine.(samples for OpenGL, DirectX and Ogre3d)</li>
+
+   <li>Decorator engine allowing custom application-specific effects that can be applied to any element.</li>
+
+   <li>Generic event system that binds seamlessly into existing projects.</li>
+
+</ul>
+
+</div>
+
+}}}

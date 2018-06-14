@@ -1,0 +1,6 @@
+= Rocket Invaders from Mars =
+
+''Rocket Invaders from Mars'' is the sample application distributed with ''libRocket''. It comes with complete source code and runs on Windows, MacOSX and Linux. The game contains original '70s-style game play and graphics with a modern HTML/CSS style user interface experience.
+
+[[Image(rocketinvaders.jpg, align="right")]]
+[attachment:rocketinvaders_win32.exe?format=raw Download Windows version]

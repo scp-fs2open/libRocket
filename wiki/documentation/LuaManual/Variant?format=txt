@@ -1,0 +1,13 @@
+= Variant =
+'Variant' is a type that can be returned from a Lua call in to the API, but cannot be instantiated. This is because a variant gets translated to the correct type when it gets passed to Lua. The types a ''Variant'' can be is limited to:
+ * `int`
+ * `float`
+ * `string`
+ * `Colourb`
+ * `Colourf`
+ * `Vector2f`
+ * ''light userdata''
+ * `nil`
+
+
+So when a function in the [wiki:documentation/LuaManual/APIReference API reference] claims to return a ''Variant'', it will return one of the above listed types, but there is no way to figure out which type it is unless you know exactly what it is/should be before hand based on its identifier/name.

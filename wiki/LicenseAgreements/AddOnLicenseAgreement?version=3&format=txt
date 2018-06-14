@@ -1,0 +1,897 @@
+{{{
+                 LIBROCKET ADD-ON APPLICATION LICENCE AGREEMENT
+
+   THIS AGREEMENT is made BETWEEN:
+
+   (1) Wandering Monster Studios Limited, a company registered in New Zealand
+   under number 1854826 whose registered office is at Level 2, 282 Wakefield
+   Street, Wellington 6011, New Zealand ("the Licensor");  and
+
+   (2) You  ("the Licensee")
+
+   WHEREAS:
+
+   (1) The Licensee wishes to acquire and the Licensor has agreed to grant to
+   the Licensee a licence to use the Software on the terms and conditions set
+   out in this agreement ("Agreement").
+
+   (2) The parties are entering into this Agreement on the following terms to
+   record their understanding on these matters.
+
+   IT IS AGREED as follows:
+
+    1. Definitions
+
+   In this Agreement, unless inconsistent with the context or otherwise
+   specified the following definitions will apply:
+
+   "business day" means any day other than a Saturday, Sunday or public
+   holiday in Wellington, New Zealand;
+
+   "Documentation" the supporting documentation for aiding the use of the
+   Software which is available for viewing on the Website;
+
+   "Equipment" computer equipment with sufficient spare disk space for the
+   downloading, installation and running of the Software and capable of
+   running any other necessary software including without limitation an
+   industry standard compiler;
+
+   "Error" any failure of the Software to substantially conform to the
+   Specification;
+
+   "Error Correction" a software modification or addition that, when made or
+   added to the Software, establishes material conformity to the
+   Specification;
+
+   "Forums"  the user forums relating to the Software located on the Website;
+
+   "Intellectual Property Rights" all vested contingent and future intellectual 
+   property rights including but not limited to copyright, trade marks, service 
+   marks, design rights (whether registered or unregistered), patents, know-how, 
+   trade secrets, inventions, database rights and any applications for the 
+   protection or registration of these rights and all renewals and extensions
+   thereof existing in any part of the world whether now known or in the future 
+   created; 
+
+   "Licence Fee" the applicable fee for the Licence provided under this
+   Agreement as further defined in clause 5;
+
+   "Object Code" Machine-readable binary version of a piece of software;
+
+   "Product Materials" the Software and the Documentation;
+
+   "Project" one single specific game or project on a single specific
+   platform;
+
+   "Software" the current Object Code version in machine-readable form only
+   of the application called libRocket Python Add-on;
+
+   "Source Code" the human-readable source-code version of the Software;
+
+   "Specification" the specification describing the facilities and functions
+   of the Software as included in Schedule 1;
+
+   "Support and Maintenance Services" provided by the Licensor to the Licensee as
+   the support and maintenance services to be specified in clause 7; 
+
+   "Support Request" an email sent by the Licensee to the Licensor at
+   [1]support@librocket.com requesting provision of the Support and
+   Maintenance Services;
+
+   "Taxes" taxes, duties and charges imposed or levied in New Zealand or
+   overseas in connection with the supply of the Product Materials or the
+   provision of Support and Maintenance Services;
+
+   "Third Party Software" any software incorporated in the Software or on which
+   the Software is partly based which is owned by a third party;
+
+   "Very Low Volume"  an amount of ten thousand or less; and
+
+   "Website" means the libRocket website located at www.[2]librocket.com.
+
+    2. Grant of Licence
+
+         1. Upon payment of any applicable Licence Fee or in the event no
+            Licence Fee is payable pursuant to clause 5.1, on any use being
+            made of the Software, ("Commencement Date") the Licensor grants
+            to the Licensee subject to the terms and conditions contained in
+            this Agreement, a non-exclusive licence for the use of the
+            Software in relation to the Project ("Licence"). Subject to the
+            payment of any applicable Licence Fee as provided for in clause
+            5, the Licence allows the Licensee to use the Software for the
+            Licensee's own internal purposes in relation to the Project
+            including as applicable in the course of the Licensee's ordinary
+            business activities as they relate to the Project and also to
+            incorporate the Software into products related to the Project
+            offered for sale or for free use to the public ("Products") by
+            the Licensee, provided that the Software is not the main
+            component of such Products and such Products do not provide for
+            the Software to be directly accessed and utilised in its own
+            right.
+
+         2. The Licence shall not entitle the Licensee to have access to the
+            Source Code in respect of the Software or to create or to attempt
+            to create the same.
+
+         3. Notwithstanding clause 2.1 the Licensee acknowledges that to make
+            use of the Software the Licensee will need to have installed on
+            the Equipment a current version of:
+
+               1. the standard libRocket software which can be acquired from
+                  [3]www.librocket.com;
+
+               2. the Boost Python software which can be acquired from
+                  [4]www.boost.org; and
+
+               3. the Python software which can be acquired from
+                  www.python.org.
+
+    3. Licence Term
+
+         1. The Licence shall commence on the Commencement Date and shall
+            continue until terminated in accordance with the provisions of
+            this Agreement ("Term").
+
+         2. Under no circumstance will the Licensee be entitled to grant a
+            sub-licence in respect of the Licence or any part of the Licence
+            or otherwise deal with its rights and obligations in respect of
+            the Licence.
+
+    4. Support and Maintenance Services Term
+
+         1. The Support and Maintenance Services shall commence on the
+            Commencement Date and shall continue until the end of the Term.
+
+    5. Payment
+
+         1. In the event that the Licensee uses the Software only for their
+            own personal use or where the Products are distributed for free
+            in a Very Low Volume, the Licensee will not be required to pay a
+            Licence Fee to the Licensor but in return for the benefit the
+            Licensee receives from using the Software the Licensee
+            acknowledges that they will at all times still be bound by the
+            terms of this Agreement.
+
+         2. In the event that the Licensee incorporates the Software into
+            Products, but such Products are sold in Very Low Volume, the
+            Licensee will only be required to pay a Licence Fee of 
+            fifty United States dollars ($50.00 USD).
+
+         3. To qualify for the Licence Fee exception pursuant to clause 5.1
+            or the Licence Fee outlined in clause 5.2, the Licensee must also
+            ensure that:
+
+       1. they are an individual or partnership and not a registered company;
+
+       4. the Project to which the Licence is to apply produces Products that
+          are of a shareware or hobby type nature and which if sold are sold
+          for ten New Zealand dollars or less ($10.00 NZD); and
+
+       5. they obtain the approval of the Licensor that the Project to which
+          the Licence is to apply comes within the terms of clauses 5.1 or
+          5.2 as applicable and clauses 5.3.1 and 5.3.2.
+
+     4. In the event that the Licensee incorporates the Software into
+        Products which are sold or distributed for free in any volumes
+        greater than Very Low Volumes the Licensee will be required to pay a
+        Licence Fee of two hundred and fifty United States dollars ($250.00 USD).
+
+     5. It is the Licensee's responsibility to ensure they have paid any
+        applicable Licence Fee provided for in clauses 5.2 and 5.4 prior to
+        making any use of the Software. Once paid the Licence Fee is
+        non-refundable and the Licensor may terminate or suspend any Licence
+        granted pursuant to this Agreement immediately on notice to the
+        Licensee in the event any applicable Licence Fees due as defined in
+        clauses 5.2 and 5.4 are unpaid and the Licensee will also indemnify
+        the Licensor on demand for any direct and indirect costs of any
+        nature whatsoever reasonably incurred by the Licensor in the course
+        of securing the payment of any such unpaid Licence Fees.
+
+     6. The Licensee shall pay the Licence Fee to the Licensor by way of
+        credit card payment in the manner provided for via the Website.
+
+     7. The Licence Fee is exclusive of any applicable Taxes including
+        without limitation Goods and Services Tax ("GST") pursuant to the
+        Goods and Services Tax Act 1985.
+
+     8. Notwithstanding clause 5.7 in the event that the Licensee is or
+        becomes liable to pay or otherwise account for any Taxes, the payment
+        of any amounts due under this Agreement will be adjusted to ensure
+        that after the payment or accounting for of such Taxes the Licensor
+        will receive the original amount that was due to it under this
+        Agreement.
+
+    6. Delivery
+
+     1. The Licensee shall download the Software from the Website.
+
+    7. Support and Maintenance Services
+
+     1. During the Term the Licensor shall upon receipt of a Support Request
+        provide the Licensee with the following Support and Maintenance
+        Services by email in the following manner:
+
+       1. Where an Error occurs the Licensee shall supply in writing to the
+          Licensor a detailed description of the Error requiring Error
+          Correction and the circumstances in which it arose, and shall
+          submit sufficient material and information to enable the Licensor
+          to duplicate the Error, following which the Licensor will provide
+          Error Correction in respect of the Error.
+
+       6. Exclusions:
+
+        a. The Licensor shall be under no obligation to provide Support and
+           Maintenance Services in respect of:
+
+        i. any defects or errors resulting from any modifications or
+           customisation of the Software made by any other person other than
+           the Licensor;
+
+        ii. incorrect or unauthorised use of the Software or operator error
+            where these are defined as use or operation not in accordance
+            with the Documentation;
+
+        iii. any fault in the Equipment or in any programs used in
+             conjunction with the Software;
+
+        iv. any defects or errors caused by the use of the Software on or
+            with any Equipment which is not approved in writing by the
+            Licensor or in conjunction with any other software which is not
+            approved in writing by the Licensor;
+
+        v. any software or programs other than the Software;
+
+        vi. any other of the Licensee's computer hardware, other equipment,
+            or any data feeds or external data; and
+
+        vii. the Licensee's failure to install and use upon the Equipment in
+             substitution for the previous release any new release of the
+             Software which includes updates or bug fixes in respect of the
+             Licensee's version of the Software within 90 days of such new
+             release of the Software being available for download from the
+             Website.
+
+     1. The Licensor will respond to any Support Request by email within 48
+        hours of its receipt and will attempt to provide the required Support
+        and Maintenance Services within the same time period.
+
+     2. In addition to making use of the Support and Maintenance Services
+        provided for in clauses 7.1 and 7.2 the Licensee is also entitled to
+        make use of the Forums on such the terms and conditions as are
+        specified on the Website from time to time in respect of use of the
+        Forums.
+
+     3. Notwithstanding clauses 7.1, 7.2 and 7.3, the Licensee acknowledges
+        that in the event they are not required to pay a Licence Fee as
+        provided for by clause 5.1, the Licensee will not be entitled to make
+        use of the Support and Maintenance Services as described in clauses
+        7.1 and 7.2 but will be entitled to make use of the Forums as
+        provided for by clause 7.3.
+
+    8. New Releases
+
+     1. During the Term the Licensor shall notify the Licensee by email,
+        where the Licensee has registered on the Website to receive such
+        notification, of any new release of the Software that is available
+        for download from the Website.
+
+     2. Notwithstanding clause 8.1, although the Licensee will be entitled to
+        download any new releases of the Software as part of the Support and
+        Maintenance Services, for the avoidance of doubt the Licensee will
+        not be entitled to download and use any later version of the Software
+        without paying a further applicable Licence Fee as defined in clauses
+        5.2 and 5.4 in respect of that new version of the Software.
+
+     3. In the event of any confusion as to whether a new release of the
+        Software is actually a new version of the Software the Licensor's
+        decision shall be final.
+
+     1. The Licensor may from time to time, acting entirely at its own
+        discretion, make such modifications to the current release of the
+        Software as shall ensure that the current release conforms to any
+        legal requirements or change of legislation. In the event that the
+        Licensor acting reasonably does not believe that it is technically
+        possible or commercially justifiable for it to make such
+        modifications then the Licensor shall be entitled to terminate this
+        Agreement on 30 days written notice to the Licensee. Where the
+        Licensor does make modifications to the current release of the
+        Software ("Modified Software") in accordance with the terms of this
+        Agreement, the Licensor shall make such Modified Software available
+        for download from the Website. The Licensee shall be required to as
+        soon as reasonably possible adopt such Modified Software. Failure by
+        the Licensee to adopt such Modified Software within 90 days of any
+        such new release of the Software being made available for download
+        from the Website, shall entitle the Licensor to terminate this
+        Agreement immediately on written notice to the Licensee.
+
+     2. Any new release of the Software or Modified Software adopted by the
+        Licensee shall become the current release and the provisions of this
+        Agreement shall apply accordingly.
+
+    9. Licensee's Obligations
+
+         1. The Licensee shall operate the Software in accordance with the
+            Specification and Documentation.
+
+   10. Restrictions on Alterations
+
+         1. If the Software within the Licensee's control pursuant to the
+            Licence is modified or altered by the Licensee, the Licensee will
+            fully indemnify the Licensor against all liability which may be
+            incurred by the Licensor if such modifications or alterations
+            infringe any Intellectual Property Rights of a third person or
+            otherwise cause the Licensor to suffer loss, damages or expense.
+
+         2. The Software within the Licensee's control pursuant to the
+            Licence remains the property of the Licensor in all respects.
+
+   11. Security and Control
+
+         1. The Licensee shall during the continuance of the Licence effect
+            and maintain security measures in accordance with accepted
+            industry standards to safeguard the Software from access or use
+            by any unauthorised person.
+
+   12. Proprietary Rights
+
+         1. The Product Materials and the Intellectual Property Rights of
+            whatever nature in the Product Materials (excluding any third
+            party rights in respect of Third Party Software) are and shall
+            remain the property of the Licensor.
+
+         2. The Licensee shall notify the Licensor immediately if the
+            Licensee becomes aware of any unauthorised use of the whole or
+            any part of the Product Materials by any person.
+
+         3. The Third Party Software at all times remains the property of the
+            applicable third party and the Licensee's use of such Third Party
+            Software is at all times governed by the provisions of any
+            applicable licence relating to any such Third Party Software.
+
+   13. Intellectual Property Rights
+
+         1. The Licensee acknowledges that the Licence granted pursuant to
+            clause 2 does not grant any transfer of title or ownership to the
+            Licensee of any Licensor's Intellectual Property Rights including
+            without limitation in the Product Materials. The Licensee's right
+            to use the Licensor's Intellectual Property Rights as provided
+            for in this Agreement will cease upon the termination of this
+            Agreement or as otherwise provided for in this clause 13.
+
+         2. The Licensee acknowledges that the grant of the Licence or any
+            other terms of this Agreement do not in any way confer any right
+            or licence upon the Licensee to use, exploit or otherwise utilise
+            any rights relating to the Licensor's Intellectual Property
+            Rights other than in accordance with the terms of this Agreement.
+
+         3. The Licensee agrees not to represent in any way that it has any
+            title, right or interest in the ownership of the Licensor's
+            Intellectual Property Rights nor do anything which might be
+            contrary to the rights or interest of the Licensor in its
+            Intellectual Property Rights nor seek to apply to register in its
+            own name or that of any third party any part of the Licensor's
+            Intellectual Property Rights and will assist the Licensor in any
+            application to register any such Intellectual Property Rights
+            belonging to the Licensor at the cost of the Licensor.
+
+         4. The Licensee agrees with the Licensor that it will notify the
+            Licensor in writing as soon as practicable of any infringement,
+            suspected infringement or alleged infringement relating to the
+            Licensor's Intellectual Property Rights which comes to its
+            knowledge provided that the Licensee will be deemed to have
+            knowledge of any infringement, suspected infringement or alleged
+            infringement if such infringement would have come to the
+            Licensee's knowledge but for any negligence or wilful misconduct
+            on the part of the Licensee.
+
+         5. In the event that proceedings are brought or threatened by a
+            third party against the Licensee or the Licensor, alleging that
+            the Licensee's use of the Product Materials constitutes an
+            infringement of a third party's Intellectual Property Rights, the
+            Licensor may at its option and at its own expense conduct the
+            defence of such proceedings. As requested by the Licensor the
+            Licensee shall provide all necessary co-operation, information
+            and assistance to the Licensor in the conduct of the defence of
+            such proceedings.
+
+         6. In the circumstances provided for in clause 13.5, but also where
+            the Licensor acting entirely at its own discretion believes that
+            there is a reasonable likelihood that infringement may currently
+            exist or is likely to occur, the Licensee agrees with the
+            Licensor that it will permit the Licensor, acting entirely in the
+            Licensor's discretion to;
+
+       1. modify, alter or substitute the infringing or potentially
+          infringing part of the Product Materials, at the Licensor's expense
+          in order to avoid the infringement or potential infringement; or
+
+       7. procure for the Licensee the authority to continue with the use and
+          possession of the infringing or potentially infringing part of the
+          Product Materials.
+
+     7. If the remedies set out in clause 13.6 above are not in the
+        Licensor's opinion reasonably available, then the Licensor shall be
+        entitled to terminate the Licence and this Agreement immediately on
+        written notice to the Licensee at which point the Licensee shall
+        destroy all copies of the Product Materials within its possession and
+        provide a written certificate from one of the Licensee's directors to
+        the Licensor that such copies have been destroyed provided that the
+        Licensor shall be entitled to enter upon the Licensee's premises to
+        repossess any copies of the Product Materials in the possession,
+        custody or control of the Licensee not returned or destroyed as
+        provided for above.
+
+     8. The Licensee acknowledges that the Licensor will have no obligation
+        to indemnify the Licensee against any damages, costs and losses
+        incurred by the Licensee whether direct or consequential (including
+        but without limitation any economic loss or other loss of turnover,
+        profits, business or goodwill) in connection with any proceedings
+        bought by a third party against the Licensee alleging that the
+        Licensee's use of the Product Materials constitutes an infringement
+        of that third party's Intellectual Property Rights.
+
+     9. The Licensee shall indemnify the Licensor against any loss, costs,
+        expenses, demands or liability, whether direct or indirect, arising
+        out of a claim by a third party pursuant to clause 13.5 where:
+
+       1. the claim arises from:
+
+        b. use of the Product Materials in combination with any equipment or
+           programs where such use is not authorised by the terms of this
+           Agreement or otherwise approved by the Licensor;
+
+        c. use of the Product Materials in a manner or for a purpose not
+           specifically provided for by this Agreement or authorised by the
+           Licensor;
+
+        d. modification or alteration of the Product Materials by the
+           Licensee or any third party on behalf of the Licensee; and
+
+        e. any transaction entered into by the Licensee relating to the
+           Product Materials without the Licensor's prior consent in writing
+           which is not otherwise authorised by the terms of this Agreement;
+           or
+
+       8. the ability of the Licensor to defend the claim has been prejudiced
+          by the failure of the Licensee to comply with any requirements of
+          clauses 13.4, 13.5 or 13.6.
+
+    10. The Licensee acknowledges that the Licensor is in no way liable to
+        the Licensee in respect of any liability arising from the Licensee's
+        use of any Third Party Software and the Licensee agrees to indemnify
+        the Licensor on demand in the event of any liability suffered by the
+        Licensor arising from the Licensee's use of the Third Party Software.
+
+   14. Warranties
+
+         1. To the fullest extent permitted at law, the Licensor:
+
+       1. disclaims all warranties with respect to the Software, either
+          express or implied, including but not limited to any implied
+          warranties relating to quality, fitness for any particular purpose
+          or ability to achieve a particular result;
+
+       9. makes no warranty that the Software is error free or that use of
+          the Software will be uninterrupted and the Licensee acknowledges
+          and agrees that the existence of such errors shall not constitute a
+          breach of this Agreement; and
+
+      10. does not give any warranty in respect of the Third Party Software.
+
+     2. The Licensee agrees that its sole remedy in respect of any
+        non-conformance with any warranty that can not be excluded pursuant
+        to clause 14.1 is that the Licensor will remedy such non-conformance
+        (either by itself or through a third party) and if, in the Licensor's
+        reasonable opinion, it is unable to remedy such non-conformance, the
+        Licensor shall be entitled to terminate the Licence and this
+        Agreement immediately on written notice to the Licensee at which
+        point the Licensee shall destroy all copies of the Product Materials
+        within its possession and provide a written certificate from one of
+        the Licensee's directors to the Licensor that such copies have been
+        destroyed provided that the Licensor shall be entitled to enter upon
+        the Licensee's premises to repossess any copies of the Product
+        Materials in the possession, custody or control of the Licensee not
+        returned or destroyed as provided for above.
+
+     3. The Licensee will not disable or alter the display of the Software
+        logo, as such is incorporated into any Products or generally
+        displayed as a result of the use of the Software.
+
+   15. Liability
+
+         1. Except as provided for in clauses 13.9, 15.2, 15.3, 15.5 and 15.6
+            and to the greatest extent permitted at law, under no
+            circumstances will either party ("the first party"), its
+            employees or its agents be liable to the other party ("the second
+            party") in contract, tort, equity, statute, regulation or
+            otherwise for any loss, damage, costs, legal costs, professional
+            and other expenses of any nature whatsoever incurred or suffered
+            by the second party, or by any other third party, whether direct
+            or consequential (including but without limitation any economic
+            loss or other loss of turnover, profits, business or goodwill)
+            arising out of any dispute or contractual, tortuous or other
+            claims or proceedings bought by the second party or which are
+            alternatively bought against the second party as a result of the
+            second party's breach of this Agreement.
+
+         2. Clause 15.1 shall not exclude any liability of the first party to
+            the second party which arises from:
+
+       1. wilful misconduct or gross negligence on the part of the first
+          party;
+
+      11. where the Licensee is the first party, any act or omission by any
+          persons to whom the Licensee is permitted to disclose Information
+          (as defined in clause 16.1) as set out in this Agreement, which, if
+          done or omitted to be done by the Licensee, would be a breach of
+          the Licensee's obligations under this Agreement,
+
+   and in respect of which the first party will indemnify the second party.
+
+     3. In the event that any limitation or provision contained in this
+        Agreement is held to be invalid or unenforceable for any reason and
+        the first party becomes liable for loss or damage that would
+        otherwise have been excluded, to the greatest extent permitted at
+        law, and also in respect of any liability pursuant to clause 15.2,
+        the first party's maximum liability to the second party under the
+        Agreement shall be limited to an amount equivalent to the Licence Fee
+        paid by the Licensee pursuant to this Agreement.
+
+     4. Notwithstanding clause 15.1, to the greatest extent permitted at law,
+        the parties agree that the first party shall not be liable to the
+        second party in contract, tort, equity, statute, regulation or
+        otherwise for any loss, damage, cost, legal costs, professional and
+        other expenses of a consequential nature (including but without
+        limitation any economic loss or other loss of turnover, profits,
+        business or goodwill).
+
+     5. Notwithstanding clauses 15.1, 15.2, 15.3 and 15.4 the liability of
+        the Licensee to the licensor shall not be limited in respect of any
+        liability arising from the Licensee's breach of the Licensor's
+        Intellectual Property Rights or any third party's Intellectual
+        Property Rights.
+
+     6. The parties acknowledge and agree that the limitations contained in
+        this clause 15 are reasonable in the light of all the circumstances.
+
+     7. Where the Licensee is obtaining the Product Materials and Support and
+        Maintenance Services for business purposes the Licensee agrees the
+        Consumer Guarantees Act 1993 does not apply.
+
+     8. The parties agree that to the greatest extent permitted at law the
+        Sale of Goods Act 1908, the United Nations Convention on Contracts
+        for the International Sale of Goods (1980) and the Sale of Goods
+        (United Nations Convention) Act 1994 will not apply to this
+        Agreement.
+
+   16. Confidential Information
+
+         1. The Licensee undertakes, except as provided below, to treat as
+            confidential and keep secret all information marked
+            'confidential' or which may reasonably be supposed to be
+            confidential, including, without limitation, information
+            contained or embodied in the Product Materials, the Specification
+            and other information supplied by the Licensor to the Licensee
+            (in this Agreement collectively referred to as 'the Information')
+            with the same degree of care as the Licensee employs with regard
+            to the Licensee's own confidential information of a like nature
+            and in any event in accordance with best current commercial
+            security practices, provided that, this clause shall not extend
+            to any information which was rightfully in the possession of the
+            Licensee prior to the commencement of this Agreement or which is
+            already public knowledge or becomes so at a future date
+            (otherwise than as a result of a breach of this clause).
+
+         2. The Licensee shall not without the prior written consent of the
+            Licensor divulge any part of the Information to any person
+            except:
+
+       1. to the Licensee's employees and then only to those employees to
+          whom it is necessary to make such disclosure in order for the
+          Licensee to meet its obligations under this Agreement;
+
+       2. to such other parties as may be reasonably necessary to enable the
+          Licensee to meet its obligations under this Agreement;
+
+      12. to the Licensee's solicitors, insurers, accountants and auditors;
+          and
+
+      13. where such disclosure is required, pursuant to any law, regulation,
+          court order or valid government department or agency legal
+          requirement, provided that the Licensee must:
+
+        a. promptly and if practicable before making the disclosure, notify
+           the Licensor of that fact and identify the Information required to
+           be so disclosed so that if practicable in the circumstances a
+           protective order or other appropriate remedy may be sought; and
+
+        a. disclose only the minimum Information required to comply with the
+           applicable law or order.
+
+     3. The Licensee undertakes to ensure that persons and bodies referred to
+        in clause 16.2 are made aware before the disclosure of any part of
+        the Information that the same is confidential and that they owe a
+        duty of confidence to the Licensor.
+
+     4. The Licensee shall promptly notify the Licensor if it becomes aware
+        of any breach of confidence by any person to whom the Licensee has
+        divulged all or any part of the Information and the Licensee shall
+        give the Licensor all reasonable assistance in connection with any
+        proceedings which the Licensor may institute against such person for
+        breach of confidence.
+
+     5. The foregoing obligations as to confidentiality shall remain in full
+        force and effect notwithstanding any termination of the Licence or
+        this Agreement.
+
+     6. The Licensor shall be entitled to identify the Licensee as a licensee
+        of the Products in the Licensor's publicity materials.
+
+     1. If the Licensor authorises the Licensee to disclose any Information
+        to any person the Licensee agrees at the request of the Licensor
+        prior to such disclosure to have such person execute an
+        acknowledgement to the effect that the Information is disclosed to
+        that person in confidence.
+
+   17. Termination
+
+     1. Either party may terminate this Agreement immediately by notice in
+        writing to the other if the other:
+
+       1. commits a material breach of this Agreement which is not capable of
+          remedy; or
+
+      14. commits a breach of this Agreement which is capable of a remedy,
+          and such breach is not remedied within 14 days of receipt by the
+          other, of a notice from the innocent party identifying the breach
+          and requiring its remedy; or
+
+      15. is unable to pay its debts or is deemed to be, or enters into
+          liquidation (other than with the prior written agreement of the
+          other party for the purpose of effecting a reconstruction or
+          amalgamation in such manner that the company resulting from such
+          reconstruction or amalgamation if a different legal entity agrees
+          to be bound by and assume the obligations of the relevant party
+          under this Agreement) or compounds with or compromises with or
+          convenes a meeting of its creditors or has a receiver appointed
+          over all or any part of its assets or takes or suffers any similar
+          action in consequence of a debt, or ceases for any reason to carry
+          on business.
+
+     1. For the avoidance of doubt the Licence will be deemed to terminate
+        upon the termination of the Agreement and upon the termination of the
+        Licence, the Licensee shall destroy all copies of the Product
+        Materials within its possession and provide a written certificate
+        from one of the Licensee's directors to the Licensor that such copies
+        have been destroyed provided that the Licensor shall be entitled to
+        enter upon the Licensee's premises to repossess any copies of the
+        Product Materials in the possession, custody or control of the
+        Licensee not returned or destroyed as provided for above.
+
+     2. Any termination of the Licence or this Agreement (howsoever
+        occasioned) shall not affect any accrued rights or liabilities of
+        either party nor shall it affect the coming into force or the
+        continuance in force of any provision in this Agreement which is
+        expressly stated as continuing in force on or after such termination.
+
+   18. Agency, Partnership
+
+         1. This Agreement shall not constitute or imply any partnership,
+            joint venture, agency, fiduciary relationship or other
+            relationship between the parties other than the contractual
+            relationship expressly provided for in this Agreement.
+
+   19. Amendments
+
+         1. Except where expressly provided for in this Agreement, this
+            Agreement may not be released, discharged, supplemented,
+            interpreted, amended, varied or modified in any manner except by
+            an instrument in writing signed by a duly authorised officer or
+            representative of each of the parties.
+
+   20. Announcements
+
+         1. Except where expressly provided for in this Agreement, no party
+            shall issue or make any public announcement or disclose any
+            information regarding this Agreement unless prior written consent
+            has been obtained from the other party.
+
+   21. Assignment
+
+         1. The Licensee may not assign or otherwise deal with any of its
+            rights or obligations under this Agreement.
+
+   22. Entire Agreement
+
+         1. This Agreement supersedes all prior agreements, arrangements and
+            undertakings between the parties and constitutes the entire
+            agreement between the parties relating to the subject matter of
+            this Agreement. The parties confirm that they have not entered
+            into this Agreement on the basis of any representation that is
+            not expressly incorporated into this Agreement.
+
+   23. Force Majeure
+
+         1. Neither party is in breach of this Agreement if its breach is
+            caused by an act of God, fire, act of government or state, war,
+            terrorism, sabotage, civil commotion, insurrection, embargo,
+            prevention from or hindrance in obtaining any raw materials,
+            energy or other supplies, labour disputes of whatever nature
+            including strikes and lockouts, piracy, destruction of essential
+            equipment by fire, explosion, storm, flood or earthquake, medical
+            epidemic and delay caused by failure of power supplies or
+            transport facilities or any other reason beyond the reasonable
+            control of a party.
+
+   24. Notices
+
+         1. All notices in relation to this Agreement must be served by email
+            to the email address used by either party from time to time to
+            communicate with the other party.
+
+   25. Schedules
+
+         1. The provisions of Schedule 1 shall form part of this Agreement as
+            if set out here.
+
+   26. Severance
+
+         1. If any provision of this Agreement is prohibited by law or judged
+            by a court to be unlawful, void or unenforceable, the provision
+            shall, to the extent required, be severed from this Agreement and
+            rendered ineffective as far as possible without modifying the
+            remaining provisions of this Agreement, and shall not in any way
+            affect any other circumstances of or the validity or enforcement
+            of this Agreement.
+
+   27. Waiver
+
+         1. No delay, neglect or forbearance on the part of either party in
+            enforcing against the other party any term or condition of this
+            Agreement shall either be or be deemed to be a waiver or in any
+            way prejudice any right of that party under this Agreement. No
+            right, power or remedy in this Agreement conferred upon or
+            reserved for either party is exclusive of any other right, power
+            or remedy available to that party.
+
+   28. Subcontracting
+
+         1. The Licensee agrees that the Licensor may perform any or all of
+            its obligations under this Agreement through agents or
+            sub-contractors.
+
+   29. Survival of Agreement
+
+         1. The provisions of clauses 12 (Proprietary Rights), 13
+            (Intellectual Property Rights), 14 (Warranties), 15 (Liability),
+            16 (Confidential Information) clauses 17.2 and 17.3 (Termination)
+            and this clause 29 survive the termination or expiry of this
+            Agreement for whatever reason.
+
+   30. Language
+
+         1. This Agreement is made only in the English language. If there is
+            any conflict in the meaning between the English language version
+            of this Agreement and any version or translation of it in any
+            other language, the English language version shall prevail.
+
+   31. Proper Law and Jurisdiction
+
+     1. This Agreement and all matters arising from it and any dispute
+        resolutions referred to below shall be governed by and construed in
+        accordance with New Zealand law notwithstanding the conflict of law
+        provisions and other mandatory legal provisions.
+
+     2. Subject to clause 31.8 and 31.11 the procedures set out in clauses
+        31.3 to 31.9 shall apply to all disputes arising under this
+        Agreement.
+
+     3. Where there is a dispute, the aggrieved party shall notify the other
+        party in writing of the nature of the dispute, with as much detail as
+        possible about the deficient performance of the other party. A
+        representative from senior management of each of the parties
+        ("representatives") shall meet in person or communicate by telephone
+        within 5 business days of the date of the written notification in
+        order to reach an agreement about the nature of the deficiency and
+        the corrective action to be taken by the respective parties.
+
+     1. If the dispute pursuant to clause 31.3 cannot be resolved within 10
+        business days of the date of the written notification provided for in
+        clause 31.3, or if the agreed upon completion dates in any written
+        plan of corrective action are exceeded, the parties will refer the
+        dispute to a single arbitrator to be chosen by the parties or, if
+        they cannot agree, chosen by the President of the New Zealand Law
+        Society, or the President's nominee and such arbitration will be
+        conducted in New Zealand in accordance with the Rules in Schedules 1
+        and 2 of the Arbitration Act 1996.
+
+     2. The parties must always act in good faith and co-operate with each
+        other to promptly resolve any dispute.
+
+     3. The arbitrator will fix the procedures and time frames for the
+        arbitration if the parties cannot agree.
+
+     4. The parties must continue to comply with their obligations under this
+        Agreement during the dispute resolution process.
+
+     5. This clause will not apply to:
+
+       1. a dispute arising in connection with any attempted re-negotiation
+          of this Agreement; or
+
+       1. any application by either party for urgent interlocutory relief.
+
+     6. If the parties cannot resolve the dispute by the procedure set out
+        above, the parties shall irrevocably submit to the exclusive
+        jurisdiction of the courts of New Zealand for the purposes of hearing
+        and determining any dispute arising out of this Agreement.
+
+     7. Each party recognises that the other party's business relies upon the
+        protection of its Intellectual Property Rights and that in the event
+        of a breach of Intellectual Property Rights, the other party will be
+        caused irreparable damage and such other party may therefore be
+        entitled to injunctive or other equitable relief in order to prevent
+        a breach or threatened breach of its Intellectual Property Rights.
+
+     8. Notwithstanding clause 31.1 to 31.7 and clause 31.9, the parties
+        agree that:
+
+       1. the Licensor shall have the right to sue to recover any amounts
+          owing to it in any jurisdiction in which the Licensee is operating
+          or has assets; and
+
+       1. in the event of any breach or potential breach of its Intellectual
+          Property Rights the Licensor shall have the right to sue for breach
+          of its Intellectual Property Rights (whether in connection with
+          this Agreement or otherwise) in any country where it believes that
+          infringement or a breach or potential infringement or breach of
+          this Agreement relating to its Intellectual Property Rights is or
+          is likely to take place.
+
+                                   SCHEDULE 1
+
+                        Specification and Functionality
+
+   Goal
+
+   Provide a framework for constructing, displaying, and interacting with
+   user interfaces in a C++ application.
+
+   Overview
+
+   Interfaces are defined in Rocket Markup Language (RML), a format based on
+   HTML, and Rocket Cascading Style Sheets (RCSS), a format based on CSS. The
+   RML specifies the content of the interfaces, the RCSS specifies how the
+   content will be displayed.
+
+   Based on the rules specified in the RCSS, each document (which is roughly
+   equivalent to a webpage in web terminology, or a window in desktop
+   terminology) has its child elements automatically laid out. The layout
+   engine will detect when changes occur to the content or styling and
+   re-layout when necessary.
+
+   Elements have event hooks which can be used to send events back to the
+   application.
+
+   Templates for documents can be created from an RML file. New documents can
+   read from the template and add their own content.
+
+   Dynamic data can be handled by a datagrid or a dataselect, by fetching
+   their contents from a data source and automatically respond to any changes
+   in the data.
+
+   libRocket's functionality can be extended by creating custom decorators to
+   render elements in a specific way, by creating a custom element, by taking
+   advantage of hooks in the XML parser, or by setting custom logging, file,
+   render and system handlers.
+
+   A visual run-time debugger is provided with libRocket.
+
+References
+
+   Visible links
+   1. mailto:support@librocket.com
+   2. http://librocket.com/
+   3. http://www.librocket.com/
+   4. http://www.boost.org/
+}}}

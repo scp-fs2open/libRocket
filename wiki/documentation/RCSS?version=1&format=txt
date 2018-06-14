@@ -1,0 +1,27 @@
+= Rocket Cascading Style Sheet =
+
+This document defines the Rocket Cascading Style Sheet language. RCSS is based on the [http://www.w3.org/TR/REC-CSS2/ CSS2 specification], with certain elements removed or altered to suit the needs of Rocket. In some cases, elements have been taken from the [http://www.w3.org/Style/CSS/current-work CSS3 working draft]. This document provides an overview of RCSS and the differences between RCSS and CSS, and should be read in conjunction with the CSS2 specification.
+
+RCSS interacts with RML in an identical fashion to CSS and HTML. Style properties declared in a RCSS are attached selectively to elements defined in RML to affect layout, positioning and other style attributes (such as font, color, text decoration, etc).
+
+If you are familiar with CSS, a good place to start is the [wiki:documentation/RCSS/PropertyIndex property index], which outlines the properties and values supported in RCSS and the new functionality included. Next, read up on [wiki:documentation/RCSS/Decorators decorators], the new, flexible way to skin elements.
+
+If you are not, read through this documentation while consulting the CSS2 specification for detailed examples and technical details, or skip  all this for now and play around with the samples!
+
+== Contents ==
+
+ 1. [wiki:documentation/RCSS/Syntax Syntax and basic data types][[BR]]
+ 1. [wiki:documentation/RCSS/Selectors Selectors][[BR]]
+ 1. [wiki:documentation/RCSS/Cascade Assigning property values, Cascading and Inheritance][[BR]]
+ 1. [wiki:documentation/RCSS/BoxModel Box model][[BR]]
+ 1. [wiki:documentation/RCSS/VisualFormattingModel Visual formatting model][[BR]]
+ 1. [wiki:documentation/RCSS/VisualFormattingModelDetails Visual formatting model details][[BR]]
+ 1. [wiki:documentation/RCSS/VisualEffects Visual effects][[BR]]
+ 1. [wiki:documentation/RCSS/ColoursBackgrounds Colours and backgrounds][[BR]]
+ 1. [wiki:documentation/RCSS/Fonts Fonts][[BR]]
+ 1. [wiki:documentation/RCSS/Text Text][[BR]]
+ 1. [wiki:documentation/RCSS/UserInterface Cursors, Dragging and Tabbing][[BR]]
+ 1. [wiki:documentation/RCSS/Decorators Decorators][[BR]]
+
+== Appendix ==
+ a. [wiki:documentation/RCSS/PropertyIndex Property index]

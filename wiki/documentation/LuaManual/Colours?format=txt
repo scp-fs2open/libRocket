@@ -1,0 +1,87 @@
+= Colours =
+A Colour (`Colourf` or `Colourb`) is a basic type. It has four properties for ''red'', ''green'', ''blue'', and ''alpha''. Colourf has them as `float`s bound between 0.0 and 1.0. Colourb has them as `int`s bound between 0 and 255.
+
+== Colourb ==
+
+ `Colourb `'''new'''(`int` ''red'', `int` ''green'', `int` ''blue'', `int` ''alpha'')::
+   Creates a new ''Colourb'' for use in Lua.
+
+ '''red'''`   `(`int`)::
+   ''red'' property. Read & write.
+
+ '''green'''`   `(`int`)::
+   ''green'' property. Read & write.
+
+ '''blue'''`   `(`int`)::
+   ''blue'' property. Read & write.
+
+ '''alpha'''`   `(`int`)::
+   ''alpha'' property. Read & write.
+
+ '''rgba'''`   `(`int,int,int,int`)::
+   Returns four separate values (not a table) representing the four properties of the Colourb. Read & write. When writing, all of them are optional. You may only wish to set r and g, so only pass those two. However, if you want to set only r and a, then you must pass all of them, because there is no way to tell which ones you want omitted.
+
+For info on how to read operator overload documentation, see the beginning of the [wiki:documentation/LuaManual/Vectors#Overloadedoperators operator overloading section of the Vectors page].
+
+ `bool `operator '''=='''(`Colourb` ''lhs'', `Colourb` ''rhs'')::
+   Equality
+
+ `Colourb `operator '''+'''(`Colourb` ''lhs'', `Colourb` ''rhs'')::
+   Addition
+
+ `Colourb `operator '''*'''(`Colourb` ''lhs'', `float` ''rhs'')::
+   Multiplication. Linear scaling ''lhs''.
+
+
+== Colourf ==
+
+ `Colourf `'''new'''(`float` ''red'', `float` ''green'', `float` ''blue'', `float` ''alpha'')::
+   Creates a new ''Colourf'' for use in Lua.
+
+ '''red'''`   `(`float`)::
+   ''red'' property. Read & write.
+
+ '''green'''`   `(`float`)::
+   ''green'' property. Read & write.
+
+ '''blue'''`   `(`float`)::
+   ''blue'' property. Read & write.
+
+ '''alpha'''`   `(`float`)::
+   ''alpha'' property. Read & write.
+
+ '''rgba'''`   `(`float,float,float,float`)::
+   Returns four separate values (not a table) representing the four properties of the Colourf. Read & write. When writing, all of them are optional. You may only wish to set r and g, so only pass those two. However, if you want to set only r and a, then you must pass all of them, because there is no way to tell which ones you want omitted.
+
+For info on how to read operator overload documentation, see the beginning of the [wiki:documentation/LuaManual/Vectors#Overloadedoperators operator overloading section of the Vectors page].
+
+ `bool `operator '''=='''(`Colourf` ''lhs'', `Colourf` ''rhs'')::
+   Equality
+
+
+== Colour.rgba Example ==
+Because it cannot be clearly expressed in words, this is an example of things that work and things that don't.
+{{{
+--Lua code
+local col = Colourb.new(100,200,300,400)
+local r,g,b,a = col.rgba 
+--now: r=100,g=200,b=300,400
+
+col.rgba = 150,250,350,450
+--now: col.red=150,col.green=250,col.blue=350,col.alpha=450
+
+--for our next block, our intent is to only change col.red and col.alpha with two
+--variables, but it will not work
+r = 10 --variables from above
+a = 40
+col.rgba = r,a
+--now: col.red=10,col.green=40,col.blue=350,col.alpha=450
+
+--A correct way to do the above is
+--first version
+col.red = r
+col.alpha = a
+--or second version
+col.rgba = r,col.green,col.blue,a
+--Note the second version takes 3 function calls to the first version's two calls.
+}}}

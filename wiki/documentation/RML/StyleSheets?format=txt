@@ -1,0 +1,22 @@
+= RML Style Sheets =
+
+Styles can be included in an RML document in three ways: included from an external style sheet, declared in the header, or declared inline inside a specific tag.
+
+== External Style Sheets ==
+
+Style sheets are included from an external source with the ''LINK'' tag. See [wiki:documentation/RML/Documents#LINKElement Link Element].
+
+== Header Style Information ==
+
+RCSS can be included directly inside the header, with the ''STYLE'' tag.
+
+''No attributes''[[br]]
+
+== Inline Style Declaration ==
+
+RCSS can be declared directly inside an element with the ''style'' attribute.
+
+''Attributes''[[br]]
+'''style = [wiki:documentation/Glossary#Styleinformation style]''' [wiki:documentation/Glossary#CaseInformation (CN)]
+  This attribute specifies a list of RCSS properties to be applied to the current element.
+

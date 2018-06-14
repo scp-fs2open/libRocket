@@ -1,0 +1,23 @@
+= Python Manual =
+
+The Python interface to Rocket has been designed to resemble Javascript as closely as possible. Due the nature of the language, this is more possible in Python than C++.
+
+The functionality of Rocket is described fully in the [wiki:documentation/C++Manual C++ Manual]; this manual defines the Python interface to the Rocket objects described there. Not all aspects of Rocket are accessible from Python; for example, custom decorators can only be created in C++. However the vast majority is accessible, enabling you to easily and efficiently develop the functionality of your documents.
+
+== Integrating Python ==
+ 
+ 1. [wiki:documentation/PythonManual/Overview Overview]
+ 1. [wiki:documentation/PythonManual/EmbeddingScript Embedding script]
+ 1. [wiki:documentation/PythonManual/Fonts Loading fonts]
+ 1. [wiki:documentation/PythonManual/AttachingToEvents Attaching to Events]
+
+== Interfaces ==
+
+ 1. [wiki:documentation/PythonManual/Elements Elements]
+ 1. [wiki:documentation/PythonManual/Documents Documents]
+ 1. [wiki:documentation/PythonManual/Contexts Contexts]
+ 1. [wiki:documentation/PythonManual/Events Events]
+
+== Appendix ==
+
+ a. [wiki:documentation/PythonManual/APIReference API reference]

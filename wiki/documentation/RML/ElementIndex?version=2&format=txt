@@ -1,0 +1,9 @@
+= Element Index =
+
+The following is a list of elements supported by RML.
+||'''Tag'''||'''Attributes'''||
+||img||src="CDATA" width="NUMBER" height="NUMBER"||
+||handle||movetarget="IDREF" sizetarget="IDREF"||
+||button||||
+||input||type="text|radio|checkbox|submit|range" value="CDATA" size="NUMBER" maxlength="NUMBER" min="NUMBER" max="NUMBER" step="NUMBER"||
+||textarea||cols="NUMBER" rows="NUMBER" maxlength="NUMBER"||

@@ -1,0 +1,89 @@
+[[PageOutline(1-5, Contents)]]
+= Contexts =
+
+== Interface ==
+
+=== Properties ===
+
+|| '''Lua property''' || '''Brief description''' || '''Equivalent C++ functions''' ||
+|| ''dimensions'' || Gets/sets the dimensions of the context. || ''GetDimensions()'', ''SetDimensions()'' ||
+|| ''documents'' || Retrieves a document within the interface. || ''GetDocument()'', ''GetNumDocuments()'' ||
+|| ''focus_element'' || Retrieves the context's focus element. || ''GetFocusElement()'' ||
+|| ''hover_element'' || Retrieves the element under the context's cursor. || ''GetHoverElement()'' ||
+|| ''root_element'' || Retrieves the context's root element. || ''GetRootElement()'' ||
+|| ''name'' || Retrieves the context's name. || ''GetName()'' ||
+
+==== Retrieving documents ====
+
+The ''documents'' property on the context is a [wiki:documentation/LuaManual/ProxyTables proxy table] in regards to the C++ interface with Lua, accessed by both string and integer keys.
+
+{{{
+for key, doc in ipairs(context.documents:GetTable()) do
+    print doc.title
+end
+
+local index = 0
+local length = #context.documents:GetTable() / 2
+while index < length do
+    print (index .. ": " .. context.documents[index].title)
+end
+}}}
+Because the items can be indexed by both string and integer keys, the contexts are duplicated in the table. This means that the size operator on ''context.documents:GetTable()'' returns twice as many items as there are contexts.
+
+It is also possible to access them as a dictionary, looking documents up by their ID:
+{{{
+document = context.documents["highscores"]
+if document == nil then
+    print ("No document found!")
+end
+}}}
+
+Or accessing documents as attributes on the ''documents'' property itself:
+
+{{{
+document = context.documents.highscores
+if document == nil then
+    print "No document found!"
+end
+}}}
+
+=== Methods ===
+
+The following methods are exported from the C++ interface.
+
+|| '''Lua method''' || '''Brief description''' ||
+|| ''AddEventListener()'' || Attaches an inline event listener to the root of the context.||
+|| ''AddMouseCursor()'' || Adds a previously-loaded mouse cursor to the document. ||
+|| ''CreateDocument()'' || Creates a new document. ||
+|| ''LoadDocument()'' || Loads a document from an external RML file. ||
+|| ''LoadMouseCursor()'' || Loads a mouse cursor from an external RML file. ||
+|| ''Render()'' || Renders the context. ||
+|| ''ShowMouseCursor()'' || Shows or hides the mouse cursor. ||
+|| ''UnloadAllDocuments()'' || Unloads all loaded documents within the context. ||
+|| ''UnloadAllMouseCursors()'' || Unloads all of the context's mouse cursors. ||
+|| ''UnloadDocument()'' || Unloads one of the context's documents. ||
+|| ''UnloadMouseCursor()'' || Unloads one of the context's cursors. ||
+|| ''Update()'' || Updates the context. ||
+
+== Creating contexts ==
+
+Contexts can be created in Lua with the ''CreateContext()'' function in the ''rocket'' table. This function takes the name of the context as a string and the dimensions as a ''Vector2i'' type.
+
+{{{
+new_context = rocket.CreateContext("hud", Vector2i.new(1024, 768))
+}}}
+
+== Accessing contexts ==
+
+Existing contexts can be accessed in Lua via the contexts member on the rocket table. They can then be accessed via name or index.
+
+{{{
+context = rocket.contexts["hud"]
+}}}
+
+List all contexts
+{{{
+for key,context in ipairs(rocket.contexts) do
+  print context.name
+end
+}}}

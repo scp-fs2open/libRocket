@@ -1,0 +1,22 @@
+= Proxy Tables =
+When iterating over a table returned from a select few properties, you '''must''' use ''ipairs'' or ''pairs'' rather than ''foreach'', ''next'', or whatever else exists. The "tables" are actually userdata containing C++ pointers.
+
+== Why ==
+The Lua language is fairly simple. It does not have an iterator metamethod like it does for some other operations. Because of this, `__pairs` and `__ipairs` are pseudo-metamethods that exist for proxy tables. It is a tradeoff of performance for being a little less flexible. However, since Lua's ''foreach'' is being depreciated, there is almost no reason to not use ''ipairs'' or ''pairs''.
+
+== List of proxy tables ==
+This is an exhaustive list of everything that returns proxy tables. If you think that this is out of date or incorrect, then the file names in the source code will tell you if you are correct. If the file name ends with "Proxy.cpp", then it is proxy table.
+
+{{{
+Context.documents --read-only, index by integer and string
+Element.attributes --read-only, index by string
+Element.child_nodes --read-only, index by integer
+Element.style --read & write, index by string
+Event.parameters --read-only, index by string
+rocket.contexts --read-only, index by integer and string
+--From RocketControls
+ElementFormControlSelect.options --[[read only, index by integer
+      each index item is a table with two named values, {"element"=Element,"value"=string} ]]
+}}}
+
+If you try to use ''ipairs'' on a proxy table that is only indexed by string, then you will iterate over no items. If you use ''pairs'' on a proxy table that is only indexed by integer, then you will iterate over all of the items, just like you would expect. 

@@ -1,0 +1,34 @@
+{{{
+#!html
+<div class="left-col">
+	<p class="intro">libRocket is the C++ user interface middleware package based on the HTML and CSS standards. It is designed as a complete solution for any project's interface needs.</p>
+	<p>libRocket uses the time-tested open standards XHTML1.0 and CSS2.0 (while borrowing features from HTML5 and CSS3), and extends them with features suited towards real-time applications. Because of this, you don't have to learn a whole new proprietary technology like other packages in this middleware space.</p>
+</div>
+<div class="centre-col">
+        <a href="http://www.konggame.co.uk/"><img src="/chrome/site/images/kong.jpg" width="259px" height="194px" alt="Kong" /></a>
+	<p class="caption">Kong! version 1.1 utilising libRocket for its user interface has just been released.</p>
+
+	<a href="http://farmpioneer.wanderingmonster.co.nz/"><img src="/chrome/site/images/farmpioneer.jpg" width="259px" height="173px" alt="No One Can Stop The Farm Pioneer" /></a>
+	<p class="caption">We put together this entry in to the three-week VGNG competition at <a href="http://www.tigsource.com/">TIGSource</a>, using libRocket for the interface. Check out <a href="http://farmpioneer.wanderingmonster.co.nz/">No One Can Stop The Farm Pioneer</a>!</p>
+
+<!--	<a href="/wiki/frontend/showcase/invaders"><img src="/chrome/site/images/rocket_invaders_small.jpg" width="259px" height="194px" alt="Rocket Invaders" /></a>
+	<p class="caption">The sample game bundled with libRocket, <em>Rocket Invaders from Mars</em>. This screenshot shows the debugger in action.</p>-->
+</div>
+<div class="right-col">
+	<p class="intro">Packed with features!</p>
+	<ul>
+		<li>Cross platform across all desktop environments: Windows, Mac OSX (Intel) and Linux.</li>
+		<li>Dynamic layout system.</li>
+		<li>Efficient application-wide styling, with a custom-built templating engine.</li>
+		<li>Fully featured open source user control set: buttons, sliders, drop-downs, etc.</li>
+		<li>Runtime visual debugging suite.</li>
+		<li>Easily integrated and extensible with Python scripting.</li>
+	</ul>
+	<p class="intro">Extensible:</p>
+	<ul>
+		<li>Abstracted interfaces for plugging in to any game engine.</li>
+		<li>Decorator engine allowing custom application-specific effects that can be applied to any element.</li>
+		<li>Generic event system that binds seamlessly into existing projects.</li>
+	</ul>
+</div>
+}}}

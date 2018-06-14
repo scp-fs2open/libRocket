@@ -1,0 +1,660 @@
+[[PageOutline(1-5, Contents)]]
+= Decorators =
+
+Decorators are an extension to CSS for RCSS. A decorator can be declared and named in a style sheet like a property, and then configured with decorator-specific properties. Custom decorator types can be developed to suit the needs of the user, and in this manner any kind of decoration can be applied to an element.
+
+'''Important:''' Note that decorators can only be declared and defined in style sheets, ''not'' in style defined inline to an element.
+
+== Declaring decorators ==
+
+The declaration of a decorator is a property of the form:
+
+{{{
+<name>-decorator: <type>;
+}}}
+
+where <name> is the user-specified name of the decorator to declare, and <type> is the application-specific type of decorator. Rocket ships with the decorators 'image', 'tiled-box', 'tiled-horizontal' and 'tiled-vertical'. The decorator type 'none' is a reserved name that represents no decorator. For example, in the following:
+
+{{{
+button
+{
+    icon-decorator: tiled-horizontal;
+}
+}}}
+
+the RCSS is attaching a decorator of type 'tiled-horizontal' called 'icon' to all 'button' elements.
+
+Decorator types can be overridden like any other property. So, in the example:
+
+{{{
+h1
+{
+    icon-decorator: image;
+}
+
+h1:hover
+{
+    icon-decorator: none;
+}
+}}}
+
+all 'h1' tags will have an image decorator attached, except when they are being hovered, when the decorator will not be rendered.
+
+== Decorator properties ==
+
+Decorators have their own property specifications with properties and shorthands, and these can be defined for declared decorators just like any other property. Decorator properties are set in the form:
+
+{{{
+<decorator_name>-<property_name>: <property_value>;
+}}}
+
+where <decorator_name> is the name the decorator was declared under, <property_name> is the name of the decorator's property to set, and <property_value> is the value of the property. For example:
+
+{{{
+h1
+{
+    icon-decorator: image;
+    icon-image-src: ../images/header_arrow.png;
+    icon-image-s-begin: 5px;
+}
+}}}
+
+an 'image' decorator is declared, called 'icon'. On this decorator, the properties 'image-src' is set to '../images/header_arrow.png' and the 'image-s-begin' is set to '5px'. The other properties in the 'image' specification are left to their defaults.
+
+The decorator properties behave like other properties, so are subject to precedence and the cascade. For example, if the following RCSS was loaded after the previous example:
+
+{{{
+h1
+{
+    icon-image-s-begin: 3px;
+}
+
+h1:first-child
+{
+    icon-decorator: none;
+}
+}}}
+
+all 'h1' tags will have their 'icon' decorators defined with an 's-begin' property of '3px' instead of '5px', and an 'h1' that is a first child will have no decorator.
+
+Be careful of name conflicts! For example, in the following sample:
+
+{{{
+h1
+{
+    icon-decorator: image;
+}
+
+.secondary
+{
+    icon-decorator: tiled-horizontal;
+}
+}}}
+
+an element of type 'h1' with a class of 'secondary' will have a single decorator, 'icon', of type 'tiled-horizontal'. If the decorators had different names then they both would be present.
+
+== Specifying render order ==
+
+If an element has more than one decorator on it, you can use the 'z-index' decorator property to control the render order in a similar fashion to elements. For example, in this sample:
+
+{{{
+button
+{
+    background-decorator: tiled-horizontal;
+    background-z-index: 0;
+
+    icon-decorator: image;
+    icon-z-index: 1;
+}
+}}}
+
+the 'icon' decorator will appear on top of the 'background' decorator. If no z-index is specified on a decorator, it will have the default z-index of 0.
+
+== Decorators and pseudo-classes ==
+
+Because of the way Rocket compiles pseudo-class rules within style sheets, overriding decorator properties within dynamic pseudo-classes (:active, :hover and :focus, not any of the structural classes) might not always work the way you think it should.
+
+In a nutshell, each decorator will only process properties from their element's base rules (ie, those not specifying dynamic pseudo-classes in their final simple selector) and ''one'' rule specifying a dynamic pseudo-class (or classes), that with the highest specificity. For example, in the following sample:
+
+{{{
+button
+{
+    background-decorator: tiled-horizontal;
+    background-image-src: ../button.png;
+    background-image-s-end: 128px;
+}
+
+button:hover
+{
+    background-image-t-begin: 32px;
+    background-image-t-end: 64px;
+}
+
+button:active
+{
+    background-image-s-begin: 128px;
+    background-image-s-end: 256px;
+}
+}}}
+
+if both the 'hover' and 'active' pseudo-classes are active on a 'button' element, the image-s-begin / end properties from the 'active' rule will be set, but the image-t-begin / -end properties from the 'hover' rule will be ignored. The 'active' rule is used as it has higher precedence that the 'hover' rule, appearing further down the file. If you wanted both the s and t properties set, you could create another rule:
+
+{{{
+button:active:hover
+{
+    background-image-t-begin: 32px;
+    background-image-t-end: 64px;
+    background-image-s-begin: 128px;
+    background-image-s-end: 256px;
+}
+}}}
+
+== Rocket decorators ==
+
+Rocket comes with several built-in decorators for displaying images and tiled images behind elements.
+
+=== The 'image' decorator ===
+
+The 'image' decorator can render a single image or a rectangular subsection of a single image. It has the following properties:
+
+''image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+This property defines the name (and, for file sources, the relative path) of the source image.
+
+''image-s-begin'', ''image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''image-s-end'', ''image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These values specify the texture coordinates to use when rendering the image. Values have the following meanings:
+
+ number::
+   Expected to be a floating-point number from 0 to 1, this is the raw texture coordinate.
+ length::
+   Expected to be expressed in 'px' units and from 0 to the length of the appropriate texture axis. The texture will be rendered from (for -begin) or to (for -end) this pixel.
+ percentage::
+   The texture will be rendered from (for -begin) ot to (for -end) this far across the appropriate texture axis.
+
+''image-s''[[BR]]
+A shorthand property for setting ''image-s-begin'' and ''image-s-end''.
+
+''image-t''[[BR]]
+A shorthand property for setting ''image-t-begin'' and ''image-t-end''.
+
+''image''[[BR]]
+A shorthand property for setting ''image-src'', ''image-s-begin'', ''image-t-begin'', ''image-s-end'' and ''image-t-end''.
+
+{{{
+/* Declares an image decorator. */
+div#avatar
+{
+    avatar-decorator: image;
+    avatar-image: player.png 0px 32px 32px 64px;
+}
+}}}
+
+The image will be stretched or shrunk to render across the entire padded area of an element it is attached to.
+
+=== The 'tiled-horizontal' decorator ===
+
+The 'horizontal-tiled' decorator can render three images, or subsections of images, horizontally across an element. One image is placed on the left edge, another on the right edge, and the last is stretched or repeated across the middle.
+
+''left-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''left-image-s-begin'', ''left-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''left-image-s-end'', ''left-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the left image. They behave similarly to the properties in the 'image' decorator.
+
+''right-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''right-image-s-begin'', ''right-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''right-image-s-end'', ''right-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the right image. They behave similarly to the properties in the 'image' decorator. If only one side is defined, the other will be the horizontal mirror of it. At least one side must be defined.
+
+''center-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''center-image-repeat''
+|| ''Value:'' || stretch | clamp-stretch | clamp-truncate | repeat-stretch | repeat-truncate ||
+|| ''Initial:'' || stretch ||
+|| ''Percentages:'' || N/A ||
+
+Values have the following meanings:
+
+ stretch::
+   The image will be stretched to fit the centre of the decorator.
+ clamp-stretch::
+   The image will be clamped to the upper-left of the centre of the decorator. If the centre of the decorator is too small to fit the image, it will be scaled down to fit.
+ clamp-truncate::
+   The image will be clamped to the upper-left of the centre of the decorator. If the centre of the decorator is too small to fit the image, it will be truncated.
+ repeat-stretch::
+   The image will be repeated across the centre of the decorator. Any last repeat will be stretched across the remainder.
+ repeat-truncate::
+   The image will be repeated across the centre of the decorator. The last repeat will be truncated.
+
+''center-image-s-begin'', ''center-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''center-image-s-end'', ''center-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the centre image. They behave similarly to the properties in the 'image' decorator.
+
+''left-image-s''[[BR]]
+Shorthand for setting ''left-image-s-begin'' and ''left-image-s-end''.
+
+''left-image-t''[[BR]]
+Shorthand for setting ''left-image-t-begin'' and ''left-image-t-end''.
+
+''left-image''[[BR]]
+A shorthand property for setting ''left-image-src'', ''left-image-s-begin'', ''left-image-t-begin'', ''left-image-s-end'' and ''left-image-t-end''.
+
+''right-image-s''[[BR]]
+Shorthand for setting ''right-image-s-begin'' and ''right-image-s-end''.
+
+''right-image-t''[[BR]]
+Shorthand for setting ''right-image-t-begin'' and ''right-image-t-end''.
+
+''right-image''[[BR]]
+A shorthand property for setting ''right-image-src'', ''right-image-s-begin'', ''right-image-t-begin'', ''right-image-s-end'' and ''right-image-t-end''.
+
+''center-image-s''[[BR]]
+Shorthand for setting ''center-image-s-begin'' and ''center-image-s-end''.
+
+''center-image-t''[[BR]]
+Shorthand for setting ''center-image-t-begin'' and ''center-image-t-end''.
+
+''center-image''[[BR]]
+A shorthand property for setting ''center-image-src'', ''center-image-repeat'', ''center-image-s-begin'', ''center-image-t-begin'', ''center-image-s-end'' and ''center-image-t-end''.
+
+The decorator renders across the padded area of its element.
+
+=== The 'tiled-vertical' decorator ===
+
+The 'tiled-vertical' decorator can render three images, or subsections of images, vertically across an element. One image is placed on the top edge, another on the bottom edge, and the last is stretched or repeated across the middle.
+
+''top-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''top-image-s-begin'', ''top-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''top-image-s-end'', ''top-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the top image. They behave similarly to the properties in the 'image' decorator.
+
+''bottom-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''bottom-image-s-begin'', ''bottom-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''bottom-image-s-end'', ''bottom-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the bottom image. They behave similarly to the properties in the 'image' decorator. If only one side is defined, the other will be the vertical mirror of it. At least one side must be defined.
+
+''center-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''center-image-repeat''
+|| ''Value:'' || stretch | clamp-stretch | clamp-truncate | repeat-stretch | repeat-truncate ||
+|| ''Initial:'' || stretch ||
+|| ''Percentages:'' || N/A ||
+
+''center-image-s-begin'', ''center-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''center-image-s-end'', ''center-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the centre image. They behave similarly to the centre properties in the 'horizontal-tiled' decorator.
+
+''top-image-s''[[BR]]
+Shorthand for setting ''top-image-s-begin'' and ''top-image-s-end''.
+
+''top-image-t''[[BR]]
+Shorthand for setting ''top-image-t-begin'' and ''top-image-t-end''.
+
+''top-image''[[BR]]
+A shorthand property for setting ''top-image-src'', ''top-image-s-begin'', ''top-image-t-begin'', ''top-image-s-end'' and ''top-image-t-end''.
+
+''bottom-image-s''[[BR]]
+Shorthand for setting ''bottom-image-s-begin'' and ''bottom-image-s-end''.
+
+''bottom-image-t''[[BR]]
+Shorthand for setting ''bottom-image-t-begin'' and ''bottom-image-t-end''.
+
+''bottom-image''[[BR]]
+A shorthand property for setting ''bottom-image-src'', ''bottom-image-s-begin'', ''bottom-image-t-begin'', ''bottom-image-s-end'' and ''bottom-image-t-end''.
+
+''center-image-s''[[BR]]
+Shorthand for setting ''center-image-s-begin'' and ''center-image-s-end''.
+
+''center-image-t''[[BR]]
+Shorthand for setting ''center-image-t-begin'' and ''center-image-t-end''.
+
+''center-image''[[BR]]
+A shorthand property for setting ''center-image-src'', ''center-image-repeat'', ''center-image-s-begin'', ''center-image-t-begin'', ''center-image-s-end'' and ''center-image-t-end''.
+
+The decorator renders across the padded area of its element.
+
+=== The 'tiled-box' decorator ===
+
+The 'tiled-box' decorator can render nine images, or subsections of images, across an element. One image is placed in each of the element's corners, one each stretched or tiled along the edges, and another stretched across the middle.
+
+''top-left-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''top-left-image-s-begin'', ''top-left-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''top-left-image-s-end'', ''top-left-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the top-left corner image. They behave similarly to the properties in the 'image' decorator.
+
+''top-right-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''top-right-image-s-begin'', ''top-right-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''top-right-image-s-end'', ''top-right-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the top-right corner image. They behave similarly to the properties in the 'image' decorator.
+
+''bottom-left-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''bottom-left-image-s-begin'', ''bottom-left-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''bottom-left-image-s-end'', ''bottom-left-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the bottom-left corner image. They behave similarly to the properties in the 'image' decorator.
+
+''bottom-right-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''bottom-right-image-s-begin'', ''bottom-right-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''bottom-right-image-s-end'', ''bottom-right-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the bottom-right corner image. They and behave similarly to the properties in the 'image' decorator.
+
+''top-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''top-image-repeat''
+|| ''Value:'' || stretch | clamp-stretch | clamp-truncate | repeat-stretch | repeat-truncate ||
+|| ''Initial:'' || stretch ||
+|| ''Percentages:'' || N/A ||
+
+''top-image-s-begin'', ''top-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''top-image-s-end'', ''top-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the top edge image. They behave similarly to the centre properties in the 'horizontal-tiled' decorator.
+
+''right-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''right-image-repeat''
+|| ''Value:'' || stretch | clamp-stretch | clamp-truncate | repeat-stretch | repeat-truncate ||
+|| ''Initial:'' || stretch ||
+|| ''Percentages:'' || N/A ||
+
+''right-image-s-begin'', ''right-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''right-image-s-end'', ''right-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the right edge image. They behave similarly to the centre properties in the 'vertical-tiled' decorator.
+
+''bottom-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''bottom-image-repeat''
+|| ''Value:'' || stretch | clamp-stretch | clamp-truncate | repeat-stretch | repeat-truncate ||
+|| ''Initial:'' || stretch ||
+|| ''Percentages:'' || N/A ||
+
+''bottom-image-s-begin'', ''bottom-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''bottom-image-s-end'', ''bottom-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the bottom edge image. They behave similarly to the centre properties in the 'horizontal-tiled' decorator.
+
+''left-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''left-image-repeat''
+|| ''Value:'' || stretch | clamp-stretch | clamp-truncate | repeat-stretch | repeat-truncate ||
+|| ''Initial:'' || stretch ||
+|| ''Percentages:'' || N/A ||
+
+''left-image-s-begin'', ''left-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''left-image-s-end'', ''left-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the left edge image. They behave similarly to the centre properties in the 'vertical-tiled' decorator.
+
+''center-image-src''
+|| ''Value:'' || <string> ||
+|| ''Initial:'' || not defined ||
+|| ''Percentages:'' || N/A ||
+
+''center-image-repeat''
+|| ''Value:'' || stretch | clamp-stretch | clamp-truncate | repeat-stretch | repeat-truncate ||
+|| ''Initial:'' || stretch ||
+|| ''Percentages:'' || N/A ||
+
+''center-image-s-begin'', ''center-image-t-begin''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 0 ||
+|| ''Percentages:'' || N/A ||
+
+''center-image-s-end'', ''center-image-t-end''
+|| ''Value:'' || <number> | <length> | <percentage> ||
+|| ''Initial:'' || 1 ||
+|| ''Percentages:'' || N/A ||
+
+These properties specify the center image. They behave similarly to the centre properties in the 'tiled-horizontal' decorator.
+
+''top-left-image-s''[[BR]]
+Shorthand for setting ''top-left-image-s-begin'' and ''top-left-image-s-end''.
+
+''top-left-image-t''[[BR]]
+Shorthand for setting ''top-left-image-t-begin'' and ''top-left-image-t-end''.
+
+''top-left-image''[[BR]]
+A shorthand property for setting ''top-left-image-src'', ''top-left-image-s-begin'', ''top-left-image-t-begin'', ''top-left-image-s-end'' and ''top-left-image-t-end''.
+
+''top-right-image-s''[[BR]]
+Shorthand for setting ''top-right-image-s-begin'' and ''top-right-image-s-end''.
+
+''top-right-image-t''[[BR]]
+Shorthand for setting ''top-right-image-t-begin'' and ''top-right-image-t-end''.
+
+''top-right-image''[[BR]]
+A shorthand property for setting ''top-right-image-src'', ''top-right-image-s-begin'', ''top-right-image-t-begin'', ''top-right-image-s-end'' and ''top-right-image-t-end''.
+
+''bottom-left-image-s''[[BR]]
+Shorthand for setting ''bottom-left-image-s-begin'' and ''bottom-left-image-s-end''.
+
+''bottom-left-image-t''[[BR]]
+Shorthand for setting ''bottom-left-image-t-begin'' and ''bottom-left-image-t-end''.
+
+''bottom-left-image''[[BR]]
+A shorthand property for setting ''bottom-left-image-src'', ''bottom-left-image-s-begin'', ''bottom-left-image-t-begin'', ''bottom-left-image-s-end'' and ''bottom-left-image-t-end''.
+
+''bottom-right-image-s''[[BR]]
+Shorthand for setting ''bottom-right-image-s-begin'' and ''bottom-right-image-s-end''.
+
+''bottom-right-image-t''[[BR]]
+Shorthand for setting ''bottom-right-image-t-begin'' and ''bottom-right-image-t-end''.
+
+''bottom-right-image''[[BR]]
+A shorthand property for setting ''bottom-right-image-src'', ''bottom-right-image-s-begin'', ''bottom-right-image-t-begin'', ''bottom-right-image-s-end'' and ''bottom-right-image-t-end''.
+
+''top-image-s''[[BR]]
+Shorthand for setting ''top-image-s-begin'' and ''top-image-s-end''.
+
+''top-image-t''[[BR]]
+Shorthand for setting ''top-image-t-begin'' and ''top-image-t-end''.
+
+''top-image''[[BR]]
+A shorthand property for setting ''top-image-src'', ''top-image-repeat'', ''top-image-s-begin'', ''top-image-t-begin'', ''top-image-s-end'' and ''top-image-t-end''.
+
+''right-image-s''[[BR]]
+Shorthand for setting ''right-image-s-begin'' and ''right-image-s-end''.
+
+''right-image-t''[[BR]]
+Shorthand for setting ''right-image-t-begin'' and ''right-image-t-end''.
+
+''right-image''[[BR]]
+A shorthand property for setting ''right-image-src'', ''right-image-repeat'', ''right-image-s-begin'', ''right-image-t-begin'', ''right-image-s-end'' and ''right-image-t-end''.
+
+''bottom-image-s''[[BR]]
+Shorthand for setting ''bottom-image-s-begin'' and ''bottom-image-s-end''.
+
+''bottom-image-t''[[BR]]
+Shorthand for setting ''bottom-image-t-begin'' and ''bottom-image-t-end''.
+
+''bottom-image''[[BR]]
+A shorthand property for setting ''bottom-image-src'', ''bottom-image-repeat'', ''bottom-image-s-begin'', ''bottom-image-t-begin'', ''bottom-image-s-end'' and ''bottom-image-t-end''.
+
+''left-image-s''[[BR]]
+Shorthand for setting ''left-image-s-begin'' and ''left-image-s-end''.
+
+''left-image-t''[[BR]]
+Shorthand for setting ''left-image-t-begin'' and ''left-image-t-end''.
+
+''left-image''[[BR]]
+A shorthand property for setting ''left-image-src'', ''left-image-repeat'', ''left-image-s-begin'', ''left-image-t-begin'', ''left-image-s-end'' and ''left-image-t-end''.
+
+''center-image-s''[[BR]]
+Shorthand for setting ''center-image-s-begin'' and ''center-image-s-end''.
+
+''center-image-t''[[BR]]
+Shorthand for setting ''center-image-t-begin'' and ''center-image-t-end''.
+
+''center-image''[[BR]]
+A shorthand property for setting ''center-image-src'', ''center-image-repeat'', ''center-image-s-begin'', ''center-image-t-begin'', ''center-image-s-end'' and ''center-image-t-end''.
+
+The decorator renders across the padded area of its element.

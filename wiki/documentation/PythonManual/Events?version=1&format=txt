@@ -1,0 +1,18 @@
+[[PageOutline(1-5, Contents)]]
+= Events =
+
+Events in Python are accessed in inline event handlers through the global variable ''event''.
+
+== Interface ==
+
+=== Properties ===
+
+|| '''Python property''' || '''Brief description''' || '''Equivalent C++ method''' ||
+|| ''current_element'' || The current element in the event propagation. || ''GetCurrentElement()'' ||
+|| ''target_element'' || The element the event was originally targeted at. || ''GetTargetElement()'' ||
+|| ''type'' || The type of the event. || ''GetType()'' ||
+|| ''parameters'' || Dictionary style container of all the parameters in the event || ''GetParameters()'' ||
+
+=== Methods ===
+
+Events have a single Python method, ''StopPropagation()'', which interrupts the event propagation if allowed by the event (ie, if it is interruptible).

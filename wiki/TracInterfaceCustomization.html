@@ -1,0 +1,256 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title> Trac Interface Customization - libRocket</title>
+<link rel="start" href="http://librocket.com/wiki"/><link rel="search" href="http://librocket.com/search"/><link rel="help" href="TracGuide.html"/><link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css"/><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css"/><link rel="icon" href="../chrome/site/trac.ico" type="image/x-icon"/><link rel="shortcut icon" href="../chrome/site/trac.ico" type="image/x-icon"/><link rel="alternate" href="TracInterfaceCustomization%3Fformat=txt" title="Plain Text" type="text/x-trac-wiki"/><style type="text/css">
+</style>
+<script type="text/javascript" src="../chrome/common/js/trac.js"></script>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/base.css"></link>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/content.css"></link>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/discussion.css"></link>
+<style>
+		div.wiki img
+		{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+<div class="widthshell-width">
+<div class="widthshell-minwidth">
+<div class="widthshell-layout">
+<div class="widthshell-container">
+<div class="widthshell-content">
+<div id="background">
+<div style="float:right;width:160px;height:600px;margin-top:110px;margin-right:20px;">
+<script type="text/javascript"><!--
+                        google_ad_client = "pub-5872045433470541";
+                        /* Default, Wide Skyscraper */
+                        google_ad_slot = "3956485030";
+                        google_ad_width = 160;
+                        google_ad_height = 600;
+                //-->
+                </script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+</div>
+<div class="shell">
+<div class="stars">
+<img id="star-1" src="../chrome/site/images/star-red-medium.gif" width="22px" height="22px" alt="Star"/>
+<img id="star-2" src="../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-3" src="../chrome/site/images/star-red-small.gif" width="11px" height="11px" alt="Star"/>
+<img id="star-4" src="../chrome/site/images/star-orange-small.gif" width="16px" height="16px" alt="Star"/>
+<img id="star-5" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-6" src="../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-7" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-8" src="../chrome/site/images/star-red-big.gif" width="33px" height="33px" alt="Star"/>
+<img id="star-9" src="../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-10" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-11" src="../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-12" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+</div>
+<div id="header">
+<a href="documentation.html"><img id="title" src="../chrome/site/images/title.gif" width="256px" height="49px" alt="Rocket"/></a>
+<ul class="top-level-nav">
+<li><a href="frontend/features.html">features.</a></li>
+
+<li><a href="http://github.com/lloydw/librocket">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="documentation.html">developer.</a></li>
+</ul>
+<img id="trail" src="../chrome/site/images/trail-content.gif" width="72px" height="115px" alt="Rocket Trail"/>
+<a href="documentation.html"><img id="rocket" src="../chrome/site/images/rocket-content.gif" width="126px" height="139px" alt="Rocket"/></a>
+</div>
+</div>
+</div>
+<div class="shell">
+<div id="banner">
+<div class="stars">
+<img id="star-13" src="../chrome/site/images/star-black-big.gif" width="49px" height="50px" alt="Star"/>
+<img id="star-14" src="../chrome/site/images/star-black-medium.gif" width="23px" height="23px" alt="Star"/>
+<img id="star-15" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-16" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-17" src="../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-18" src="../chrome/site/images/star-black-tiny.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-19" src="../chrome/site/images/star-black-tiny.gif" width="9px" height="9px" alt="Star"/>
+<img id="star-20" src="../chrome/site/images/star-black-tiny.gif" width="10px" height="10px" alt="Star"/>
+<img id="star-21" src="../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-22" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-23" src="../chrome/site/images/star-black-small.gif" width="13px" height="13px" alt="Star"/>
+</div>
+<img id="banner-bottom-left" src="../chrome/site/images/banner-bottom-left.gif" width="20px" height="19px" alt="Bottom left banner image"/>
+<img id="banner-bottom-right" src="../chrome/site/images/banner-bottom-right.gif" width="20px" height="19px" alt="Bottom right banner image"/>
+<div id="login"><a href="http://librocket.com/login">Login</a> | <a "http://librocket.com/wiki/href">Register</a></div>
+<div id="breadcrumbs">
+<a href="TracInterfaceCustomization.html">TracInterfaceCustomization</a></div>
+<div id="title"> Trac Interface Customization</div>
+<div id="second-level-nav">
+<span class="nav-item active"><a href="documentation.html">Documentation</a></span>
+<span class="nav-item"><a accesskey="4" href="http://librocket.com/search">Search</a></span>
+</div>
+</div>
+<div id="content-container">
+<div id="content" class="wiki">
+<div class="wikipage">
+<div id="searchable"><h1 id="CustomizingtheTracInterface">Customizing the Trac Interface</h1>
+<p>
+</p><div class="wiki-toc"><h4>Table of Contents</h4><ul><li><a href="TracGuide.html">Index</a></li><li><a href="TracInstall.html">Installation</a></li><li><a href="TracUpgrade.html">Upgrading</a></li><li><a href="TracIni.html">Configuration</a></li><li><a href="TracAdmin.html">Administration</a></li><li><a href="TracBackup.html">Backup</a></li><li><a href="TracLogging.html">Logging</a></li><li><a href="TracPermissions.html">Permissions</a></li><li><a href="TracWiki.html">The Wiki</a></li><li><a href="WikiFormatting.html">Wiki Formatting</a></li><li><a href="TracTimeline.html">Timeline</a></li><li><a href="TracBrowser.html">Repository Browser</a></li><li><a href="TracChangeset.html">Changesets</a></li><li><a href="TracRoadmap.html">Roadmap</a></li><li><a href="TracTickets.html">Tickets</a></li><li><a href="TracQuery.html">Ticket Queries</a></li><li><a href="TracReports.html">Reports</a></li><li><a href="TracRss.html">RSS Support</a></li><li><a href="TracNotification.html">Notification</a></li><li class="active"><a href="TracInterfaceCustomization.html">Customization</a></li><li><a href="TracPlugins.html">Plugins</a></li></ul></div><p>
+</p>
+<h2 id="Introduction">Introduction</h2>
+<p>
+This page is meant to give users suggestions on how they can customize the look of Trac. Topics on this page cover editing the HTML templates and CSS files, but not the program code itself. The topics are intended to show users how they can modify the look of Trac to meet their specific needs. Suggestions for changes to Trac's interface applicable to all users should be filed as tickets, not listed on this page.
+</p>
+<h2 id="ProjectLogoandIcon">Project Logo and Icon</h2>
+<p>
+The easiest parts of the Trac interface to customize are the logo and the site icon. Both of these can be configured with settings in <a class="wiki" href="TracIni.html">trac.ini</a>.
+</p>
+<p>
+The logo or icon image should be put in a folder named "htdocs" in your project's environment folder. (<i>Note: in projects created with a Trac version prior to 0.9 you will need to create this folder</i>)
+</p>
+<blockquote>
+<p>
+<i>Note: you can actually put the logo and icon anywhere on your server (as long as it's accessible through the web server), and use their absolute or server-relative URLs in the configuration.</i>
+</p>
+</blockquote>
+<p>
+Now configure the appropriate section of your <a class="wiki" href="TracIni.html">trac.ini</a>:
+</p>
+<h3 id="Logo">Logo</h3>
+<p>
+Change the <tt>src</tt> setting to <tt>site/</tt> followed by the name of your image file. The <tt>width</tt> and <tt>height</tt> settings should be modified to match your image's dimensions (the Trac chrome handler uses "<tt>site/</tt>" for files within the project directory <tt>htdocs</tt> and "<tt>common/</tt>" for the common ones).
+</p>
+<pre class="wiki">[header_logo]
+src = site/my_logo.gif
+alt = My Project
+width = 300
+height = 100
+</pre><h3 id="Icon">Icon</h3>
+<p>
+Icons should be a 16x16 image in <tt>.gif</tt> or <tt>.ico</tt> format. Change the <tt>icon</tt> setting to <tt>site/</tt> followed by the name of your icon file. Icons will typically be displayed by your web browser next to the site's URL and in the <tt>Bookmarks</tt> menu.
+</p>
+<pre class="wiki">[project]
+icon = site/my_icon.ico
+</pre><p>
+Note though that this icon is ignored by Internet Explorer, which only accepts a file named <tt></tt>favicon.ico<tt></tt> at the root of the host. To make the project icon work in both IE and other browsers, you can store the icon in the document root of the host, and reference it from <tt></tt>trac.ini<tt></tt> as follows:
+</p>
+<pre class="wiki">[project]
+icon = /favicon.ico
+</pre><h2 id="SiteHeaderFooter">Site Header &amp; Footer</h2>
+<p>
+In the environment folder for each Trac project there should be a directory called <tt>templates</tt>. This folder contains files <tt>site_header.cs</tt> and <tt>site_footer.cs</tt>. Users can customize their Trac site by adding the required HTML markup to these files. The content of these two files will be placed immediately following the opening <tt>&lt;body&gt;</tt> tag and immediately preceding the closing <tt>&lt;/body&gt;</tt> tag of each page in the site, respectively.
+</p>
+<p>
+These files may contain static HTML, though if users desire to have dynamically generated content they can make use of the <a class="ext-link" href="http://www.clearsilver.net/"><span class="icon">ClearSilver</span></a> templating language from within the pages as well. When you need to see what variables are available to the template, append the query string <tt>?hdfdump=1</tt> to the URL of your Trac site. This will display a structured view of the template data.
+</p>
+<h2 id="SiteCSS">Site CSS</h2>
+<p>
+The primary means to adjust the layout of a Trac site is to add <a class="ext-link" href="http://www.w3.org/TR/REC-CSS2/"><span class="icon">CSS</span></a> style rules that overlay the default rules. This is best done by editing the <tt>site_css.cs</tt> file in the enviroment's <tt>templates</tt> directory. The content of that template gets inserted into a <tt>&lt;style type="text/css"&gt;&lt;/style&gt;</tt> element on every HTML page generated by Trac.
+</p>
+<p>
+While you can add your custom style rules directly to the <tt>site_css.cs</tt> file, it is recommended that you simply reference an external style sheet, thereby enabling browsers to cache the CSS file instead of transmitting the rules with every response.
+</p>
+<p>
+The following example would import a style sheet located in the <tt>style</tt> root directory of your host:
+</p>
+<pre class="wiki">@import url(/style/mytrac.css);
+</pre><p>
+You can use a ClearSilver variable to reference a style sheet stored in the project environment's <tt>htdocs</tt> directory:
+</p>
+<pre class="wiki">@import url(&lt;?cs var:chrome.href ?&gt;/site/style.css);
+</pre><h2 id="ProjectList">Project List</h2>
+<p>
+You can use a custom ClearSilver template to display the list of projects if you are using Trac with multiple projects.
+</p>
+<p>
+The following is the basic template used by Trac to display a list of links to the projects. For projects that could not be loaded it displays an error message. You can use this as a starting point for your own index template.
+</p>
+<div class="code"><pre>&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Available Projects&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+ &lt;h1&gt;Available Projects&lt;/h1&gt;
+ &lt;ul&gt;&lt;?cs
+ each:project = projects ?&gt;&lt;li&gt;&lt;?cs
+  if:project.href ?&gt;
+   &lt;a href=&#34;&lt;?cs var:project.href ?&gt;&#34; title=&#34;&lt;?cs var:project.description ?&gt;&#34;&gt;
+    &lt;?cs var:project.name ?&gt;&lt;/a&gt;&lt;?cs
+  else ?&gt;
+   &lt;small&gt;&lt;?cs var:project.name ?&gt;: &lt;em&gt;Error&lt;/em&gt; &lt;br /&gt;
+   (&lt;?cs var:project.description ?&gt;)&lt;/small&gt;&lt;?cs
+  /if ?&gt;
+  &lt;/li&gt;&lt;?cs
+ /each ?&gt;
+ &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div><p>
+Once you've created your custom template you will need to configure the webserver to tell Trac where the template is located:
+</p>
+<p>
+For <a class="wiki" href="TracFastCgi.html">FastCGI</a>:
+</p>
+<pre class="wiki">FastCgiConfig -initial-env TRAC_ENV_PARENT_DIR=/parent/dir/of/projects \
+              -initial-env TRAC_ENV_INDEX_TEMPLATE=/path/to/template
+</pre><p>
+For <a class="wiki" href="TracModPython.html">mod_python</a>:
+</p>
+<pre class="wiki">PythonOption TracEnvIndexTemplate /path/to/template
+</pre><p>
+For <a class="wiki" href="TracCgi.html">CGI</a>:
+</p>
+<pre class="wiki">SetEnv TRAC_ENV_INDEX_TEMPLATE /path/to/template
+</pre><h2 id="MainTemplates">Main Templates</h2>
+<p>
+It is also possible to use your own modified versions of the Trac <a class="ext-link" href="http://www.clearsilver.net/"><span class="icon">ClearSilver</span></a> templates. Note though that this technique is not recommended because it makes upgrading Trac rather problematic: there are unfortunately several dependencies between the templates and the application code, such as the name of form fields and the structure of the template data, and these are likely to change between different versions of Trac.
+</p>
+<p>
+If you absolutely need to use modified templates, copy the template files from the default templates directory (usually in found in <tt>$prefix/share/trac/templates</tt>) into the <tt>templates</tt> directory of the project environment. Then modify those copies to get the desired results.
+</p>
+<hr/>
+<p>
+See also <a class="wiki" href="TracGuide.html">TracGuide</a>, <a class="wiki" href="TracIni.html">TracIni</a>
+</p>
+</div>
+</div>
+<script type="text/javascript">
+   addHeadingLinks(document.getElementById("searchable"), "Link to this section");
+  </script>
+</div>
+</div>
+</div>
+<div id="footer">
+<a id="tracpowered" href="http://trac.edgewall.org/">
+<img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"/>
+</a>
+<p class="left">
+Powered by <a href="http://librocket.com/about"><strong>Trac </strong></a><br/>By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+</p>
+<p id="copyright" class="left clear">
+Copyright &copy; 2007-2010 Code Point Ltd, Shift Technology Ltd.
+</p>
+<ul class="top-level-nav">
+<li><a href="frontend/features.html">features.</a></li>
+<li><a "http://librocket.com/wiki/href">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="documentation.html">developer.</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3379591-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title> Trac Changeset - libRocket</title>
+<link rel="start" href="http://librocket.com/wiki"/><link rel="search" href="http://librocket.com/search"/><link rel="help" href="TracGuide.html"/><link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css"/><link rel="stylesheet" href="../chrome/common/css/wiki.css" type="text/css"/><link rel="icon" href="../chrome/site/trac.ico" type="image/x-icon"/><link rel="shortcut icon" href="../chrome/site/trac.ico" type="image/x-icon"/><link rel="alternate" href="TracChangeset%3Fformat=txt" title="Plain Text" type="text/x-trac-wiki"/><style type="text/css">
+</style>
+<script type="text/javascript" src="../chrome/common/js/trac.js"></script>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/base.css"></link>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/content.css"></link>
+<link rel="stylesheet" type="text/css" href="../chrome/site/style/discussion.css"></link>
+<style>
+		div.wiki img
+		{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+<div class="widthshell-width">
+<div class="widthshell-minwidth">
+<div class="widthshell-layout">
+<div class="widthshell-container">
+<div class="widthshell-content">
+<div id="background">
+<div style="float:right;width:160px;height:600px;margin-top:110px;margin-right:20px;">
+<script type="text/javascript"><!--
+                        google_ad_client = "pub-5872045433470541";
+                        /* Default, Wide Skyscraper */
+                        google_ad_slot = "3956485030";
+                        google_ad_width = 160;
+                        google_ad_height = 600;
+                //-->
+                </script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+</div>
+<div class="shell">
+<div class="stars">
+<img id="star-1" src="../chrome/site/images/star-red-medium.gif" width="22px" height="22px" alt="Star"/>
+<img id="star-2" src="../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-3" src="../chrome/site/images/star-red-small.gif" width="11px" height="11px" alt="Star"/>
+<img id="star-4" src="../chrome/site/images/star-orange-small.gif" width="16px" height="16px" alt="Star"/>
+<img id="star-5" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-6" src="../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-7" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-8" src="../chrome/site/images/star-red-big.gif" width="33px" height="33px" alt="Star"/>
+<img id="star-9" src="../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-10" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-11" src="../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-12" src="../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+</div>
+<div id="header">
+<a href="documentation.html"><img id="title" src="../chrome/site/images/title.gif" width="256px" height="49px" alt="Rocket"/></a>
+<ul class="top-level-nav">
+<li><a href="frontend/features.html">features.</a></li>
+
+<li><a href="http://github.com/lloydw/librocket">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="documentation.html">developer.</a></li>
+</ul>
+<img id="trail" src="../chrome/site/images/trail-content.gif" width="72px" height="115px" alt="Rocket Trail"/>
+<a href="documentation.html"><img id="rocket" src="../chrome/site/images/rocket-content.gif" width="126px" height="139px" alt="Rocket"/></a>
+</div>
+</div>
+</div>
+<div class="shell">
+<div id="banner">
+<div class="stars">
+<img id="star-13" src="../chrome/site/images/star-black-big.gif" width="49px" height="50px" alt="Star"/>
+<img id="star-14" src="../chrome/site/images/star-black-medium.gif" width="23px" height="23px" alt="Star"/>
+<img id="star-15" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-16" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-17" src="../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-18" src="../chrome/site/images/star-black-tiny.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-19" src="../chrome/site/images/star-black-tiny.gif" width="9px" height="9px" alt="Star"/>
+<img id="star-20" src="../chrome/site/images/star-black-tiny.gif" width="10px" height="10px" alt="Star"/>
+<img id="star-21" src="../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-22" src="../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-23" src="../chrome/site/images/star-black-small.gif" width="13px" height="13px" alt="Star"/>
+</div>
+<img id="banner-bottom-left" src="../chrome/site/images/banner-bottom-left.gif" width="20px" height="19px" alt="Bottom left banner image"/>
+<img id="banner-bottom-right" src="../chrome/site/images/banner-bottom-right.gif" width="20px" height="19px" alt="Bottom right banner image"/>
+<div id="login"><a href="http://librocket.com/login">Login</a> | <a "http://librocket.com/wiki/href">Register</a></div>
+<div id="breadcrumbs">
+<a href="TracChangeset.html">TracChangeset</a></div>
+<div id="title"> Trac Changeset</div>
+<div id="second-level-nav">
+<span class="nav-item active"><a href="documentation.html">Documentation</a></span>
+<span class="nav-item"><a accesskey="4" href="http://librocket.com/search">Search</a></span>
+</div>
+</div>
+<div id="content-container">
+<div id="content" class="wiki">
+<div class="wikipage">
+<div id="searchable"><h1 id="TracChangesetModule">Trac Changeset Module</h1>
+<p>
+</p><div class="wiki-toc"><h4>Table of Contents</h4><ul><li><a href="TracGuide.html">Index</a></li><li><a href="TracInstall.html">Installation</a></li><li><a href="TracUpgrade.html">Upgrading</a></li><li><a href="TracIni.html">Configuration</a></li><li><a href="TracAdmin.html">Administration</a></li><li><a href="TracBackup.html">Backup</a></li><li><a href="TracLogging.html">Logging</a></li><li><a href="TracPermissions.html">Permissions</a></li><li><a href="TracWiki.html">The Wiki</a></li><li><a href="WikiFormatting.html">Wiki Formatting</a></li><li><a href="TracTimeline.html">Timeline</a></li><li><a href="TracBrowser.html">Repository Browser</a></li><li class="active"><a href="TracChangeset.html">Changesets</a></li><li><a href="TracRoadmap.html">Roadmap</a></li><li><a href="TracTickets.html">Tickets</a></li><li><a href="TracQuery.html">Ticket Queries</a></li><li><a href="TracReports.html">Reports</a></li><li><a href="TracRss.html">RSS Support</a></li><li><a href="TracNotification.html">Notification</a></li><li><a href="TracInterfaceCustomization.html">Customization</a></li><li><a href="TracPlugins.html">Plugins</a></li></ul></div><p>
+</p>
+<p>
+Trac has a built-in functionality for visualizing “diffs” - changes to files.
+</p>
+<p>
+There are different kinds of <i>change sets</i>.
+Some can correspond to revisions made in the repositories,
+others can aggregate changes made in several revisions,
+but in the end, any kind of differences can be shown.
+</p>
+<p>
+The changeset view consists of two parts, the <i>header</i>
+and the <i>diff views</i>.
+</p>
+<h2 id="ChangesetHeader">Changeset Header</h2>
+<p>
+The header shows an overview of the whole changeset.
+Here you will find information such as:
+</p>
+<ul><li>Timestamp -- When the changeset was commited
+</li><li>Author -- Who commited the changeset
+</li><li>Message -- A brief description from the author (the commit log message)
+</li><li>Files -- A list of files affected by this changeset
+</li></ul><p>
+If more than one revision is involved in the set of changes being
+displayed, the <i>Timestamp</i>, <i>Author</i> and <i>Message</i> fields
+won't be shown.
+</p>
+<p>
+In front of each listed file, you'll find a colored rectangle. The color
+indicates how the file is affected by the changeset.
+</p>
+<ul><li>Green: Added
+</li><li>Red: Removed
+</li><li>Yellow: Modified
+</li><li>Blue: Copied
+</li><li>Gray: Moved
+</li></ul><p>
+The color legend is located below the header as a reminder.
+</p>
+<h2 id="DiffViews">Diff Views</h2>
+<p>
+Below the header is the main part of the changeset, the diff view. Each file is shown in a separate section, each of which will contain only the regions of the file that are affected by the changeset. There are two different styles of displaying the diffs: <i>inline</i> or <i>side-by-side</i> (you can switch between those styles using the preferences form):
+</p>
+<ul><li>The <i>inline</i> style shows the changed regions of a file underneath each other. A region removed from the file will be colored red, an added region will be colored green. If a region was modified, the old version is displayed above the new version. Line numbers on the left side indicate the exact position of the change in both the old and the new version of the file.
+</li><li>The <i>side-by-side</i> style shows the old version on the left and the new version on the right (this will typically require more screen width than the inline style.) Added and removed regions will be colored in the same way as with the inline style (green and red, respectively), but modified regions will have a yellow background.
+</li></ul><p>
+In addition, various advanced options are available in the preferences form for adjusting the display of the diffs:
+</p>
+<ul><li>You can set how many lines are displayed before and after every change
+(if the value <i>all</i> is used, then the full file will be shown)
+</li><li>You can toggle whether blank lines, case changes and white space changes are ignored, thereby letting you find the functional changes more quickly
+</li></ul><h2 id="TheDifferentWaystoGetaDiff">The Different Ways to Get a Diff</h2>
+<h3 id="ExaminingaChangeset">Examining a Changeset</h3>
+<p>
+When viewing a repository check-in, such as when following a
+changeset <a class="wiki" href="TracLinks.html">link</a> or a changeset event in the
+<a class="wiki" href="TracTimeline.html">timeline</a>, Trac will display the exact changes
+made by the check-in.
+</p>
+<p>
+There will be also navigation links to the <i>Previous Changeset</i>
+to and <i>Next Changeset</i>.
+</p>
+<h3 id="ExaminingDifferencesBetweenRevisions">Examining Differences Between Revisions</h3>
+<p>
+Often you'll want to look at changes made on a file
+or on a directory spanning multiple revisions. The easiest way
+to get there is from the <a class="wiki" href="TracRevisionLog.html">TracRevisionLog</a>, where you can select
+the <i>old</i> and the <i>new</i> revisions of the file or directory, and
+then click the <i>View changes</i> button.
+</p>
+<h3 id="ExaminingDifferencesBetweenBranches">Examining Differences Between Branches</h3>
+<p>
+One of the core features of version control systems is the possibility
+to work simultaneously on different <i>Lines of Developments</i>, commonly
+called “branches”. Trac enables you to examine the exact differences
+between such branches.
+</p>
+<p>
+Using the <strong>View changes ...</strong> button in the <a class="wiki" href="TracBrowser.html">TracBrowser</a> allows you to enter
+<i>From:</i> and <i>To:</i> path/revision pairs. The resulting set of differences consist
+of the changes that should be applied to the <i>From:</i> content in order
+to get to the <i>To:</i> content.
+</p>
+<p>
+For convenience, it is possible to invert the roles of the <i>old</i> and the <i>new</i>
+path/revision pairs by clicking the <i>Reverse Diff</i> link on the changeset page.
+</p>
+<h3 id="CheckingtheLastChange">Checking the Last Change</h3>
+<p>
+The last possibility for examining changes is to use the <i>Last Change</i>
+link provided by the <a class="wiki" href="TracBrowser.html">TracBrowser</a>.
+</p>
+<p>
+This link will take you to the last change that was made on that path.
+From there, you can use the <i>Previous Change</i> and <i>Next Change</i> links
+to traverse the change history of the file or directory.
+</p>
+<hr/>
+<p>
+See also: <a class="wiki" href="TracGuide.html">TracGuide</a>, <a class="wiki" href="TracBrowser.html">TracBrowser</a>
+</p>
+</div>
+</div>
+<script type="text/javascript">
+   addHeadingLinks(document.getElementById("searchable"), "Link to this section");
+  </script>
+</div>
+</div>
+</div>
+<div id="footer">
+<a id="tracpowered" href="http://trac.edgewall.org/">
+<img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"/>
+</a>
+<p class="left">
+Powered by <a href="http://librocket.com/about"><strong>Trac </strong></a><br/>By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+</p>
+<p id="copyright" class="left clear">
+Copyright &copy; 2007-2010 Code Point Ltd, Shift Technology Ltd.
+</p>
+<ul class="top-level-nav">
+<li><a href="frontend/features.html">features.</a></li>
+<li><a "http://librocket.com/wiki/href">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="documentation.html">developer.</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3379591-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+</body>
+</html>

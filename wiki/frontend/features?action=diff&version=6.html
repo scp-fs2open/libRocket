@@ -1,0 +1,191 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>features - libRocket</title>
+<link rel="start" href="http://librocket.com/wiki"/><link rel="search" href="http://librocket.com/search"/><link rel="help" href="../TracGuide.html"/><link rel="stylesheet" href="../../chrome/common/css/trac.css" type="text/css"/><link rel="stylesheet" href="../../chrome/common/css/wiki.css" type="text/css"/><link rel="stylesheet" href="../../chrome/common/css/diff.css" type="text/css"/><link rel="icon" href="../../chrome/site/trac.ico" type="image/x-icon"/><link rel="shortcut icon" href="../../chrome/site/trac.ico" type="image/x-icon"/><link rel="prev" href="features%3Faction=diff&amp;version=5.html" title="Version 5"/><link rel="next" href="features%3Faction=diff&amp;version=7.html" title="Version 7"/><style type="text/css">
+</style>
+<script type="text/javascript" src="../../chrome/common/js/trac.js"></script>
+<link rel="stylesheet" type="text/css" href="../../chrome/site/style/base.css"></link>
+<link rel="stylesheet" type="text/css" href="../../chrome/site/style/content.css"></link>
+</head>
+<body>
+<div class="widthshell-width">
+<div class="widthshell-minwidth">
+<div class="widthshell-layout">
+<div class="widthshell-container">
+<div class="widthshell-content">
+<div id="background">
+<div style="float:right;width:160px;height:600px;margin-top:110px;margin-right:20px;">
+<script type="text/javascript"><!--
+                        google_ad_client = "pub-5872045433470541";
+                        /* Default, Wide Skyscraper */
+                        google_ad_slot = "3956485030";
+                        google_ad_width = 160;
+                        google_ad_height = 600;
+                //-->
+                </script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+</div>
+<div class="shell">
+<div class="stars">
+<img id="star-1" src="../../chrome/site/images/star-red-medium.gif" width="22px" height="22px" alt="Star"/>
+<img id="star-2" src="../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-3" src="../../chrome/site/images/star-red-small.gif" width="11px" height="11px" alt="Star"/>
+<img id="star-4" src="../../chrome/site/images/star-orange-small.gif" width="16px" height="16px" alt="Star"/>
+<img id="star-5" src="../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-6" src="../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-7" src="../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-8" src="../../chrome/site/images/star-red-big.gif" width="33px" height="33px" alt="Star"/>
+<img id="star-9" src="../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-10" src="../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-11" src="../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-12" src="../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+</div>
+<div id="header">
+<a href="http://librocket.com/wiki"><img id="title" src="../../chrome/site/images/title.gif" width="256px" height="49px" alt="Rocket"/></a>
+<ul class="top-level-nav">
+<li><a href="features.html">features.</a></li>
+
+<li><a href="http://github.com/lloydw/librocket">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../documentation.html">developer.</a></li>
+</ul>
+<img id="trail" src="../../chrome/site/images/trail-content.gif" width="72px" height="115px" alt="Rocket Trail"/>
+<a href="http://librocket.com/wiki"><img id="rocket" src="../../chrome/site/images/rocket-content.gif" width="126px" height="139px" alt="Rocket"/></a>
+</div>
+</div>
+</div>
+<div class="shell">
+<div id="banner">
+<div class="stars">
+<img id="star-13" src="../../chrome/site/images/star-black-big.gif" width="49px" height="50px" alt="Star"/>
+<img id="star-14" src="../../chrome/site/images/star-black-medium.gif" width="23px" height="23px" alt="Star"/>
+<img id="star-15" src="../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-16" src="../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-17" src="../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-18" src="../../chrome/site/images/star-black-tiny.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-19" src="../../chrome/site/images/star-black-tiny.gif" width="9px" height="9px" alt="Star"/>
+<img id="star-20" src="../../chrome/site/images/star-black-tiny.gif" width="10px" height="10px" alt="Star"/>
+<img id="star-21" src="../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-22" src="../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-23" src="../../chrome/site/images/star-black-small.gif" width="13px" height="13px" alt="Star"/>
+</div>
+<img id="banner-bottom-left" src="../../chrome/site/images/banner-bottom-left.gif" width="20px" height="19px" alt="Bottom left banner image"/>
+<img id="banner-bottom-right" src="../../chrome/site/images/banner-bottom-right.gif" width="20px" height="19px" alt="Bottom right banner image"/>
+<div id="login">&nbsp;</div>
+<div id="breadcrumbs">&nbsp;</div>
+<div id="title">features</div>
+</div>
+<div id="content-container">
+<div id="content" class="wiki">
+<h1>Changes between
+<a href="features%3Fversion=5.html">Version 5</a> and
+<a href="features%3Fversion=6.html">Version 6</a> of
+<a href="features.html">frontend/features</a></h1>
+<form method="post" id="prefs" action="features.html"><div><input type="hidden" name="__FORM_TOKEN" value="a669ff33c84a83d396ad829a"/></div>
+<div>
+<input type="hidden" name="action" value="diff"/>
+<input type="hidden" name="version" value="6"/>
+<input type="hidden" name="old_version" value="5"/>
+<label>View differences <select name="style">
+<option value="inline" selected="selected">inline</option>
+<option value="sidebyside">side by side</option>
+</select></label>
+<div class="field">
+Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2"/>
+<label for="contextlines">lines around each change</label>
+</div>
+<fieldset id="ignore">
+<legend>Ignore:</legend>
+<div class="field">
+<input type="checkbox" id="blanklines" name="ignoreblanklines"/>
+<label for="blanklines">Blank lines</label>
+</div>
+<div class="field">
+<input type="checkbox" id="case" name="ignorecase"/>
+<label for="case">Case changes</label>
+</div>
+<div class="field">
+<input type="checkbox" id="whitespace" name="ignorewhitespace"/>
+<label for="whitespace">White space changes</label>
+</div>
+</fieldset>
+<div class="buttons">
+<input type="submit" name="update" value="Update"/>
+</div>
+</div>
+</form>
+<dl id="overview">
+<dt class="property author">Author:</dt>
+<dd class="author">lloydw <span class="ipnr">(IP: 192.168.0.1)</span></dd>
+<dt class="property time">Timestamp:</dt>
+<dd class="time">01/07/08 16:55:25 (10 years ago)</dd>
+<dt class="property message">Comment:</dt>
+<dd class="message"><p>
+--
+</p>
+</dd>
+</dl>
+<div class="diff">
+<div id="legend">
+<h3>Legend:</h3>
+<dl>
+<dt class="unmod"></dt><dd>Unmodified</dd>
+<dt class="add"></dt><dd>Added</dd>
+<dt class="rem"></dt><dd>Removed</dd>
+<dt class="mod"></dt><dd>Modified</dd>
+</dl>
+</div>
+<ul class="entries">
+<li class="entry">
+<h2>frontend/features</h2>
+<table class="inline" summary="Differences">
+<colgroup><col class="lineno"/><col class="lineno"/><col class="content"/></colgroup>
+<thead><tr>
+<th title="Version 5">v5</th>
+<th title="Version 6">v6</th>
+<th>&nbsp;</th>
+</tr></thead><tbody><tr><th>24</th><th>24</th><td class="l"><span>== Dynamic Data Representation (Model, View, Controller) ==</span>&nbsp;</td></tr><tr><th>25</th><th>25</th><td class="l"><span></span>&nbsp;</td></tr></tbody><tbody class="mod"><tr class="first"><th>26</th><th>&nbsp;</th><td class="l">One of the key parts of any UI is displaying dynamic data - main menus are all well enough but the real test of a UI is how well it can handle the lobby screens, the inventory screens, and the level select screens. <del>L</del>ibRocket comes with a powerful collection of classes to detach the data from the output. Data is fetched from a data source, passed through a data formatter, then finally displayed in a datagrid which includes full support for tree-like structures, like Windows Explorer.[[br]]&nbsp;</td></tr><tr class="last"><th>&nbsp;</th><th>26</th><td class="r">One of the key parts of any UI is displaying dynamic data - main menus are all well enough but the real test of a UI is how well it can handle the lobby screens, the inventory screens, and the level select screens. <ins>l</ins>ibRocket comes with a powerful collection of classes to detach the data from the output. Data is fetched from a data source, passed through a data formatter, then finally displayed in a datagrid which includes full support for tree-like structures, like Windows Explorer.[[br]]&nbsp;</td></tr></tbody><tbody><tr><th>27</th><th>27</th><td class="l"><span>[[br]]</span>&nbsp;</td></tr><tr><th>28</th><th>28</th><td class="l"><span>[[Image(datasource.gif, nolink)]]</span>&nbsp;</td></tr></tbody><tbody><tr><th>34</th><th>34</th><td class="l"><span>== Extensibility ==</span>&nbsp;</td></tr><tr><th>35</th><th>35</th><td class="l"><span></span>&nbsp;</td></tr></tbody><tbody class="mod"><tr class="first"><th>36</th><th>&nbsp;</th><td class="l"><del>L</del>ibRocket doesn't do exactly what you want it to do? No problem! We've bent over backwards to open it up to modification by adding own custom interfaces to it. You can:&nbsp;</td></tr><tr class="last"><th>&nbsp;</th><th>36</th><td class="r"><ins>l</ins>ibRocket doesn't do exactly what you want it to do? No problem! We've bent over backwards to open it up to modification by adding own custom interfaces to it. You can:&nbsp;</td></tr></tbody><tbody><tr><th>37</th><th>37</th><td class="l"><span>&nbsp;- set your own log, file, render and system interfaces.</span>&nbsp;</td></tr><tr><th>38</th><th>38</th><td class="l"><span>&nbsp;- define custom decorators, to display anything you like. For example, the starfield in the demo application, Rocket Invaders from Mars, was a custom decorator.</span>&nbsp;</td></tr></tbody><tbody><tr><th>43</th><th>43</th><td class="l"><span></span>&nbsp;</td></tr><tr><th>44</th><th>44</th><td class="l"><span>[[Image(debugger.gif, nolink, align="right")]]</span>&nbsp;</td></tr></tbody><tbody class="mod"><tr class="first"><th>45</th><th>&nbsp;</th><td class="l"><del>L</del>ibRocket also comes with its own visual debugger to allow you to track down any problems you're having with your interfaces. You can click on any part of the screen and see what the element is, why it looks and acts the way it does, exactly where it gets its style information from, and navigate up and down to any of its children or parents.&nbsp;</td></tr><tr class="last"><th>&nbsp;</th><th>45</th><td class="r"><ins>l</ins>ibRocket also comes with its own visual debugger to allow you to track down any problems you're having with your interfaces. You can click on any part of the screen and see what the element is, why it looks and acts the way it does, exactly where it gets its style information from, and navigate up and down to any of its children or parents.&nbsp;</td></tr></tbody><tbody><tr><th>46</th><th>46</th><td class="l"><span>{{{</span>&nbsp;</td></tr><tr><th>47</th><th>47</th><td class="l"><span>#!html</span>&nbsp;</td></tr></tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<a id="tracpowered" href="http://trac.edgewall.org/">
+<img src="../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"/>
+</a>
+<p class="left">
+Powered by <a href="http://librocket.com/about"><strong>Trac </strong></a><br/>By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+</p>
+<p id="copyright" class="left clear">
+Copyright &copy; 2007-2010 Code Point Ltd, Shift Technology Ltd.
+</p>
+<ul class="top-level-nav">
+<li><a href="features.html">features.</a></li>
+<li><a "http://librocket.com/wiki/frontend/href">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../documentation.html">developer.</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3379591-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+</body>
+</html>

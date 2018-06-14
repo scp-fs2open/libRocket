@@ -1,0 +1,353 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title> Decorators - libRocket</title>
+<link rel="start" href="http://librocket.com/wiki"/><link rel="search" href="http://librocket.com/search"/><link rel="help" href="../../TracGuide.html"/><link rel="stylesheet" href="../../../chrome/common/css/trac.css" type="text/css"/><link rel="stylesheet" href="../../../chrome/common/css/wiki.css" type="text/css"/><link rel="icon" href="../../../chrome/site/trac.ico" type="image/x-icon"/><link rel="shortcut icon" href="../../../chrome/site/trac.ico" type="image/x-icon"/><link rel="alternate" href="Decorators%3Fformat=txt" title="Plain Text" type="text/x-trac-wiki"/><style type="text/css">
+</style>
+<script type="text/javascript" src="../../../chrome/common/js/trac.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/base.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/content.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/discussion.css"></link>
+<style>
+		div.wiki img
+		{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+<div class="widthshell-width">
+<div class="widthshell-minwidth">
+<div class="widthshell-layout">
+<div class="widthshell-container">
+<div class="widthshell-content">
+<div id="background">
+<div style="float:right;width:160px;height:600px;margin-top:110px;margin-right:20px;">
+<script type="text/javascript"><!--
+                        google_ad_client = "pub-5872045433470541";
+                        /* Default, Wide Skyscraper */
+                        google_ad_slot = "3956485030";
+                        google_ad_width = 160;
+                        google_ad_height = 600;
+                //-->
+                </script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+</div>
+<div class="shell">
+<div class="stars">
+<img id="star-1" src="../../../chrome/site/images/star-red-medium.gif" width="22px" height="22px" alt="Star"/>
+<img id="star-2" src="../../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-3" src="../../../chrome/site/images/star-red-small.gif" width="11px" height="11px" alt="Star"/>
+<img id="star-4" src="../../../chrome/site/images/star-orange-small.gif" width="16px" height="16px" alt="Star"/>
+<img id="star-5" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-6" src="../../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-7" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-8" src="../../../chrome/site/images/star-red-big.gif" width="33px" height="33px" alt="Star"/>
+<img id="star-9" src="../../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-10" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-11" src="../../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-12" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+</div>
+<div id="header">
+<a href="../../documentation.html"><img id="title" src="../../../chrome/site/images/title.gif" width="256px" height="49px" alt="Rocket"/></a>
+<ul class="top-level-nav">
+<li><a href="../../frontend/features.html">features.</a></li>
+
+<li><a href="http://github.com/lloydw/librocket">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../../documentation.html">developer.</a></li>
+</ul>
+<img id="trail" src="../../../chrome/site/images/trail-content.gif" width="72px" height="115px" alt="Rocket Trail"/>
+<a href="../../documentation.html"><img id="rocket" src="../../../chrome/site/images/rocket-content.gif" width="126px" height="139px" alt="Rocket"/></a>
+</div>
+</div>
+</div>
+<div class="shell">
+<div id="banner">
+<div class="stars">
+<img id="star-13" src="../../../chrome/site/images/star-black-big.gif" width="49px" height="50px" alt="Star"/>
+<img id="star-14" src="../../../chrome/site/images/star-black-medium.gif" width="23px" height="23px" alt="Star"/>
+<img id="star-15" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-16" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-17" src="../../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-18" src="../../../chrome/site/images/star-black-tiny.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-19" src="../../../chrome/site/images/star-black-tiny.gif" width="9px" height="9px" alt="Star"/>
+<img id="star-20" src="../../../chrome/site/images/star-black-tiny.gif" width="10px" height="10px" alt="Star"/>
+<img id="star-21" src="../../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-22" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-23" src="../../../chrome/site/images/star-black-small.gif" width="13px" height="13px" alt="Star"/>
+</div>
+<img id="banner-bottom-left" src="../../../chrome/site/images/banner-bottom-left.gif" width="20px" height="19px" alt="Bottom left banner image"/>
+<img id="banner-bottom-right" src="../../../chrome/site/images/banner-bottom-right.gif" width="20px" height="19px" alt="Bottom right banner image"/>
+<div id="login"><a href="http://librocket.com/login">Login</a> | <a "http://librocket.com/wiki/documentation/C%2B%2BManual/href">Register</a></div>
+<div id="breadcrumbs">
+<a href="../../documentation.html">documentation</a> <strong>&#8249;</strong> <a href="http://librocket.com/wiki/documentation/C++Manual">C++Manual</a> <strong>&#8249;</strong> <a href="http://librocket.com/wiki/documentation/C++Manual/Decorators">Decorators</a></div>
+<div id="title"> Decorators</div>
+<div id="second-level-nav">
+<span class="nav-item active"><a href="../../documentation.html">Documentation</a></span>
+<span class="nav-item"><a accesskey="4" href="http://librocket.com/search">Search</a></span>
+</div>
+</div>
+<div id="content-container">
+<div id="content" class="wiki">
+<div class="wikipage">
+<div id="searchable"><p>
+<div class="wiki-toc"><h4>Contents</h4><ol><li><a href="Decorators.html#Decorators">Decorators</a><ol><li><a href="Decorators.html#Decoratoroverview">Decorator overview</a></li><li>
+<a href="Decorators.html#Customdecorators">Custom decorators</a><ol><li><a href="Decorators.html#Creatingacustomdecorator">Creating a custom decorator</a><ol><li><a href="Decorators.html#Generatinggeometry">Generating geometry</a></li></ol><li><a href="Decorators.html#Creatingacustomdecoratorinstancer">Creating a custom decorator instancer</a><ol><li><a href="Decorators.html#Definingthedecoratorsproperties">Defining the decorator's properties</a></li><li>
+<a href="Decorators.html#Registeringaninstancer">Registering an instancer</a></li></ol><li><a href="Decorators.html#Updatingdecorators">Updating decorators</a></li></ol></li></ol></li></ol></div>
+</p>
+<h1 id="Decorators">Decorators</h1>
+<p>
+Decorators are generic, configurable, reusable objects designed to be attached to elements to add custom rendering effects. Decorators render on top of an element's border and background. For a full description on how decorators are attached to elements and configured through RML, see the <a class="wiki" href="../RCSS/Decorators.html">relevant section in the RCSS documentation</a>.
+</p>
+<h2 id="Decoratoroverview">Decorator overview</h2>
+<p>
+Rocket ships with four decorators; one for displaying a single image on an element, and three for tiling images across an element's surface. Depending on how fancy you want your elements to look, you may need to develop custom decorators. Custom decorators are defined and instanced in a similar way to <a class="wiki" href="Elements.html#Customelements">custom elements</a>. A custom decorator class is created, which needs to derive from Rocket::Core::Decorator, and an instancer is registered for it with the Rocket factory.
+</p>
+<p>
+In order to optimise memory usage, decorators are shared between elements where appropriate. For each decorator it has, an element maintains a handle to arbitrary per-element data that the decorator can generate if required. So, for example, in the document generated by the following RML:
+</p>
+<pre class="wiki">&lt;rml&gt;
+	&lt;head&gt;
+		&lt;style&gt;
+			button
+			{
+				icon-decorator: image;
+				icon-image-src: button.png;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;button id="restart"&gt;Restart&lt;/button&gt;
+		&lt;button id="restore"&gt;Restore&lt;/button&gt;
+		&lt;button id="quit"&gt;Quit&lt;/button&gt;
+	&lt;/body&gt;
+&lt;/rml&gt;
+</pre><p>
+only one actual decorator will be instanced; that decorator will be shared across all three 'button' elements. The entire decorator system looks like the following:
+</p>
+<p>
+<img src="../../../attachment/wiki/documentation/C++Manual/Decorators/decorators_1.gif%3Fformat=raw"/>
+</p>
+<h2 id="Customdecorators">Custom decorators</h2>
+<p>
+If you need custom decoration above what the built-in decorators can provide, you can easily create a custom decorator to suit your needs.
+</p>
+<h3 id="Creatingacustomdecorator">Creating a custom decorator</h3>
+<p>
+All custom decorators are classes derived (not necessarily directly) from Rocket::Core::Decorator. There are three virtual functions that need to be overridden in a custom decorator:
+</p>
+<pre class="wiki">// Called on a decorator to generate any required per-element data for a newly decorated element.
+// @param[in] element The newly decorated element.
+// @return A handle to a decorator-defined data handle, or NULL if none is needed for the element.
+virtual Rocket::Core::DecoratorDataHandle GenerateElementData(Rocket::Core::Element* element) = 0;
+
+// Called to release element data generated by this decorator.
+// @param[in] element_data The element data handle to release.
+virtual void ReleaseElementData(Rocket::Core::DecoratorDataHandle element_data) = 0;
+
+// Called to render the decorator on an element.
+// @param[in] element The element to render the decorator on.
+// @param[in] element_data The handle to the data generated by the decorator for the element.
+virtual void RenderElement(Rocket::Core::Element* element,
+                           Rocket::Core::DecoratorDataHandle element_data) = 0;
+</pre><p>
+GenerateElementData() will be called by an element that uses the decorator before the first time it is rendered and whenever it is resized. If the decorator needs to store data for each element that uses it, it can generate the data in this function and return a handle to it. The DecoratorDataHandle, like all handle types, is a void pointer type. If no data is required, return NULL (0). Therefore make sure that for your decorators, 0 is not a valid handle!
+</p>
+<p>
+ReleaseElementData() will be called by an element when it needs to release a non-NULL data handle that was generated for it by the decorator. The decorator should free any resources allocated for the data handle.
+</p>
+<p>
+RenderElement() will be called every frame when the element wants the decorator to render its decoration on the element. It passes in itself as well as the data handle that the decorator generated for it previously; this will be NULL if no data was generated. The decorator is free here to execute any rendering code necessary. Remember that the clipping region will be set up at this point as appropriate for the element; you'll need to disable it if you want to render outside of the element's bordered area. If you do so, remember to enable it again as appropriate, otherwise Rocket may render clipped content.
+</p>
+<h4 id="Generatinggeometry">Generating geometry</h4>
+<p>
+Custom decorators do not need to render their geometry through Rocket's render interface; as the render interface is quite limiting, decorators way want to talk directly to their application's renderer to access effects such as multiple textures, pixel shaders, etc, for fancy effects. However, you may want to render through the render interface for simplicity if it's all you need.
+</p>
+<p>
+Rocket uses the <i>Geometry</i> class internally for storing and rendering generated geometry. Each geometry object has a single vertex buffer, index buffer and an optional texture. A custom decorator can store one or more geometry objects in each decorator handle.
+</p>
+<p>
+To create a geometry object, simply call the constructor.
+</p>
+<pre class="wiki">Rocket::Core::Geometry* geometry = new Rocket::Core::Geometry();
+</pre><p>
+To populate the object's vertices and indices, use the <i>GetVertices()</i> and <i>GetIndices()</i> functions to retrieve references to the internal arrays.
+</p>
+<pre class="wiki">EMP::Core::STL::vector&lt; Rocket::Core::Vertex &gt;&amp; vertices = geometry-&gt;GetVertices();
+EMP::Core::STL::vector&lt; int &gt;&amp; indices = geometry-&gt;GetIndices();
+</pre><p>
+Remember to store the arrays as references! Then simply add elements to the arrays as appropriate for your geometry.
+</p>
+<pre class="wiki">Rocket::Core::Vertex vertex;
+vertex.colour = EMP::Core::Colourb(255, 128, 192, 200);
+vertex.tex_coord = EMP::Core::Vector2f(0, 0);
+
+vertex.position = EMP::Core::Vector2f(0, 0);
+vertices.insert(vertex);
+vertex.position = EMP::Core::Vector2f(0, 68);
+vertices.insert(vertex);
+vertex.position = EMP::Core::Vector2f(42, 68);
+vertices.insert(vertex);
+vertex.position = EMP::Core::Vector2f(42, 0);
+vertices.insert(vertex);
+
+indices.insert(0);
+indices.insert(1);
+indices.insert(2);
+indices.insert(0);
+indices.insert(2);
+indices.insert(3);
+</pre><p>
+To render the geometry through the current render interface, call the <i>Render()</i> function. This takes a single vector, the translation to apply to the geometry before rendering it.
+</p>
+<pre class="wiki">geometry-&gt;Render(element-&gt;GetAbsoluteOffset(Rocket::Core::Box::PADDING));
+</pre><p>
+To apply a texture to the geometry, call the <i>SetTexture()</i> function with a valid <i>Rocket::Core::Texture</i> object loaded through the render interface. You can load a texture either by fetching the current render interface with the <i>Rocket::Core::GetRenderInterface()</i> function and calling <i>LoadTexture()</i> or <i>GenerateTexture()</i>, or with the <i>LoadTexture()</i> helper method on the <i>Rocket::Core::Decorator</i> class.
+</p>
+<pre class="wiki">// Attempts to load a texture into the list of textures in use by the decorator.
+// @param[in] texture_name The name of the texture to load.
+// @param[in] rcss_path The RCSS file the decorator definition was loaded from; this is used to resolve relative paths.
+// @return The index of the texture if the load was successful, or -1 if the load failed.
+int LoadTexture(const EMP::Core::String&amp; texture_name, const EMP::Core::String&amp; rcss_path);
+
+// Returns one of the decorator's previously loaded textures.
+// @param[in] index The index of the desired texture.
+// @return The texture at the appropriate index, or NULL if the index was invalid.
+const Rocket::Core::Texture* GetTexture(int index = 0) const;
+</pre><p>
+<i>LoadTexture()</i> takes the file name of the texture to load and the path of the resource that specified the file name; this is used so file names can be specified relative to the declaring RCSS file. If your texture name is not relative to any particular resource, leave this blank; otherwise, if you are loading from an RCSS property, you can access the source of the property with the <i>source</i> variable on the property structure. If the texture load is successful, the index of the new texture will be returned; otherwise, -1 will be returned. You can then retrieve the <i>Rocket::Core::Texture</i> object with the <i>GetTexture()</i> function.
+</p>
+<p>
+If you ever change the geometry or its texture, be sure to call the <i>Release()</i> function to force the geometry to be recompiled.
+</p>
+<h3 id="Creatingacustomdecoratorinstancer">Creating a custom decorator instancer</h3>
+<p>
+The instancer for a decorator is a bit more sophisticated than the element; it is responsible for defining and processing the properties that can be used to configure the decorator. While you can create a custom decorator with no properties, we recommend you expose all variables to RCSS; it's quick, easy and you'll have much more flexible decorators.
+</p>
+<p>
+A decorator instancer needs to derive from Rocket::Core::DecoratorInstancer. The following three pure virtual functions need to be overridden:
+</p>
+<pre class="wiki">// Instances a decorator given the property tag and attributes from the RCSS file.
+// @param[in] name The type of decorator desired.
+// @param[in] properties All RCSS properties associated with the decorator.
+// @return The decorator if it was instanced successful, NULL if an error occured.
+virtual Rocket::Core::Decorator* InstanceDecorator(const EMP::Core::String&amp; name,
+                                                   const PropertyDictionary&amp; properties) = 0;
+
+// Releases the given decorator.
+// @param[in] decorator Decorator to release.
+virtual void ReleaseDecorator(Decorator* decorator) = 0;
+
+// Releases the instancer.
+virtual void Release() = 0;
+</pre><p>
+InstanceDecorator() will be called whenever a decorator needs to created using this instancer. It is passed in <i>name</i>, the name the decorator was created with, and <i>properties</i>, the dictionary of the properties the RCSS rules defined for the decorator (see <a class="wiki" href="Decorators.html#Definingthedecoratorsproperties">below</a>). The property dictionary will contain an entry for every property in the decorator's property specification; if a value was not specified in the RCSS, then the default value will be put into the dictionary for you. If the decorator was created successfully, return it from the function. If not, return NULL (0) and any elements that would have used the decorator will ignore it.
+</p>
+<p>
+ReleaseDecorator() will be called when a decorator created from this instancer is released from Rocket. The instancer should delete the decorator as well as any resources allocated for it.
+</p>
+<p>
+Release() will be called when the instancer itself is no longer required, usually when Rocket is shut down. It should delete itself if it was dynamically allocated, as well as any other resources allocated for it.
+</p>
+<h4 id="Definingthedecoratorsproperties">Defining the decorator's properties</h4>
+<p>
+Each decorator instancer holds a complete property specification for the decorators it creates. The specification object (stored as a Rocket::Core::PropertySpecification type) is a protected member variable on the Rocket::Core::DecoratorInstancer class, so derived instancers can access it. A custom instancer has the opportunity in its constructor to add properties and shorthands to its specification. Use the RegisterProperty() and RegisterShorthand() functions on the property specification object itself to do this; for detailed documentation on defining properties, see the documentation on <a class="wiki" href="RCSS.html#Definingcustomproperties">registering custom properties</a>. Note that custom property parsers registered with Rocket::Core::StyleSheetSpecification can be used in decorator property specifications.
+</p>
+<p>
+The following is an example decorator defining a simple property specification:
+</p>
+<pre class="wiki">CustomDecoratorInstancer::CustomDecoratorInstancer() : Rocket:Core:DecoratorInstancer()
+{
+	properties.RegisterProperty("custom-property-1", "1").AddParser("number");
+	properties.RegisterProperty("custom-property-2", "auto").AddParser("number")
+								.AddParser("keyword", "auto, none");
+	properties.RegisterShorthand("custom-shorthand", "custom-property-1, custom-property-2");
+}
+</pre><p>
+The custom decorator now has two properties. The property dictionary passed into the instancer's InstanceDecorator() function will contain values for the two properties, defaulting to their specified default values if they weren't set in the RCSS.
+</p>
+<h4 id="Registeringaninstancer">Registering an instancer</h4>
+<p>
+To register a custom decorator instancer with Rocket, call the RegisterDecoratorInstancer() function on the Rocket factory (Rocket::Core::Factory) after Rocket has been initialised.
+</p>
+<pre class="wiki">// Registers an instancer that will be used to instance decorators.
+// @param[in] name The name of the decorator the instancer will be called for.
+// @param[in] instancer The instancer to call when the decorator name is encountered.
+// @return The added instancer if the registration was successful, NULL otherwise.
+static Rocket::Core::DecoratorInstancer* RegisterDecoratorInstancer(const EMP::Core::String&amp; name,
+                                                                    Rocket::Core::DecoratorInstancer* instancer);
+</pre><p>
+The <i>name</i> parameter is the string value that you will use to bind to the decorator through RML. For example, calling:
+</p>
+<pre class="wiki">Rocket::Core::DecoratorInstancer* instancer = new CustomDecoratorInstancer();
+Rocket::Core::Factory::RegisterDecoratorInstancer("custom-decorator", instancer);
+instancer-&gt;RemoveReference();
+</pre><p>
+will cause the following RML fragment to create decorators using the CustomDecoratorInstancer type:
+</p>
+<pre class="wiki">&lt;rml&gt;
+	&lt;head&gt;
+		&lt;style&gt;
+			button
+			{
+				icon-decorator: custom-decorator;
+				icon-parameter-1: 15;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+...
+</pre><p>
+Decorator instancers are reference counted. They start with a single reference, belonging to the constructing code; the factory will maintain a reference count for each time the instancer is registered with it (a decorator instancer can be registered multiple times with the factory under different names). Therefore, remember to remove the initial reference once you've registered the instancer with the factory.
+</p>
+<h3 id="Updatingdecorators">Updating decorators</h3>
+<p>
+Decorators are not updated from inside Rocket. If you have a decorator that requires updating (for example, for updating animation) then you could maintain a list of the decorator data handles that require updating and process them when appropriate during your update loop, or simply update them during the render loop.
+</p>
+</div>
+</div>
+<script type="text/javascript">
+   addHeadingLinks(document.getElementById("searchable"), "Link to this section");
+  </script>
+</div>
+</div>
+</div>
+<div id="footer">
+<a id="tracpowered" href="http://trac.edgewall.org/">
+<img src="../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"/>
+</a>
+<p class="left">
+Powered by <a href="http://librocket.com/about"><strong>Trac </strong></a><br/>By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+</p>
+<p id="copyright" class="left clear">
+Copyright &copy; 2007-2010 Code Point Ltd, Shift Technology Ltd.
+</p>
+<ul class="top-level-nav">
+<li><a href="../../frontend/features.html">features.</a></li>
+<li><a "http://librocket.com/wiki/documentation/C%2B%2BManual/href">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../../documentation.html">developer.</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3379591-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+</body>
+</html>

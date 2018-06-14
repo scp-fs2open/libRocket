@@ -1,0 +1,473 @@
+[[PageOutline(1-5, Contents)]]
+= API Reference =
+This is mostly the same as the Python page. For only the differences with Python, see LINK HERE
+
+How to read:
+For methods, on the left is the return type, then a space, then the name of the method. In the parenthesis will be a comma separated list of parameters with a type, then a space, then a hopefully descriptive name.
+
+For properties, there will be a type to the left in parenthesis. Get and/or Set access are indicated in the last sentence.
+
+Types should be easy to decipher, with an exception where ''{}'' means a table and ''void'' means no type. Table examples:
+  {} = see the text for more info[[br]]
+  {type} = array of type objects[[br]]
+  {k=k_type,v=v_type} = table with k_type keys and v_type values
+
+== rocket Table ==
+
+ `Context `'''CreateContext'''(`string` ''name'', `Vector2i` ''dimensions'')::
+   Creates and returns a new context called ''name'', with initial dimensions of ''dimensions''. The name of the context must be unique; if it is not, ''nil'' will be returned
+
+ `bool `'''LoadFontFace'''(`string` ''font_path'')::
+   Loads the font face at ''font_path''. The function will return true if the font face was loaded, false if not.
+
+ `void `'''RegisterTag'''(`string` ''tag_name'', `ElementInstancer` ''instancer'')::
+   Registers a [wiki:documentation/LuaManual/ElementInstancer ElementInstancer] to instance when a specific XML tag is encountered in an RML file.
+
+ '''contexts'''`   `(`{}`)::
+   A table of the active libRocket contexts. It can be indexed by string (in which case the context with the matching name is returned), or number (in which case the nth context is returned).
+
+== Basic Types ==
+
+ '''class''' [wiki:documentation/LuaManual/Vectors Vector2i]::
+   A two-dimensional integral vector.
+
+ '''class''' [wiki:documentation/LuaManual/Vectors Vector2f]::
+   Constructs a two-dimensional floating-point vector.
+
+ '''class''' [wiki:documentation/LuaManual/Colours Colourb]::
+   A colour with four channels, each from 0 to 255.
+
+ '''class''' [wiki:documentation/LuaManual/Colours Colourf]::
+   A colour with four channels, each from 0.0 to 1.0.
+
+== Log ==
+
+ `void `'''Message'''(`logtype` ''type'', `string` ''message'')::
+   Sends a log message to libRocket (and the attached debugger if present). This is not called from an instance of a Log object, just ''Log.Message''.[[br]]
+   type should be one of:
+ * Log.logtype.always
+ * Log.logtype.error
+ * Log.logtype.warning
+ * Log.logtype.info
+ * Log.logtype.debug
+
+
+== Element ==
+The ''Element'' global table contains a table named ''As'', where you would find the child types of ''Element'' to cast to. For example, if you are using RocketControls, to convert an element from an event to an ''ElementFormControlInput'', you could put `local input = Element.As.ElementFormControlInput(element)`. 
+
+The ''Element'' class has no constructor; it must be instantiated through a ''[wiki:documentation/LuaManual/APIReference#Document Document]'' object instead. It has the following methods and properties:
+
+ `void `'''AddEventListener'''(`string` ''event'', `string|function` ''listener''[, `bool` ''in_capture_phase''])::
+   Attaches ''listener'' to this element, listening for occurrences of ''event'' in either the bubble or capture phase. If not specified, ''in_capture_phase'' will default to false. [wiki:documentation/LuaManual/AttachingToEvents See also][[br]]''NOTE: Events added from Lua cannot be removed.''
+
+ `void `'''AppendChild'''(`Element` ''element'')::
+   Appends ''element'' as a child to this element.
+
+ `void `'''Blur'''()::
+   Removes input focus from this element.
+
+ `void `'''Click'''()::
+   Fakes a click on this element.
+
+ `void `'''DispatchEvent'''(`string` ''event'', `{}` ''parameters'', `bool` ''interruptible'')::
+   Dispatches an event to this element. The event is of type ''event''. Parameters to the event are given in the table ''parameters''; the table must only contain string keys and floating-point, integer, boolean, Lua userdata, or string values. ''interruptible'' determines if the event can be forced to stop propagation early.
+
+ `void `'''Focus'''()::
+   Gives input focus to this element.
+
+ ''[wiki:documentation/LuaManual/Variant variant]''` `'''GetAttribute'''(`string` ''name'')::
+   Returns the value of the attribute named ''name''. If no such attribute exists, the empty string will be returned.
+
+ `Element `'''GetElementById'''(`string` ''id'')::
+   Returns the descendant element with an id of ''id''.
+
+ `{Element} `'''GetElementsByTagName'''(`string` ''tag_name'')::
+   Returns a list of all descendant elements with the tag of ''tag_name''.
+
+ `bool `'''HasAttribute'''(`string` ''name'')::
+   Returns True if the element has a value for the attribute named ''name'', False if not.
+
+ `bool `'''HasChildNodes'''()::
+   Returns True if the element has at least one child node, false if not.
+
+ `void `'''InsertBefore'''(`Element` ''element'', `Element` ''adjacent_element'')::
+   Inserts the element ''element'' as a child of this element, directly before ''adjacent_element'' in the list of children.
+
+ `bool `'''IsClassSet'''(`string` name'')::
+   Returns true if the class ''name'' is set on the element, false if not.
+
+ `void `'''RemoveAttribute'''(`string` ''name'')::
+   Removes the attribute named ''name'' from the element.
+
+ `bool `'''RemoveChild'''(`Element` ''element'')::
+   Removes the child element ''element'' from this element.
+
+ `void `'''ReplaceChild'''(`Element` ''inserted_element'', `Element` ''replaced_element'')::
+   Replaces the child element ''replaced_element'' with ''inserted_element'' in this element's list of children. If ''replaced_element'' is not a child of this element, ''inserted_element'' will be appended onto the list instead.
+
+ `void `'''ScrollIntoView'''(`bool` ''align_with_top'')::
+   Scrolls this element into view if its ancestors have hidden overflow. If ''align_with_top'' is True, the element's top edge will be aligned with the top (or as close as possible to the top) of its ancestors' viewing windows. If False, its bottom edge will be aligned to the bottom.
+
+ `void `'''SetAttribute'''(`string` ''name'', `string` ''value'')::
+   Sets the value of the attribute named ''name'' to ''value''.
+
+ `void `'''SetClass'''(`string` ''name'', `bool` ''value'')::
+   Sets (if ''value'' is true) or clears (if ''value'' is false) the class ''name'' on the element.
+
+ '''attributes'''`   `(`{k=string`,`v=`''[wiki:documentation/LuaManual/Variant variant]''`}`)::
+   The array of attributes on the element. Read-only [wiki:documentation/LuaManual/ProxyTables proxy table].
+
+ '''child_nodes'''`   `(`{Element}`)::
+   The array of child nodes on the element. Read-only.
+
+ '''class_name'''`   `(`string`)::
+   The space-separated list of classes on the element. Read & write.
+
+ '''client_left'''`   `(`float`)::
+   The distance between the left border edge and the left client edge of the element. Read-only.
+
+ '''client_height'''`   `(`float`)::
+   The height of the element's client area. Read-only.
+
+ '''client_top'''`   `(`float`)::
+   The distance between the top border edge and the top client edge of the element. Read-only.
+
+ '''client_width'''`   `(`float`)::
+   The width of the element's client area. Read-only.
+
+ '''first_child'''`   `(`Element`)::
+   The first child of the element, or nil if the client has no children. Read-only.
+
+ '''id'''`   `(`string`)::
+   The ID of the element, or the empty string if the element has no ID. Read & write.
+
+ '''inner_rml'''`   `(`string`)::
+   The element's RML content. Read & write.
+
+ '''last_child'''`   `(`Element`)::
+   The last child of the element, or nil if the client has no children. Read-only.
+
+ '''next_sibling'''`   `(`Element`)::
+   The element's next sibling, or None if it is the last sibling. Read-only.
+
+ '''offset_height'''`   `(`float`)::
+   The height of the element, excluding margins. Read-only.
+
+ '''offset_left'''`   `(`float`)::
+   The distance between the element's offset parent's left border edge and this element's left border edge. Read-only.
+
+ '''offset_parent'''`   `(`Element`)::
+   The element's offset parent. Read only.
+
+ '''offset_top'''`   `(`float`)::
+   The distance between the element's offset parent's top border edge and this element's top border edge. Read-only.
+
+ '''offset_width'''`   `(`float`)::
+   The width of the element, excluding margins. Read-only.
+
+ '''owner_document'''`   `(`Document`)::
+   The document this element is part of. Read-only.
+
+ '''parent_node'''`   `(`Element`)::
+   The element this element is directly parented to. Read-only.
+
+ '''previous_sibling'''`   `(`Element`)::
+   The element's previous sibling, or nil if it is the first sibling. Read-only.
+
+ '''scroll_height'''`   `(`float`)::
+   The height of this element's content. This will be at least as high as the client height. Read-only.
+
+ '''scroll_left'''`   `(`float`)::
+   The offset between the left edge of this element's client area and the left edge of the content area. Read & write.
+
+ '''scroll_top'''`   `(`float`)::
+   The offset between the top edge of this element's client area and the top edge of the content area. Read & write.
+
+ '''scroll_width'''`   `(`float`)::
+   The width of this element's content. This will be at least as wide as the client width. Read-only.
+
+ '''style'''`   `(`{k=string`,`v=string}`)::
+   An object used to access this element's style information. Read & write [wiki:documentation/LuaManual/ProxyTables proxy table].
+
+ '''tag_name'''`   `(`string`)::
+   The tag name used to instance this element. Read-only.
+
+== ElementText ==
+
+''ElementText'' derives from ''Element''. ''ElementText'' is an interface, and therefore cannot be instanced directly. A concrete ''ElementText'' must be instantiated through a ''[wiki:documentation/LuaManual/APIReference#Document Document]'' object instead. It has the following property:
+
+ '''text'''`   `(`string`)::
+   The raw text content of the text element in UTF-8 encoding.
+
+== Document ==
+
+''Document'' derives from ''Element''. ''Document'' has no constructor; it must be instantiated through a ''[wiki:documentation/PythonManual/APIReference#Context Context]'' object instead, either by loading an external RML file or creating an empty document. It has the following methods and properties:
+
+ `void `'''PullToFront'''()::
+   Pulls the document in front of other documents within its context with a similar z-index.
+
+ `void `'''PushToBack'''()::
+   Pushes the document behind other documents within its context with a similar z-index.
+
+ `void `'''Show'''([''flags''])::
+   Shows the document. ''flags'' is either ''Document.NONE'', ''Document.FOCUS'' or ''Document.MODAL''. ''flags'' defaults to ''Document.FOCUS''.
+
+ `void `'''Hide'''()::
+   Hides the document.
+
+ `void `'''Close'''()::
+   Hides and closes the document, destroying its contents.
+
+ `Element `'''CreateElement'''(`string` ''tag_name'')::
+   Instances an element with a tag of ''tag_name''.
+
+ `ElementText `'''CreateTextNode'''(`string` ''text'')::
+   Instances a text element containing the string ''text''.
+
+ '''title'''`   `(`string`)::
+   The title of the document, as initially set by the <title> tag in the document's header. Read & write.
+
+ '''context'''`   `(`Context`)::
+   The context the document belongs to. Read-only.
+
+== Event ==
+
+The Event class has no constructor; it is generated internally. It has the following methods and properties:
+
+ `void `'''StopPropagation'''()::
+   Stops the propagation of the event through the event cycle, if allowed.
+
+ '''current_element'''`   `(`Element`)::
+   The element the event has propagated to. Read-only.
+
+ '''type'''`   `(`string`)::
+   The string name of the event. Read-only.
+
+ '''target_element'''`   `(`Element`)::
+   The element the event was originally targeted at. Read-only.
+
+ '''parameters'''`   `(`{k=string`,`v=`''[wiki:documentation/LuaManual/Variant variant]''`}`)::
+   A dictionary like object containing all the parameters in the event. Read-only [wiki:documentation/LuaManual/ProxyTables proxy table].
+
+== Context ==
+The ''Context'' class has no constructor; it must be instantiated through the ''rocket.CreateContext()'' function. It has the following methods and properties:
+
+ `void `'''AddEventListener'''(`string` ''event'', `string|function` ''script'', `Element` ''element_context'', `bool` ''in_capture_phase'')::
+   Adds the inline Lua script, ''script'', as an event listener to the context. Rules for ''script'' are the same as the ''listener'' argument to ''Element.AddEventListener''. ''element_context'' is an optional Element; if it is not nil, then the script will be executed as if it was bound to that element.
+
+ `void `'''AddMouseCursor'''(`Document` ''cursor_document'')::
+   Adds a cursor document loaded by another context into this context. The cursor document will be returned.
+
+ `Document `'''CreateDocument'''(`string` ''tag'')::
+   Creates a new document with the tag name of ''tag''.
+
+ `Document `'''LoadDocument'''(`string` ''document_path'')::
+   Attempts to load a document from the RML file found at ''document_path''. If successful, the document will be returned with a reference count of one.
+
+ `Document `'''LoadMouseCursor'''(`string` ''cursor_document_path'')::
+   Attempts to load a document from the RML file found at ''cursor_document_path'' as a cursor. If successful, the cursor's document will be returned with a reference count of one.
+
+ `bool `'''Render'''()::
+   Renders the context.
+
+ `void `'''ShowMouseCursor'''(`bool` ''show'')::
+   If ''show'' is True, this shows the mouse cursor, otherwise hides it.
+
+ `void `'''UnloadAllDocuments'''()::
+   Closes all documents currently loaded with the context.
+
+ `void `'''UnloadAllMouseCursors'''()::
+   Unloads all cursors currently loaded with the context.
+
+ `void `'''UnloadDocument'''(`Document` ''document'')::
+   Unloads a specific document within the context.
+
+ `void `'''UnloadMouseCursor'''(`string` ''cursor_name'')::
+   Unloads a specific cursor by name.
+
+ `bool `'''Update'''()::
+   Updates the context.
+
+ '''dimensions'''`   `(`Vector2i`)::
+   The dimensions of the context, as a ''Vector2i'' type. Read & write.
+
+ '''documents'''`   `(`k=int|string`,`v=Document`)::
+   Returns an array of the documents within the context. This can be looked up as an array or a dictionary. Read-only [wiki:documentation/LuaManual/ProxyTables proxy table].
+
+ '''focus_element'''`   `(`Element`)::
+   Returns the leaf of the context's focus tree. Read-only.
+
+ '''hover_element'''`   `(`Element`)::
+   Returns the element under the context's cursor. Read-only.
+
+ '''name'''`   `(`string`)::
+   The name of the context, specified at construction. Read-only.
+
+ '''root_element'''`   `(`Element`)::
+   Returns the context's root element. Read-only.
+-----
+= Controls API Reference =
+To use these types, you must link with RocketControls and RocketControlsLua. Additionally, you must call `Rocket::Controls::Lua::RegisterTypes` found in ''/include/Rocket/Controls/Lua/Controls.h'' after you start the interpreter.
+
+
+== ElementForm ==
+
+''ElementForm'' derives from ''Element''. The form element has the following method:
+
+ `void `'''Submit'''([`string` ''name'' [, `string` ''submit_value'']])::
+   Submits the form, optionally with the given ''name'' and ''submit_value''. Both default to empty strings.
+
+== ElementFormControl ==
+
+''ElementFormControl'' derives from ''Element''. The form element control has the following properties:
+
+ '''disabled'''`   `(`bool`)::
+   The disabled status of the control. Read & write.
+
+ '''name'''`   `(`string`)::
+   The name of the control, initial set with the "name" attribute.
+
+ '''value'''`   `(`string`)::
+   The current value of the control.
+
+== ElementFormControlSelect ==
+
+''ElementFormControlSelect'' derives from ''ElementFormControl''. The control has the following methods and properties:
+
+ `int `'''Add'''(`string` ''rml'', ` string `''value''[, `int` ''before''])::
+   Adds a new option to the select box. The new option has the string value of ''value'' and is represented by the elements created by the RML string ''rml''. The new option will be inserted by the index specified by ''before''; if this is out of bounds (the default), then the new option will be appended onto the list. The index of the new option will be returned.
+
+ `void `'''Remove'''(`int `''index'')::
+   Removes an existing option from the selection box.
+
+ '''options'''`   `(`{ {"element"=Element,"value"=string} }`::
+   The array of options available in the select box. Each entry in the array has the property ''value'', the string value of the option, and ''element'', the root of the element hierarchy that represents the option in the list. Read-only [wiki:documentation/LuaManual/ProxyTables proxy table].
+
+ '''selection'''`   `(`int`)::
+   The index of the currently selected option.
+
+== ElementFormControlDataSelect ==
+
+''ElementFormControlDataSelect'' derives from ''ElementFormControlSelect''. It has the following additional method:
+
+ `void `'''SetDataSource'''(`string` ''data_source_name'')::
+   Sets the name and table of the new data source to be used by the select box.
+
+== ElementFormControlInput ==
+
+''ElementFormControlInput'' derives from ''ElementFormControl''. The control has the following properties, only appropriate on the relevant types:
+
+ '''checked'''`   `(`bool`)::
+   Relevant for ''radio'' and ''checkbox'' types. The checked status of the input. Read & write.
+
+ '''maxlength'''`   `(`int`)::
+   Relevant for ''text'' types. The maximum number of characters permitted in the text field. Read & write.
+
+ '''size'''`   `(`int`)::
+   Relevant for ''text'' types. The approximate number of characters the text field shows horizontally at once. Read & write.
+
+ '''max'''`   `(`int`)::
+   Relevant for ''range'' types. The value of the control on the bottom / right of the slider. Read & write.
+
+ '''min'''`   `(`int`)::
+   Relevant for ''range'' types. The value of the control on the top / left of the slider. Read & write.
+
+ '''step'''`   `(`int`)::
+   Relevant for ''range'' types. The step the control's value changes in. Read & write.
+
+== ElementFormControlTextArea ==
+
+''ElementFormControlTextArea'' derives from ''ElementFormControl''. The control has the following properties:
+
+ '''cols'''`   `(`int`)::
+   The approximate number of characters the text area shows horizontally at once. Read & write.
+
+ '''maxlength'''`   `(`int`)::
+   The maximum number of characters permitted in the text area. Read & write.
+
+ '''rows'''`   `(`int`)::
+   The number of lines the text area shows at once. Read & write.
+
+ '''word_wrap'''`   `(`bool`)::
+   True if lines are split to fit into the text area, false if not. Read & write.
+
+== ElementTabSet ==
+
+''ElementTabSet'' derives from ''Element''. The control has the following methods and properties:
+
+ `void `'''SetPanel'''(`int` ''index'', `string` ''rml'')::
+   Sets the contents of a panel to the RML content ''rml''. If ''index'' is out-of-bounds, a new panel will be added at the end.
+
+ `void `'''SetTab'''(`int` ''index'', `string` ''rml'')::
+   Sets the contents of a tab to the RML content ''rml''. If ''index'' is out-of-bounds, a new tab will be added at the end.
+
+ '''active_tab'''`   `(`int`)::
+   Index of the active panel. Read & write.
+
+ '''num_tabs'''`   `(`int`)::
+   The number of tabs in the tab set. Read-only.
+
+== ElementDataGrid ==
+
+ `void `'''AddColumn'''(`string` ''fields'', `string` ''formatter'', `float` ''initial_width'', `string` ''header_rml'')::
+   Adds a new column to the data grid. The column will read the columns ''fields'' (in CSV format) from the grid's data source, processing it through the data formatter named ''formatter''. ''header_rml'' specifies the RML content of the column's header.
+
+ `void `'''SetDataSource'''(`string` ''data_source_name'')::
+   Sets the name and table of the new data source to be used by the data grid.
+
+ '''rows'''`   `(`{ElementDataGridRow}`)::
+   Returns an array containing all the rows in the data grid. Read-only.
+
+== ElementDataGridRow ==
+
+''ElementDataGridRow'' derives from ''Element''. The data grid row has the following properties:
+
+ '''row_expanded'''`   `(`bool`)::
+   The expanded state of the row, either True or False. Read & write.
+
+ '''parent_relative_index'''`   `(`int`)::
+   The index of the row, relative to its parent row. So if you are the third row in your parent, then it will be 3. Read-only.
+
+ '''table_relative_index'''`   `(`int`)::
+   The index of the row, relative to the data grid it is in. This takes into account all previous rows and their children. Read-only.
+
+ '''parent_row'''`   `(`ElementDataGridRow`)::
+   The parent row of this row; nil if it at the top level. Read-only.
+
+ '''parent_grid'''`   `(`ElementDataGrid`)::
+   The data grid that this row belongs to. Read-only.
+
+== DataFormatter ==
+
+Abstract DataFormatter interface. Create one by calling ''DataFormatter.new'' and set the ''FormatData'' property to an appropriate Lua function.
+
+ `DataFormatter `'''new'''([`string` ''name''[, `function` 'format_function']])::
+   Create a new DataFormatter object for use in Lua. ''name'' defaults to an empty string, and ''format_function'' must match the function signature that you would pass to the property ''FormatData''. Both are optional, but if you do not set format_function in ''new'', then you must set it on the property. Where to set the function is solely personal preference, neither is "better" than the other.
+
+ '''FormatData'''`   `=function(`{string}') return `string` end::
+   Set this to a Lua function that takes an array of strings, and returns a string.
+
+== DataSource ==
+
+Abstract DataSource Interface. Create one by calling ''DataSource.new'', and set the ''GetNumRows'' and ''GetRow'' properties to appropriate Lua functions.
+
+ `DataSource `'''new'''(`string` ''name'')::
+   Create a new DataSource object for use in Lua.
+
+ `void `'''NotifyRowAdd'''(`string` ''table_name'', `int` ''first_row_added'', `int` ''num_rows_added'')::
+   Notify listeners that rows have been added to the data source.
+
+ `void `'''NotifyRowRemove'''(`string` ''table_name'', `int` ''first_row_removed'', `int` ''num_rows_removed'')::
+   Notify listeners that rows have been removed from the data source.
+
+ `void `'''NotifyRowChange'''(`string` ''table_name'', `int` ''first_row_changed'', `int` ''num_rows_changed'')::
+   Notify listeners that rows have been changed on the data source.
+
+ `void `'''NotifyRowChange'''(`string` ''table_name'')::
+   Notify listeners that all rows on the data source have changed.
+
+ '''GetNumRows'''`   `=function(`string` ''table_name'') return `int` end::
+   To be set in Lua; return the number of rows in the given table.
+
+ '''GetRow''' = function(`string` ''table_name'', `int` ''index'', `{string}` ''columns'') return `{string}` end::
+   To be set in Lua; return a table of the values of the columns in string form.

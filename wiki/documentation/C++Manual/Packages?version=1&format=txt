@@ -1,0 +1,36 @@
+[[PageOutline(1-5, Contents)]]
+= Packages =
+
+Rocket ships with five libraries, two of which are open-sourced.
+
+== EMPCore ==
+
+EMPCore is the types and utility library that Rocket relies on. It has definitions for 2-, 3- and 4-dimensional vectors, colours and types for single- and double-byte variables. It also has a stream API, a simple XML parser and a logging system, and the data source types that are used in the datagrid elements in RocketControls.
+
+EMPCore lies within the EMP::Core namespace. The types you will most often run into while using Rocket are the two-dimensional vector types (EMP::Core::Vector2i for signed integer types, EMP::Core::Vector2f for floating-point), the two-byte unsigned integer type (EMP::Core::word) and the one-byte unsigned integer type (EMP::Core::byte).
+
+== RocketCore ==
+
+RocketCore is the main Rocket library. It contains the basic element hierarchy, the style sheet and property system, the layout engine and the RML parser.
+
+To use RocketCore, include <Rocket/Core.h> in your application and link with RocketCore or RocketCore_d.
+
+== RocketControls ==
+
+RocketControls is an open-sourced library for Rocket which contains custom elements for form controls (radio buttons, range sliders, etc), data tables and tabbed windows. You are free to use the plugin as-is in your application, or use the elements as a starting point for more specialised controls in your application.
+
+This package is a great place to look at for examples of creating new elements and writing custom XML parsing.
+
+To use RocketControls, include <Rocket/Controls.h> in your application and link with RocketControls or RocketControls_d. The source code can be found in src/Rocket/Controls/, and a VC8 project file and SConstruct file in src/Rocket/Controls/build/.
+
+This package also contains all the required code to expose the controls to Python if you are using Rocket with RocketPython.
+
+== RocketDebugger ==
+
+RocketDebugger is an open-sourced Rocket plugin. It is a visual debugger for Rocket elements, inspired by similar debuggers for Firefox. We strongly recommend you use this in your application during development! As the project is open-sourced, you are free to modify and extend the debugger to suit the debugging needs of your application.
+
+To use RocketDebugger, include <Rocket/Debugger.h> in your application and link with RocketDebugger or RocketDebugger_d. The source code and can found in src/Rocket/Debugger/, and a VC8 project file and SConstruct file in src/Rocket/Debugger/build/.
+
+== RocketPython ==
+
+RocketPython provides Python language bindings to RocketCore via a Python extension module. RocketPython requires a small additional license fee, but will greatly improve programmer productivity.

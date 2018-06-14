@@ -1,0 +1,18 @@
+= Element Index =
+
+The following is a list of elements supported by RML.
+||'''Tag'''||'''Attributes'''||
+||[wiki:documentation/RML/Images#IMGElement img]||src="CDATA" width="NUMBER" height="NUMBER"||
+||[wiki:documentation/RML/Controls#HANDLEElement handle]||movetarget="IDREF" sizetarget="IDREF"||
+
+The following is a list of elements supported when the Controls plugin is used.
+||'''Tag'''||'''Attributes'''||
+||[wiki:documentation/RML/DataDisplay#COLElement col]||fields="CDATA" formatter="CDATA" width="NUMBER"||
+||[wiki:documentation/RML/DataDisplay#DATAGRIDElement datagrid]||source="DATASOURCE"||
+||[wiki:documentation/RML/Forms#DATASELECTElement dataselect]||source="DATASOURCE" fields="CDATA" formatter="CDATA" valuefield="CDATA"||
+||[wiki:documentation/RML/Forms#FORMElement form]||||
+||[wiki:documentation/RML/Forms#INPUTElement input]||type="text|radio|checkbox|submit|range" value="CDATA" size="NUMBER" maxlength="NUMBER" min="NUMBER" max="NUMBER" step="NUMBER" orientation="CDATA"||
+||[wiki:documentation/RML/Forms#OPTIONElement option]||selected="CDATA" unselectable="CDATA"||
+||[wiki:documentation/RML/Forms#SELECTElement select]||value="CDATA"||
+||[wiki:documentation/RML/Controls#TABSETElement tabset]||||
+||[wiki:documentation/RML/Forms#TEXTAREAElement textarea]||cols="NUMBER" rows="NUMBER" maxlength="NUMBER" wrap="CDATA"||

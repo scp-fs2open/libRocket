@@ -1,0 +1,411 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title> Visual Formatting Model - libRocket</title>
+<link rel="start" href="http://librocket.com/wiki"/><link rel="search" href="http://librocket.com/search"/><link rel="help" href="../../TracGuide.html"/><link rel="stylesheet" href="../../../chrome/common/css/trac.css" type="text/css"/><link rel="stylesheet" href="../../../chrome/common/css/wiki.css" type="text/css"/><link rel="icon" href="../../../chrome/site/trac.ico" type="image/x-icon"/><link rel="shortcut icon" href="../../../chrome/site/trac.ico" type="image/x-icon"/><link rel="alternate" href="VisualFormattingModel%3Fformat=txt" title="Plain Text" type="text/x-trac-wiki"/><style type="text/css">
+</style>
+<script type="text/javascript" src="../../../chrome/common/js/trac.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/base.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/content.css"></link>
+<link rel="stylesheet" type="text/css" href="../../../chrome/site/style/discussion.css"></link>
+<style>
+		div.wiki img
+		{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+<div class="widthshell-width">
+<div class="widthshell-minwidth">
+<div class="widthshell-layout">
+<div class="widthshell-container">
+<div class="widthshell-content">
+<div id="background">
+<div style="float:right;width:160px;height:600px;margin-top:110px;margin-right:20px;">
+<script type="text/javascript"><!--
+                        google_ad_client = "pub-5872045433470541";
+                        /* Default, Wide Skyscraper */
+                        google_ad_slot = "3956485030";
+                        google_ad_width = 160;
+                        google_ad_height = 600;
+                //-->
+                </script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+</div>
+<div class="shell">
+<div class="stars">
+<img id="star-1" src="../../../chrome/site/images/star-red-medium.gif" width="22px" height="22px" alt="Star"/>
+<img id="star-2" src="../../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-3" src="../../../chrome/site/images/star-red-small.gif" width="11px" height="11px" alt="Star"/>
+<img id="star-4" src="../../../chrome/site/images/star-orange-small.gif" width="16px" height="16px" alt="Star"/>
+<img id="star-5" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-6" src="../../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-7" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-8" src="../../../chrome/site/images/star-red-big.gif" width="33px" height="33px" alt="Star"/>
+<img id="star-9" src="../../../chrome/site/images/star-red-small.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-10" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+<img id="star-11" src="../../../chrome/site/images/star-red-tiny.gif" width="8px" height="7px" alt="Star"/>
+<img id="star-12" src="../../../chrome/site/images/star-red-tiny.gif" width="7px" height="6px" alt="Star"/>
+</div>
+<div id="header">
+<a href="../../documentation.html"><img id="title" src="../../../chrome/site/images/title.gif" width="256px" height="49px" alt="Rocket"/></a>
+<ul class="top-level-nav">
+<li><a href="../../frontend/features.html">features.</a></li>
+
+<li><a href="http://github.com/lloydw/librocket">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../../documentation.html">developer.</a></li>
+</ul>
+<img id="trail" src="../../../chrome/site/images/trail-content.gif" width="72px" height="115px" alt="Rocket Trail"/>
+<a href="../../documentation.html"><img id="rocket" src="../../../chrome/site/images/rocket-content.gif" width="126px" height="139px" alt="Rocket"/></a>
+</div>
+</div>
+</div>
+<div class="shell">
+<div id="banner">
+<div class="stars">
+<img id="star-13" src="../../../chrome/site/images/star-black-big.gif" width="49px" height="50px" alt="Star"/>
+<img id="star-14" src="../../../chrome/site/images/star-black-medium.gif" width="23px" height="23px" alt="Star"/>
+<img id="star-15" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-16" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-17" src="../../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-18" src="../../../chrome/site/images/star-black-tiny.gif" width="13px" height="13px" alt="Star"/>
+<img id="star-19" src="../../../chrome/site/images/star-black-tiny.gif" width="9px" height="9px" alt="Star"/>
+<img id="star-20" src="../../../chrome/site/images/star-black-tiny.gif" width="10px" height="10px" alt="Star"/>
+<img id="star-21" src="../../../chrome/site/images/star-black-medium.gif" width="21px" height="21px" alt="Star"/>
+<img id="star-22" src="../../../chrome/site/images/star-black-small.gif" width="14px" height="14px" alt="Star"/>
+<img id="star-23" src="../../../chrome/site/images/star-black-small.gif" width="13px" height="13px" alt="Star"/>
+</div>
+<img id="banner-bottom-left" src="../../../chrome/site/images/banner-bottom-left.gif" width="20px" height="19px" alt="Bottom left banner image"/>
+<img id="banner-bottom-right" src="../../../chrome/site/images/banner-bottom-right.gif" width="20px" height="19px" alt="Bottom right banner image"/>
+<div id="login"><a href="http://librocket.com/login">Login</a> | <a "http://librocket.com/wiki/documentation/RCSS/href">Register</a></div>
+<div id="breadcrumbs">
+<a href="../../documentation.html">documentation</a> <strong>&#8249;</strong> <a href="../RCSS.html">RCSS</a> <strong>&#8249;</strong> <a href="VisualFormattingModel.html">VisualFormattingModel</a></div>
+<div id="title"> Visual Formatting Model</div>
+<div id="second-level-nav">
+<span class="nav-item active"><a href="../../documentation.html">Documentation</a></span>
+<span class="nav-item"><a accesskey="4" href="http://librocket.com/search">Search</a></span>
+</div>
+</div>
+<div id="content-container">
+<div id="content" class="wiki">
+<div class="wikipage">
+<div id="searchable"><p>
+<div class="wiki-toc"><h4>Contents</h4><ol><li><a href="VisualFormattingModel.html#Visualformattingmodel">Visual formatting model</a><ol><li><a href="VisualFormattingModel.html#Introductiontothevisualformattingmodel">Introduction to the visual formatting model</a><ol><li><a href="VisualFormattingModel.html#Containingblocks">Containing blocks</a></li></ol><li><a href="VisualFormattingModel.html#Controllingboxgeneration">Controlling box generation</a><ol><li><a href="VisualFormattingModel.html#Blocklevelelementsandblockboxes">Block level elements and block boxes</a></li><li>
+<a href="VisualFormattingModel.html#Inline-levelelementsandinlineboxes">Inline-level elements and inline boxes</a></li><li>
+<a href="VisualFormattingModel.html#Thedisplayproperty">The 'display' property</a></li></ol><li><a href="VisualFormattingModel.html#Positioningschemes">Positioning schemes</a><ol><li><a href="VisualFormattingModel.html#Choosingapositioningscheme:positionproperty">Choosing a positioning scheme: 'position' property</a></li><li>
+<a href="VisualFormattingModel.html#Boxoffsets:toprightbottomleft">Box offsets: 'top', 'right', 'bottom', 'left'</a></li></ol><li><a href="VisualFormattingModel.html#Normalflow">Normal flow</a><ol><li><a href="VisualFormattingModel.html#Blockformatting">Block formatting</a></li><li>
+<a href="VisualFormattingModel.html#Inlineformatting">Inline formatting</a></li><li>
+<a href="VisualFormattingModel.html#Relativepositioning">Relative positioning</a></li></ol><li><a href="VisualFormattingModel.html#Floats">Floats</a><ol><li><a href="VisualFormattingModel.html#Positioningthefloat:thefloatproperty">Positioning the float: the 'float' property</a></li><li>
+<a href="VisualFormattingModel.html#Controllingflownexttofloats:theclearproperty">Controlling flow next to floats: the 'clear' property</a></li></ol><li><a href="VisualFormattingModel.html#Absolutepositioning">Absolute positioning</a></li><li>
+<a href="VisualFormattingModel.html#Layeredpresentation">Layered presentation</a><ol><li><a href="VisualFormattingModel.html#Specifyingthestackinglevel:thez-indexproperty">Specifying the stacking level: the 'z-index' property</a></li></ol></li></ol></li></ol></div>
+</p>
+<h1 id="Visualformattingmodel">Visual formatting model</h1>
+<p>
+The visual formatting model used in RCSS is almost identical to that of [<a class="ext-link" href="http://www.w3.org/TR/REC-CSS2/visuren.html"><span class="icon">CSS</span></a>], and it is recommended you read that for a detailed explanation of how Rocket builds and places element boxes. A short summary can be found below.
+</p>
+<p>
+The differences between CSS and RCSS are:
+</p>
+<ul><li>The dimensions of the viewport are defined as the dimensions of the context the document is being rendered in.
+</li><li>The document element (the root) is always positioned (as absolute), and can be positioned within its context using 'top', 'right', 'bottom' and 'left'.
+</li><li>Compact and run-in boxes are not yet supported.
+</li><li>Generated content is not yet supported.
+</li></ul><h2 id="Introductiontothevisualformattingmodel">Introduction to the visual formatting model</h2>
+<p>
+During document layout, each element generates zero or more boxes. How these boxes are sized and laid out within their document is governed by:
+</p>
+<ul><li>The box type (either <i>block</i>, for boxes generally laid out top-to-bottom, or <i>inline</i>, for boxes laid out along a line).
+</li><li>The box size; this could either be derived from intrinsic dimensions for elements such as images and form controls, or specified directly through RCSS properties, or determined by the contents of the box.
+</li><li>Relationships of the box to other boxes in the document tree, such as floating boxes.
+</li></ul><h3 id="Containingblocks">Containing blocks</h3>
+<p>
+Every box has a 'containing block', a rectangular box with a fixed width and height. The dimensions of this box are used to evaluate such things as relative widths and margins. In general, a box will establish the containing block for its descendant elements, depending on the box's type.
+</p>
+<p>
+A box is not necessarily constrained by the dimensions of its containing block, it may overflow along the x- or y-axes.
+</p>
+<p>
+The containing block of the root document element is set by the dimensions of the document's context. The document element will generally establish a containing block for its descendants. However, it if does not have a fixed height, the height of the context will be used.
+</p>
+<h2 id="Controllingboxgeneration">Controlling box generation</h2>
+<h3 id="Blocklevelelementsandblockboxes">Block level elements and block boxes</h3>
+<p>
+<i>Block-level elements</i> are those that are formatted as blocks, flowing visually down the document from top to bottom (such as paragraphs). Elements with a 'display' of 'block' generate block boxes, as do any 'absolute' or 'fixed' positioned elements and floating elements.
+</p>
+<p>
+Block-level elements generate exactly one block box that itself contains only block boxes. If any inline elements are inside this block box, an anonymous block box is created (one not representing any specific element) to hold and position the inline content. The anonymous block box is positioned with the original block box just like any other block box.
+</p>
+<p>
+So, while processing the following RML fragment (assuming 'div' and 'p' elements are block, and 'img' elements are inline):
+</p>
+<pre class="wiki">&lt;div&gt;
+    &lt;div&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+        &lt;img /&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+</pre><p>
+the first 'div' would generate a block box. This box would establish the containing block for its descendants. The second 'div' would generate a block box using the first's containing block, as would the 'p' element. The 'img' element would be placed inside an anonymous block box, which would be positioned within the 'p' tag and generated with its containing block.
+</p>
+<h3 id="Inline-levelelementsandinlineboxes">Inline-level elements and inline boxes</h3>
+<p>
+<i>Inline-level elements</i> are those elements that do not generate blocks of content, but flow their content into lines contained by a block box. Elements with a 'display' property of 'inline' or 'inline-block' generate inline boxes.
+</p>
+<p>
+Loose text within elements also generates inline boxes.
+</p>
+<h3 id="Thedisplayproperty">The 'display' property</h3>
+<p>
+<i>display</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> inline | block | inline-block | none
+</td></tr><tr><td> <i>Initial:</i> </td><td> inline
+</td></tr><tr><td> <i>Applies to:</i> </td><td> all elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> N/A
+</td></tr></table>
+<p>
+The values have the following meanings:
+</p>
+<dl><dt>block</dt><dd>
+This element generates a block box.
+</dd><dt>inline</dt><dd>
+This element generates one or more inline boxes.
+</dd><dt>inline-block</dt><dd>
+This element generates a block box, which its descendants are positioned within, but is positioned itself as a single inline box. This is similar to the behaviour of replaced elements (those with intrinsic widths).
+</dd><dt>none</dt><dd>
+This element (and all of its descendants) generate no boxes, and are not displayed. Note this will mean the element will not affect layout. The 'visibility' property can be used to make an element affect layout but not be rendered.
+</dd></dl>
+<p>
+The only difference between this and the CSS display property is the reduced range of values allowed.
+</p>
+<h2 id="Positioningschemes">Positioning schemes</h2>
+<p>
+RCSS can position elements according to three schemes:
+</p>
+<ol><li>Normal flow, which includes placement of block boxes, the flowing of inline boxes and relative positioning of either.
+</li><li>Floats. Floating elements are placed as normal, then shifted as far to the left or right as possible within their containing block. Inline content is then flowed around floating boxes.
+</li><li>Absolute positioning. Elements that are positioned with 'absolute' or 'fixed' are removed from the normal flow (therefore having no impact on the layout of other elements) and placed at an explicit location relative to their containing block.
+</li></ol><h3 id="Choosingapositioningscheme:positionproperty">Choosing a positioning scheme: 'position' property</h3>
+<p>
+<i>position</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> static | relative | absolute | fixed
+</td></tr><tr><td> <i>Initial:</i> </td><td> static
+</td></tr><tr><td> <i>Applies to:</i> </td><td> all elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> N/A
+</td></tr></table>
+<p>
+The values have the following meanings:
+</p>
+<dl><dt>static</dt><dd>
+The element generates boxes that are positioned according to normal flow.
+</dd><dt>relative</dt><dd>
+The element generates boxes that are positioned according to normal flow, but then offset according to the values of the 'top', 'right', 'bottom' and 'left' properties. Other elements are positioned as though the box was in its original location.
+</dd><dt>absolute</dt><dd>
+The element generates a block box that is removed from normal flow. The 'top', 'right', 'bottom' and 'left' properties will position the box relative to the edges of its containing block.
+</dd><dt>fixed</dt><dd>
+The element is positioned like an 'absolute' box, but will not scroll along with other content if it is within an overflowing box.
+</dd></dl>
+<h3 id="Boxoffsets:toprightbottomleft">Box offsets: 'top', 'right', 'bottom', 'left'</h3>
+<p>
+<i>top</i>, <i>bottom</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> &lt;length&gt; | &lt;percentage&gt;
+</td></tr><tr><td> <i>Initial:</i> </td><td> 0px
+</td></tr><tr><td> <i>Applies to:</i> </td><td> positioned elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> relative to the height of the containing block
+</td></tr></table>
+<p>
+<i>left</i>, <i>right</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> &lt;length&gt; | &lt;percentage&gt;
+</td></tr><tr><td> <i>Initial:</i> </td><td> 0px
+</td></tr><tr><td> <i>Applies to:</i> </td><td> positioned elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> relative to the width of the containing block
+</td></tr></table>
+<p>
+The values have the following meanings:
+</p>
+<dl><dt>length</dt><dd>
+The edge is offset a fixed distance from the reference edge.
+</dd><dt>percentage</dt><dd>
+The edge is offset from the reference edge a distance relative to the dimensions of the containing block.
+</dd></dl>
+<p>
+Note that RCSS does not yet support the 'auto' keyword for any of these properties.
+</p>
+<h2 id="Normalflow">Normal flow</h2>
+<h3 id="Blockformatting">Block formatting</h3>
+<p>
+When formatting block boxes, boxes are laid out vertically one after the other. The bottom edge of a block box will touch the top edge of the block box following it. The left edge of a block box will touch the left edge of its containing block. Block elements do not themselves flow around floating elements, but their inline content will.
+</p>
+<h3 id="Inlineformatting">Inline formatting</h3>
+<p>
+Inline boxes are positioned horizontally on a line, one after the other, from the top of the containing block. Horizontal padding, borders and margins are respected when positioning the boxes. Inline boxes on a single line are said to be laid out in a <i>line box</i>.
+</p>
+<p>
+Each line box is generally the same width as its containing block, with its left edge touching the left edge of the containing block and its right edge touching the right edge of the containing block. However, floating elements may force a line box to be shorter along one or both of its edges. The height of a line box is governed by the height of the box's inline content. Inline boxes are positioned vertically through the line box using the 'vertical-align' property.
+</p>
+<p>
+If several inline boxes cannot fit horizontally onto a single line box, they are flowed into several vertically-stacked line boxes.
+</p>
+<p>
+The 'text-align' property governs how the excess horizontal space between the widths of the inline boxes and the width of the line box is distributed.
+</p>
+<p>
+Inline boxes may be split across several line boxes. When this occurs, any horizontal margins, borders and padding will only be present at the beginning and end of the inline box, not on each line.
+</p>
+<h3 id="Relativepositioning">Relative positioning</h3>
+<p>
+Once a block or inline box has been positioned, it can be moved from its location if its 'position' is set to 'relative'. It is offset from its position using the 'top', 'right', 'bottom' and 'left' properties. Note that it affects the positioning of further elements from its original location, not its new one.
+</p>
+<h2 id="Floats">Floats</h2>
+<p>
+A float is a box that is shifted horizontally to the left or right edge of its containing block. They do not affect placement of further block boxes, however line boxes will be shortened to avoid running over them. In this way, inline content will be flowed around them. Block boxes can be forced vertically past floating boxes using the 'clear' property.
+</p>
+<p>
+See the <a class="ext-link" href="http://www.w3.org/TR/REC-CSS2/visuren.html#floats"><span class="icon">CSS2 documentation</span></a> on floating elements for a description on the full float model, and interesting uses of floats.
+</p>
+<h3 id="Positioningthefloat:thefloatproperty">Positioning the float: the 'float' property</h3>
+<p>
+<i>float</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> left | right | none
+</td></tr><tr><td> <i>Initial:</i> </td><td> none
+</td></tr><tr><td> <i>Applies to:</i> </td><td> all but absolutely positioned elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> N/A
+</td></tr></table>
+<p>
+The values of this property have the following meanings:
+</p>
+<dl><dt>left</dt><dd>
+The element generates a block box that is floated to the left.
+</dd><dt>right</dt><dd>
+The element generates a block box that is floated to the right.
+</dd><dt>none</dt><dd>
+The element's boxes are not floated.
+</dd></dl>
+<h3 id="Controllingflownexttofloats:theclearproperty">Controlling flow next to floats: the 'clear' property</h3>
+<p>
+<i>clear</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> left | right | both | none
+</td></tr><tr><td> <i>Initial:</i> </td><td> none
+</td></tr><tr><td> <i>Applies to:</i> </td><td> block-level elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> N/A
+</td></tr></table>
+<p>
+The values of this property have the following meanings:
+</p>
+<dl><dt>left</dt><dd>
+The box's position is pushed far enough vertically so its top edge is below the bottom edge of all previously placed left-floating elements.
+</dd><dt>right</dt><dd>
+The box's position is pushed far enough vertically so its top edge is below the bottom edge of all previously placed right-floating elements.
+</dd><dt>both</dt><dd>
+The box's position is pushed far enough vertically so its top edge is below the bottom edge of all previously placed floating elements.
+</dd><dt>none</dt><dd>
+The box's position is placed irrespective of floating elements.
+</dd></dl>
+<p>
+Floating boxes themselves can be cleared.
+</p>
+<p>
+Note that RCSS ignores floating elements placed within a <i>sibling's</i> containing block.
+</p>
+<h2 id="Absolutepositioning">Absolute positioning</h2>
+<p>
+An absolutely positioned box (one with a 'position' of 'absolute' or 'fixed') is explicitly offset from the edges of its containing block. Floating boxes are ignored when laying out its inline content.
+</p>
+<p>
+Note that in RCSS, 'fixed' positioned boxes are not placed relative to the viewport, but identically to 'absolute' boxes.
+</p>
+<h2 id="Layeredpresentation">Layered presentation</h2>
+<p>
+Each box has a stacking level within a single stacking context. Boxes within a stacking context are rendered in stacking level order, from lowest to highest (so boxes with the highest stacking level will appear on top). All the boxes within a single stacking context are rendered at once; they will not intermingle rendering with the members of another stacking context.
+</p>
+<p>
+The root element of a document establishes a stacking context for its descendants. Other elements within a document may establish local stacking contexts of their own. An element which does so has two stacking levels; one within the stacking context it is a member of (given by the 'z-index' property) and another inside the stacking context it establishes (always '0').
+</p>
+<h3 id="Specifyingthestackinglevel:thez-indexproperty">Specifying the stacking level: the 'z-index' property</h3>
+<p>
+<i>z-index</i>
+</p>
+<table class="wiki">
+<tr><td> <i>Value:</i> </td><td> &lt;number&gt; | auto
+</td></tr><tr><td> <i>Initial:</i> </td><td> auto
+</td></tr><tr><td> <i>Applies to:</i> </td><td> all elements
+</td></tr><tr><td> <i>Inherited:</i> </td><td> no
+</td></tr><tr><td> <i>Percentages:</i> </td><td> N/A
+</td></tr></table>
+<p>
+Values have the following meanings:
+</p>
+<dl><dt>&lt;number&gt;</dt><dd>
+The number is the stack level within the current stacking context. It also establishes a local stacking context in which its own stack level is '0'.
+</dd><dt>auto</dt><dd>
+The stack level of the box is the same as its parent's. It does not establish a local stacking context.
+</dd></dl>
+<p>
+Note that in RCSS any element can have the z-index property, not just positioned elements.
+</p>
+</div>
+</div>
+<script type="text/javascript">
+   addHeadingLinks(document.getElementById("searchable"), "Link to this section");
+  </script>
+</div>
+</div>
+</div>
+<div id="footer">
+<a id="tracpowered" href="http://trac.edgewall.org/">
+<img src="../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered"/>
+</a>
+<p class="left">
+Powered by <a href="http://librocket.com/about"><strong>Trac </strong></a><br/>By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+</p>
+<p id="copyright" class="left clear">
+Copyright &copy; 2007-2010 Code Point Ltd, Shift Technology Ltd.
+</p>
+<ul class="top-level-nav">
+<li><a href="../../frontend/features.html">features.</a></li>
+<li><a "http://librocket.com/wiki/documentation/RCSS/href">download.</a></li>
+<li><a href="http://forums.librocket.com">forums.</a></li>
+<li><a href="../../documentation.html">developer.</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3379591-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+</body>
+</html>
