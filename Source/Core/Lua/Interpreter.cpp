@@ -60,19 +60,19 @@
 namespace Rocket {
 namespace Core {
 namespace Lua {
-lua_State* Interpreter::_L = NULL;
+lua_State* Interpreter::_Lua = NULL;
 //typedefs for nicer Lua names
 typedef Rocket::Core::ElementDocument Document;
 
 void Interpreter::Startup()
 {
-	if(_L == NULL)
+	if(_Lua == NULL)
 	{
 		Log::Message(Log::LT_INFO, "Loading Lua interpreter");
-		_L = luaL_newstate();
-		luaL_openlibs(_L);
+		_Lua = luaL_newstate();
+		luaL_openlibs(_Lua);
 	}
-    RegisterCoreTypes(_L);
+    RegisterCoreTypes(_Lua);
 }
 
 
@@ -111,27 +111,27 @@ void Interpreter::LoadFile(const String& file)
     Rocket::Core::FileInterface* file_interface = Rocket::Core::GetFileInterface();
     Rocket::Core::FileHandle handle = file_interface->Open(file);
     if(handle == 0) {
-        lua_pushfstring(_L, "LoadFile: Unable to open file: %s", file.CString());
-        Report(_L);
+        lua_pushfstring(_Lua, "LoadFile: Unable to open file: %s", file.CString());
+        Report(_Lua);
         return;
     }
 
     size_t size = file_interface->Length(handle);
     if(size == 0) {
-        lua_pushfstring(_L, "LoadFile: File is 0 bytes in size: %s", file.CString());
-        Report(_L);
+        lua_pushfstring(_Lua, "LoadFile: File is 0 bytes in size: %s", file.CString());
+        Report(_Lua);
         return;
     }
     char* file_contents = new char[size];
     file_interface->Read(file_contents,size,handle);
     file_interface->Close(handle);
 
-    if(luaL_loadbuffer(_L,file_contents,size,file.CString()) != 0)
-        Report(_L); 
+    if(luaL_loadbuffer(_Lua,file_contents,size,file.CString()) != 0)
+        Report(_Lua);
     else //if there were no errors loading, then the compiled function is on the top of the stack
     {
-        if(lua_pcall(_L,0,0,0) != 0)
-            Report(_L);
+        if(lua_pcall(_Lua,0,0,0) != 0)
+            Report(_Lua);
     }
 
     delete[] file_contents;
@@ -140,27 +140,27 @@ void Interpreter::LoadFile(const String& file)
 
 void Interpreter::DoString(const Rocket::Core::String& code, const Rocket::Core::String& name)
 {
-    if(luaL_loadbuffer(_L,code.CString(),code.Length(), name.CString()) != 0)
-        Report(_L);
+    if(luaL_loadbuffer(_Lua,code.CString(),code.Length(), name.CString()) != 0)
+        Report(_Lua);
     else
     {
-        if(lua_pcall(_L,0,0,0) != 0)
-            Report(_L);
+        if(lua_pcall(_Lua,0,0,0) != 0)
+            Report(_Lua);
     }
 }
 
 void Interpreter::LoadString(const Rocket::Core::String& code, const Rocket::Core::String& name)
 {
-    if(luaL_loadbuffer(_L,code.CString(),code.Length(), name.CString()) != 0)
-        Report(_L);
+    if(luaL_loadbuffer(_Lua,code.CString(),code.Length(), name.CString()) != 0)
+        Report(_Lua);
 }
 
 
 void Interpreter::BeginCall(int funRef)
 {
-    lua_settop(_L,0); //empty stack
-    //lua_getref(_L,funRef);
-    lua_rawgeti(_L, LUA_REGISTRYINDEX, (int)funRef);
+    lua_settop(_Lua,0); //empty stack
+    //lua_getref(_Lua,funRef);
+    lua_rawgeti(_Lua, LUA_REGISTRYINDEX, (int)funRef);
 }
 
 int Interpreter::ErrorHandler(lua_State* L) {
@@ -196,8 +196,8 @@ int Interpreter::ErrorHandler(lua_State* L) {
 bool Interpreter::ExecuteCall(int params, int res)
 {
     bool ret = true;
-    int top = lua_gettop(_L);
-    if(lua_type(_L,top-params) != LUA_TFUNCTION)
+    int top = lua_gettop(_Lua);
+    if(lua_type(_Lua,top-params) != LUA_TFUNCTION)
     {
         ret = false;
         //stack cleanup
@@ -205,24 +205,24 @@ bool Interpreter::ExecuteCall(int params, int res)
         {
             for(int i = top; i >= (top-params); i--)
             {
-                if(!lua_isnone(_L,i))
-                    lua_remove(_L,i);
+                if(!lua_isnone(_Lua,i))
+                    lua_remove(_Lua,i);
             }
         }
     }
     else
     {
-    	lua_pushcfunction(_L, ErrorHandler);
-    	lua_insert(_L, -params - 2);
+        lua_pushcfunction(_Lua, ErrorHandler);
+        lua_insert(_Lua, -params - 2);
 
-        if(lua_pcall(_L,params,res,-params - 2) != 0)
+        if(lua_pcall(_Lua,params,res,-params - 2) != 0)
         {
-            Report(_L);
+            Report(_Lua);
             ret = false;
             res = 0;
         }
 
-        lua_remove(_L, -res - 1); // Remove error function from stack
+        lua_remove(_Lua, -res - 1); // Remove error function from stack
     }
     return ret;
 }
@@ -232,12 +232,12 @@ void Interpreter::EndCall(int res)
     //stack cleanup
     for(int i = res; i > 0; i--)
     {
-        if(!lua_isnone(_L,res))
-            lua_remove(_L,res);
+        if(!lua_isnone(_Lua,res))
+            lua_remove(_Lua,res);
     }
 }
 
-lua_State* Interpreter::GetLuaState() { return _L; }
+lua_State* Interpreter::GetLuaState() { return _Lua; }
 
 
 //From Plugin
@@ -267,14 +267,14 @@ void Interpreter::Initialise()
 void Interpreter::Initialise(lua_State *luaStatePointer)
 {
 	Interpreter *iPtr = new Interpreter();
-	iPtr->_L = luaStatePointer;
+	iPtr->_Lua = luaStatePointer;
 	Rocket::Core::RegisterPlugin(iPtr);
 }
 
 void Interpreter::Shutdown(bool free_state)
 {
 	if (free_state) {
-		lua_close(_L);
+		lua_close(_Lua);
 	}
 }
 
