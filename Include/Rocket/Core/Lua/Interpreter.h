@@ -103,7 +103,7 @@ public:
 	 must call lua_close yourself or if you need to continue to use the lua_State pointer provided here.  Internally, it calls
 	 Interpreter::Startup() and registers the "body" tag to generate a LuaDocument rather than a Rocket::Core::ElementDocument.
 	 If the argument provided is NULL, a Lua context is created automatically instead. */
-    static void Initialise(lua_State *_L);
+    static void Initialise(lua_State *_Lua);
 
     /** Stops the plugin by calling lua_close
 	 @remark Shutdown calls lua_Close on the lua_State associated with the Interpreter.  If a lua_State was provided in the
@@ -118,12 +118,12 @@ public:
     @sa Rocket::Core::Plugin::OnShutdown    */
     virtual void OnShutdown();
 private:
-    /** Creates a lua_State for @var _L and calls luaL_openlibs, then calls Interpreter::RegisterCoreTypes(lua_State*)
+    /** Creates a lua_State for @var _Lua and calls luaL_openlibs, then calls Interpreter::RegisterCoreTypes(lua_State*)
     @remark called by Interpreter::Initialise()    */
     void Startup();
 
     /** Lua state that Interpreter::Initialise() creates.    */
-    static lua_State* _L;
+    static lua_State* _Lua;
 };
 }
 }
