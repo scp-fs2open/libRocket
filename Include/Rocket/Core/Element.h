@@ -589,6 +589,8 @@ protected:
 	virtual void OnUpdate();
 	/// Called during render after backgrounds, borders, decorators, but before children, are rendered.
 	virtual void OnRender();
+	virtual void OnBeforeRender();
+	virtual void OnAfterRender();
 
 	/// Called during a layout operation, when the element is being positioned and sized.
 	virtual void OnLayout();

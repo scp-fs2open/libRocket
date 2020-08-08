@@ -165,6 +165,8 @@ void Element::Update()
 
 void Element::Render()
 {
+	OnBeforeRender();
+
 	// Rebuild our stacking context if necessary.
 	if (stacking_context_dirty)
 		BuildLocalStackingContext();
@@ -187,6 +189,8 @@ void Element::Render()
 	// Render the rest of the elements in the stacking context.
 	for (; i < stacking_context.size(); ++i)
 		stacking_context[i]->Render();
+
+	OnAfterRender();
 }
 
 // Clones this element, returning a new, unparented element.
@@ -1412,6 +1416,14 @@ void Element::OnUpdate()
 
 // Called during render after backgrounds, borders, decorators, but before children, are rendered.
 void Element::OnRender()
+{
+}
+
+void Element::OnBeforeRender()
+{
+}
+
+void Element::OnAfterRender()
 {
 }
 
