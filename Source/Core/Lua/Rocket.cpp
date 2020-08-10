@@ -51,6 +51,7 @@ void LuaRocketPushrocketGlobal(lua_State* L)
     lua_global_rocket.key_modifier_ref = luaL_ref(L,-2);
     LuaType<LuaRocket>::push(L,&lua_global_rocket,false);
     lua_setglobal(L,"rocket");
+    lua_pop(L, 1);
 }
 
 template<> void ExtraInit<LuaRocket>(lua_State* L, int metatable_index) { return; }
