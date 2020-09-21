@@ -30,7 +30,10 @@
 
 #include "Header.h"
 #include <Rocket/Core/Lua/lua.hpp>
+#include <Rocket/Core/Lua/LuaSystemInterface.h>
 #include <Rocket/Core/Plugin.h>
+
+#include <memory>
 
 namespace Rocket {
 namespace Core {
@@ -49,16 +52,16 @@ public:
     @param[in] file Fully qualified file name to execute.
     @remark Somewhat misleading name if you are used to the Lua meaning of "load file". It behaves
     exactly as luaL_dofile does.            */
-    static void LoadFile(const Rocket::Core::String& file);
+    static void LoadFile(const Rocket::Core::String& file, Rocket::Core::Element* context);
     /** Calls lua_dostring and reports the errors.
     @param[in] code String to execute
     @param[in] name Name for the code that will show up in the Log  */
-    static void DoString(const Rocket::Core::String& code, const Rocket::Core::String& name = "");
+    static void DoString(const Rocket::Core::String& code, Rocket::Core::Element* context, const Rocket::Core::String& name = "");
     /** Same as DoString, except does NOT call pcall on it. It will leave the compiled (but not executed) string
     on top of the stack. It behaves exactly like luaL_loadstring, but you get to specify the name
     @param[in] code String to compile
     @param[in] name Name for the code that will show up in the Log    */
-    static void LoadString(const Rocket::Core::String& code, const Rocket::Core::String& name = "");
+    static void LoadString(const Rocket::Core::String& code, Rocket::Core::Element* context, const Rocket::Core::String& name = "");
 
     /** Clears all of the items on the stack, and pushes the function from funRef on top of the stack. Only use
     this if you used lua_ref instead of luaL_ref
@@ -93,17 +96,19 @@ public:
     Alternatively, you can call RegisterCoreTypes(lua_State*) with your own Lua state if you need them defined in it. */
     static lua_State* GetLuaState();
 
+	static LuaSystemInterface* GetLuaSystemInterface();
+
     /** Creates the plugin. 
 	@remark This is equivilent to calling Initialise(NULL).
       */
-    static void Initialise();
+    static void Initialise(std::unique_ptr<LuaSystemInterface> interface);
     /** Creates the plugin and adds Rocket to an existing Lua context if one is provided.
 	 @remark Call this function only once, and special care must be taken when destroying the lua_State passed to this method.
 	 Interpreter::Shutdown() calles lua_close on the lua_State pointer provided here, do not call Interpreter::Shutdown if you
 	 must call lua_close yourself or if you need to continue to use the lua_State pointer provided here.  Internally, it calls
 	 Interpreter::Startup() and registers the "body" tag to generate a LuaDocument rather than a Rocket::Core::ElementDocument.
 	 If the argument provided is NULL, a Lua context is created automatically instead. */
-    static void Initialise(lua_State *_Lua);
+    static void Initialise(lua_State *_Lua, std::unique_ptr<LuaSystemInterface> interface);
 
     /** Stops the plugin by calling lua_close
 	 @remark Shutdown calls lua_Close on the lua_State associated with the Interpreter.  If a lua_State was provided in the
@@ -124,6 +129,7 @@ private:
 
     /** Lua state that Interpreter::Initialise() creates.    */
     static lua_State* _Lua;
+	static std::unique_ptr<LuaSystemInterface> _SystemInterface;
 };
 }
 }

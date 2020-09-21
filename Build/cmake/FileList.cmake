@@ -172,6 +172,7 @@ set(Core_PUB_HDR_FILES
     ${PROJECT_SOURCE_DIR}/Include/Rocket/Core/TypeConverter.inl
     ${PROJECT_SOURCE_DIR}/Include/Rocket/Core/Types.h
     ${PROJECT_SOURCE_DIR}/Include/Rocket/Core/URL.h
+    ${PROJECT_SOURCE_DIR}/Include/Rocket/Core/ValueReference.h
     ${PROJECT_SOURCE_DIR}/Include/Rocket/Core/Variant.h
     ${PROJECT_SOURCE_DIR}/Include/Rocket/Core/Variant.inl
     ${PROJECT_SOURCE_DIR}/Include/Rocket/Core/Vector2.h
@@ -559,6 +560,7 @@ set(LuaCore_HDR_FILES
 set(LuaCore_PUB_HDR_FILES
     ${PROJECT_SOURCE_DIR}/Include/Rocket/Core/Lua/Header.h
     ${PROJECT_SOURCE_DIR}/Include/Rocket/Core/Lua/Interpreter.h
+    ${PROJECT_SOURCE_DIR}/Include/Rocket/Core/Lua/LuaSystemInterface.h
     ${PROJECT_SOURCE_DIR}/Include/Rocket/Core/Lua/LuaType.h
     ${PROJECT_SOURCE_DIR}/Include/Rocket/Core/Lua/Utilities.h
 )

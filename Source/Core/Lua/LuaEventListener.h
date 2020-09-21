@@ -62,6 +62,7 @@ public:
     Element* attached;
     ElementDocument* parent;
     String strFunc; //for debugging purposes
+    bool prepared_function = false; // tracks if we called the user interface for perparing functions
 };
 
 }

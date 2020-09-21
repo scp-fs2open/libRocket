@@ -1991,5 +1991,20 @@ void Element::DirtyStructure()
 	}
 }
 
+void Element::PutUserValue(const String& identifier, std::unique_ptr<ValueReference> reference)
+{
+	user_values[identifier] = std::move(reference);
+}
+ValueReference* Element::GetUserValue(const String& identifier) const
+{
+	auto iter = user_values.find(identifier);
+
+	if (iter == user_values.end()) {
+		return nullptr;
+	}
+
+	return iter->second.get();
+}
+
 }
 }

@@ -48,7 +48,7 @@ LuaEventListener::LuaEventListener(const String& code) : EventListener()
     int top = lua_gettop(L);
 
     //compile,execute,and save the function
-    if(luaL_loadstring(L,function.CString()) != 0)
+    if(luaL_loadbuffer(L, function.CString(), function.Length(), "Event listener") != 0)
     {
         Report(L);
         return;
@@ -94,6 +94,18 @@ void LuaEventListener::ProcessEvent(Event& event)
 
     //push the arguments
     lua_rawgeti(L,LUA_REGISTRYINDEX,luaFuncRef);
+
+    // Let user code know that we are using this function now. E.g. for setting document specific environments.
+    // Do it lazily since only now can we be sure that we are actually properly attached to an element
+    if (!prepared_function) {
+        auto interface = Lua::Interpreter::GetLuaSystemInterface();
+        if (interface) {
+            interface->PrepareFunction(L, -1, attached);
+        }
+
+        prepared_function = true;
+    }
+
     LuaType<Event>::push(L,&event,false);
 	LuaType<Element>::push(L,attached,false);
     LuaType<Document>::push(L,parent,false);

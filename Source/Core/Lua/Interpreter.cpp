@@ -61,6 +61,7 @@ namespace Rocket {
 namespace Core {
 namespace Lua {
 lua_State* Interpreter::_Lua = NULL;
+std::unique_ptr<LuaSystemInterface> Interpreter::_SystemInterface;
 //typedefs for nicer Lua names
 typedef Rocket::Core::ElementDocument Document;
 
@@ -105,7 +106,7 @@ void Interpreter::RegisterCoreTypes(lua_State* L)
 
 
 
-void Interpreter::LoadFile(const String& file)
+void Interpreter::LoadFile(const String& file, Rocket::Core::Element* context)
 {
     //use the file interface to get the contents of the script
     Rocket::Core::FileInterface* file_interface = Rocket::Core::GetFileInterface();
@@ -130,6 +131,7 @@ void Interpreter::LoadFile(const String& file)
         Report(_Lua);
     else //if there were no errors loading, then the compiled function is on the top of the stack
     {
+        Lua::Interpreter::GetLuaSystemInterface()->PrepareFunction(_Lua, -1, context);
         if(lua_pcall(_Lua,0,0,0) != 0)
             Report(_Lua);
     }
@@ -138,21 +140,23 @@ void Interpreter::LoadFile(const String& file)
 }
 
 
-void Interpreter::DoString(const Rocket::Core::String& code, const Rocket::Core::String& name)
+void Interpreter::DoString(const Rocket::Core::String& code, Rocket::Core::Element* context, const Rocket::Core::String& name)
 {
     if(luaL_loadbuffer(_Lua,code.CString(),code.Length(), name.CString()) != 0)
         Report(_Lua);
     else
     {
+        Lua::Interpreter::GetLuaSystemInterface()->PrepareFunction(_Lua, -1, context);
         if(lua_pcall(_Lua,0,0,0) != 0)
             Report(_Lua);
     }
 }
 
-void Interpreter::LoadString(const Rocket::Core::String& code, const Rocket::Core::String& name)
+void Interpreter::LoadString(const Rocket::Core::String& code, Rocket::Core::Element* context, const Rocket::Core::String& name)
 {
     if(luaL_loadbuffer(_Lua,code.CString(),code.Length(), name.CString()) != 0)
         Report(_Lua);
+    Lua::Interpreter::GetLuaSystemInterface()->PrepareFunction(_Lua, -1, context);
 }
 
 
@@ -164,6 +168,10 @@ void Interpreter::BeginCall(int funRef)
 }
 
 int Interpreter::ErrorHandler(lua_State* L) {
+    if (_SystemInterface) {
+        return _SystemInterface->ErrorHandler(L);
+    }
+
 	std::stringstream msgStream;
 
 	msgStream << "LUA ERROR: " << lua_tostring(L, -1);
@@ -259,23 +267,29 @@ void Interpreter::OnShutdown()
 	delete this;
 }
 
-void Interpreter::Initialise()
+void Interpreter::Initialise(std::unique_ptr<LuaSystemInterface> interface)
 {
-    Rocket::Core::Lua::Interpreter::Initialise(NULL);
+    Rocket::Core::Lua::Interpreter::Initialise(NULL, std::move(interface));
 }
 
-void Interpreter::Initialise(lua_State *luaStatePointer)
+void Interpreter::Initialise(lua_State *luaStatePointer, std::unique_ptr<LuaSystemInterface> interface)
 {
 	Interpreter *iPtr = new Interpreter();
-	iPtr->_Lua = luaStatePointer;
+	_Lua = luaStatePointer;
+	_SystemInterface = std::move(interface);
 	Rocket::Core::RegisterPlugin(iPtr);
 }
 
 void Interpreter::Shutdown(bool free_state)
 {
+	_SystemInterface.reset();
 	if (free_state) {
 		lua_close(_Lua);
 	}
+}
+LuaSystemInterface* Interpreter::GetLuaSystemInterface()
+{
+	return _SystemInterface.get();
 }
 
 }

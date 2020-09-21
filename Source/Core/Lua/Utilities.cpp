@@ -26,6 +26,8 @@
  */
  
 #include "precompiled.h"
+
+#include <Rocket/Core/Lua/Interpreter.h>
 #include <Rocket/Core/Lua/Utilities.h>
 
 namespace Rocket {
@@ -75,6 +77,13 @@ void PushVariant(lua_State* L, Variant* var)
 
 void Report(lua_State* L, const Rocket::Core::String& place)
 {
+    const auto systemInterface = Interpreter::GetLuaSystemInterface();
+
+    if (systemInterface != nullptr) {
+        systemInterface->ReportError(L, place);
+        return;
+    }
+
     const char * msg= lua_tostring(L,-1);
     String strmsg;
     while(msg)

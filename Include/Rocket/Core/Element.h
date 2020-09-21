@@ -30,11 +30,14 @@
 
 #include "ReferenceCountable.h"
 #include "ScriptInterface.h"
+#include "ValueReference.h"
 #include "Header.h"
 #include "Box.h"
 #include "Event.h"
 #include "Property.h"
 #include "Types.h"
+
+#include <memory>
 
 namespace Rocket {
 namespace Core {
@@ -580,6 +583,9 @@ public:
 	/// Update the element's layout if required.
 	void UpdateLayout();
 
+    void PutUserValue(const String& identifier, std::unique_ptr<ValueReference> reference);
+    ValueReference* GetUserValue(const String& identifier) const;
+
 protected:
 	/// Forces the element to generate a local stacking context, regardless of the value of its z-index
 	/// property.
@@ -713,7 +719,9 @@ private:
 
 	// The element's font face; used to render text and resolve em / ex properties.
 	FontFaceHandle* font_face_handle;
-	
+
+	std::map<String, std::unique_ptr<ValueReference>> user_values;
+
 	// Cached rendering information
 	int clipping_ignore_depth;
 	bool clipping_enabled;
