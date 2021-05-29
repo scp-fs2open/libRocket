@@ -353,7 +353,7 @@ bool BaseXMLParser::ReadCDATA(const char* terminator)
 }
 
 // Reads from the stream until a complete word is found.
-bool BaseXMLParser::FindWord(String& word, const char* terminators)
+bool BaseXMLParser::FindWord(String& find_word, const char* terminators)
 {
 	for (;;)
 	{
@@ -366,7 +366,7 @@ bool BaseXMLParser::FindWord(String& word, const char* terminators)
 		// Ignore white space
 		if (StringUtilities::IsWhitespace(*read))
 		{
-			if (word.Empty())
+			if (find_word.Empty())
 			{
 				read++;
 				continue;
@@ -378,10 +378,10 @@ bool BaseXMLParser::FindWord(String& word, const char* terminators)
 		// Check for termination condition
 		if (terminators && strchr(terminators, *read))
 		{
-			return !word.Empty();
+			return !find_word.Empty();
 		}
 
-		word += *read;
+		find_word += *read;
 		read++;
 	}
 }
