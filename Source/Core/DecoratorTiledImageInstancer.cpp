@@ -35,6 +35,8 @@ namespace Core {
 DecoratorTiledImageInstancer::DecoratorTiledImageInstancer()
 {
 	RegisterTileProperty("image", false);
+	RegisterProperty("image-fit", "stretch")
+		.AddParser("keyword", "stretch, contain, fill");
 }
 
 DecoratorTiledImageInstancer::~DecoratorTiledImageInstancer()
@@ -52,8 +54,10 @@ Decorator* DecoratorTiledImageInstancer::InstanceDecorator(const String& ROCKET_
 
 	GetTileProperties(tile, texture_name, rcss_path, properties, "image");
 
+	DecoratorTiledImage::SizingMode sizing_mode = (DecoratorTiledImage::SizingMode) properties.GetProperty("image-fit")->value.Get< int >();
+
 	DecoratorTiledImage* decorator = new DecoratorTiledImage();
-	if (decorator->Initialise(tile, texture_name, rcss_path))
+	if (decorator->Initialise(tile, texture_name, rcss_path, sizing_mode))
 		return decorator;
 
 	decorator->RemoveReference();
