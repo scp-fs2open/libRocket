@@ -36,6 +36,7 @@ namespace Core {
 
 DecoratorTiledImage::DecoratorTiledImage()
 {
+	sizing_mode = STRETCH;
 }
 
 DecoratorTiledImage::~DecoratorTiledImage()
@@ -43,10 +44,11 @@ DecoratorTiledImage::~DecoratorTiledImage()
 }
 
 // Initialises the tiles for the decorator.
-bool DecoratorTiledImage::Initialise(const Tile& _tile, const String& _texture_name, const String& _rcss_path)
+bool DecoratorTiledImage::Initialise(const Tile& _tile, const String& _texture_name, const String& _rcss_path, SizingMode _sizing_mode)
 {
 	// Load the texture.
 	tile = _tile;
+	sizing_mode = _sizing_mode;
 	tile.texture_index = LoadTexture(_texture_name, _rcss_path);
 	if (tile.texture_index < 0)
 		return false;
@@ -64,7 +66,32 @@ DecoratorDataHandle DecoratorTiledImage::GenerateElementData(Element* element)
 	data->SetTexture(GetTexture());
 
 	// Generate the geometry for the tile.
-	tile.GenerateGeometry(data->GetVertices(), data->GetIndices(), element, Vector2f(0, 0), element->GetBox().GetSize(Box::PADDING), tile.GetDimensions(element));
+	if (sizing_mode == STRETCH)
+		tile.GenerateGeometry(data->GetVertices(), data->GetIndices(), element, Vector2f(0, 0), element->GetBox().GetSize(Box::PADDING), tile.GetDimensions(element));
+	else
+	{
+		Vector2f surface_dimensions = element->GetBox().GetSize(Box::PADDING);
+		Vector2f tile_dimensions = tile.GetDimensions(element);
+
+		if (tile_dimensions.x > 0 &&
+			tile_dimensions.y > 0 &&
+			surface_dimensions.x > 0 &&
+			surface_dimensions.y > 0)
+		{
+			float scale_x = surface_dimensions.x / tile_dimensions.x;
+			float scale_y = surface_dimensions.y / tile_dimensions.y;
+			float scale = Math::Min(scale_x, scale_y);
+			if (sizing_mode == FILL)
+				scale = Math::Max(scale_x, scale_y);
+
+			Vector2f fitted_dimensions = tile_dimensions * scale;
+			Vector2f fitted_origin = (surface_dimensions - fitted_dimensions) * 0.5f;
+
+			Tile fitted_tile = tile;
+			fitted_tile.repeat_mode = DecoratorTiled::STRETCH;
+			fitted_tile.GenerateGeometry(data->GetVertices(), data->GetIndices(), element, fitted_origin, fitted_dimensions, fitted_dimensions);
+		}
+	}
 
 	return reinterpret_cast<DecoratorDataHandle>(data);
 }

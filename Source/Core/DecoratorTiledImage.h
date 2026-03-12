@@ -43,12 +43,14 @@ public:
 	DecoratorTiledImage();
 	virtual ~DecoratorTiledImage();
 
+	enum SizingMode { STRETCH = 0, CONTAIN, FILL };
+
 	/// Initialises the tile for the decorator.
 	/// @param tile[in] The declaration for the tile.
 	/// @param texture_name[in] The application-specific path to the texture for the tile.
 	/// @param rcss_path[in] The path to the RCSS file that defined the texture source.
 	/// @return True if the image loaded (or are pending loading) and are of compatible sizes, false otherwise.
-	bool Initialise(const Tile& tiles, const String& texture_names, const String& rcss_path);
+	bool Initialise(const Tile& tiles, const String& texture_names, const String& rcss_path, SizingMode sizing_mode);
 
 	/// Called on a decorator to generate any required per-element data for a newly decorated element.
 	virtual DecoratorDataHandle GenerateElementData(Element* element);
@@ -60,6 +62,7 @@ public:
 
 private:
 	Tile tile;
+	SizingMode sizing_mode;
 };
 
 }
